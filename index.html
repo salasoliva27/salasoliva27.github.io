@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portfolio-version" content="2">
+<meta name="portfolio-version" content="3">
+<meta name="theme-color" content="#0b0d12">
+<script>
+  (function () {
+    var themes = ["dark", "light", "midnight", "sand", "terminal"], t = null;
+    try { t = localStorage.getItem("theme"); } catch (e) {}
+    if (themes.indexOf(t) < 0) t = window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
 <title>Alejandro Salas Oliva — Data &amp; AI Engineer</title>
 <meta name="description" content="Data & AI engineer. Snowflake pipelines, machine learning, and LLM agent systems — plus the AI products I build on my own.">
 <meta property="og:type" content="website">
@@ -18,11 +27,25 @@
 <body>
   <nav class="nav">
     <a class="brand" href="#top">AS<span>O</span></a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#rates">Rates</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="theme-picker">
+        <button class="theme-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Change theme" title="Change theme">
+          <span class="swatch" aria-hidden="true"></span><span class="theme-name">Dark</span>
+        </button>
+        <div class="theme-menu" role="menu" aria-label="Themes" hidden>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="dark"><span class="swatch" style="--sw-bg:#0b0d12;--sw-accent:#5eead4" aria-hidden="true"></span>Dark</button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="light"><span class="swatch" style="--sw-bg:#f7f8fa;--sw-accent:#0f766e" aria-hidden="true"></span>Light</button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="midnight"><span class="swatch" style="--sw-bg:#0a1022;--sw-accent:#8ab4ff" aria-hidden="true"></span>Midnight</button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="sand"><span class="swatch" style="--sw-bg:#f5efe6;--sw-accent:#a3431a" aria-hidden="true"></span>Sand</button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="terminal"><span class="swatch" style="--sw-bg:#050805;--sw-accent:#39ff88" aria-hidden="true"></span>Terminal</button>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -32,7 +55,8 @@
     <p class="role">Data &amp; AI Engineer</p>
     <p class="lede">I build data pipelines, machine-learning models and LLM agent systems.
       By day that has meant Snowflake migrations and churn models for companies like
-      Exxon Mobil and Oracle. On my own time I build AI products — the ones below.</p>
+      Exxon Mobil and Oracle. I also help companies bring AI into how they work, and I
+      build my own AI products — the work below.</p>
     <div class="cta">
       <a class="btn primary" href="mailto:salasoliva27@gmail.com">Email me</a>
       <a class="btn" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
@@ -62,10 +86,34 @@
             <li>Loop protocol enforced by blocking hooks: 272 of 280 acceptance criteria met across 32 finished loops.</li>
           </ul>
           <p class="stack"><span>TypeScript</span><span>React</span><span>Express</span><span>WebSocket</span><span>MCP</span><span>Supabase · pgvector</span><span>Neo4j</span><span>Playwright</span></p>
+          <a class="price-link" href="#p-workflow">One automated workflow like these <small>from $500</small></a>
         </div>
         <div class="gallery">
           <a class="shot main" href="img/janus-progress.webp"><img src="img/janus-progress.webp" width="1440" height="900" loading="lazy" alt="Janus IA Progress window: a timeline of verified loops, 97% of 280 acceptance criteria met"></a>
           <a class="shot thumb" href="img/janus-brain.webp"><img src="img/janus-brain.webp" width="1040" height="650" loading="lazy" alt="Janus IA knowledge graph of agents, concepts and learnings"></a>
+        </div>
+      </article>
+
+      <article class="project" id="ozum">
+        <div class="gallery">
+          <a class="shot main" href="img/ozum-onboarding.webp"><img src="img/ozum-onboarding.webp" width="1440" height="900" loading="lazy" alt="OZUM AI onboarding: the nine guided steps from connecting an engine to a working company AI, in Spanish"></a>
+          <a class="shot thumb" href="img/ozum-workspace.webp"><img src="img/ozum-workspace.webp" width="1440" height="900" loading="lazy" alt="OZUM AI workspace with a chat next to the onboarding console"></a>
+        </div>
+        <div class="project-text">
+          <p class="kicker">Client · AI adoption</p>
+          <h3>Ozum</h3>
+          <p class="status live">Active client · first phase delivered</p>
+          <p class="summary">Ozum is a corporate-events and incentive-travel company with more than 30 years
+            in Mexico and the US. I'm bringing AI into how they work: first their own AI platform,
+            then workflows built with the team, then teaching each person to build on it themselves.</p>
+          <ul>
+            <li><strong>Delivered:</strong> OZUM AI, a Spanish-first AI platform in Ozum's brand that installs with one double-click on Mac or Windows — nothing to set up beforehand.</li>
+            <li><strong>Delivered:</strong> a guided onboarding that takes a non-technical person from zero to a working AI engine, shared company memory and sign-in with roles (client, business, developer, admin), proven by from-zero install tests.</li>
+            <li><strong>Next:</strong> install it for the owner, build the first workflows with him from real pains, then onboard each employee to create their own.</li>
+            <li>A 12-week adoption plan with two points where spending stops on its own if the platform isn't being used.</li>
+          </ul>
+          <p class="stack"><span>TypeScript</span><span>React</span><span>Claude Code · Codex</span><span>Supabase</span><span>Neo4j</span><span>MCP</span><span>Tailscale</span></p>
+          <a class="price-link" href="#p-adoption">AI adoption program <small>from $4,700</small></a>
         </div>
       </article>
 
@@ -86,6 +134,7 @@
             <li>Community voting with thresholds that scale with the number of backers; bilingual EN/ES.</li>
           </ul>
           <p class="stack"><span>React</span><span>Tailwind</span><span>Express</span><span>Prisma</span><span>Supabase Auth</span><span>Claude API</span><span>Bitso sandbox</span></p>
+          <a class="price-link" href="#p-platform">An AI web platform like this <small>from $7,000</small></a>
         </div>
       </article>
 
@@ -106,6 +155,7 @@
             <li>Embeds with one script tag. The camera runs in the browser and no image is ever stored.</li>
           </ul>
           <p class="stack"><span>JavaScript</span><span>React</span><span>MediaPipe</span><span>Canvas</span><span>Vite</span></p>
+          <a class="price-link" href="#p-vision">A camera widget like this <small>from $3,500</small></a>
         </div>
       </article>
 
@@ -125,6 +175,7 @@
             <li>Risk monitor with drawdown cap, API-cost cap and a kill switch; live trading locked.</li>
           </ul>
           <p class="stack"><span>Python</span><span>React</span><span>Recharts</span><span>Claude API</span></p>
+          <a class="price-link" href="#p-data">A data pipeline with a dashboard <small>from $2,000</small></a>
         </div>
       </article>
 
@@ -144,6 +195,7 @@
             <li>The widget renders in a shadow DOM, so it never clashes with the host site's styles.</li>
           </ul>
           <p class="stack"><span>React 19</span><span>Tailwind v4</span><span>Framer Motion</span><span>Supabase</span><span>Claude API</span></p>
+          <a class="price-link" href="#p-assistant">An AI assistant for your site <small>from $2,500</small></a>
         </div>
       </article>
 
@@ -166,6 +218,7 @@
             <li>Every review round verified by a Playwright suite of 35 automated checks.</li>
           </ul>
           <p class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Playwright</span></p>
+          <a class="price-link" href="#p-website">A website like this <small>from $1,500</small></a>
         </div>
       </article>
     </section>
@@ -183,11 +236,68 @@
           <h4>Page 2 Reel</h4>
           <p>A pipeline that turns book chapters into ready-to-post vertical videos: AI video clips, captions and an end card, assembled with ffmpeg.</p>
         </div>
-        <div>
-          <h4>AI OS for an events agency</h4>
-          <p>Client work: an agent-based operating system for a corporate-events and incentive-travel company, with shared memory and role-based access.</p>
-        </div>
       </div>
+    </section>
+
+    <section id="rates" class="section">
+      <div class="section-head">
+        <h2>Rates</h2>
+        <p class="note">For freelance and contract work, in USD. Every fixed price is my hour estimate times the hourly rate, so you can see the math. Scope is agreed in writing before any work starts.</p>
+      </div>
+      <div class="rate-hero">
+        <div class="rate-big" data-rate="50">$50<span>/ hour</span></div>
+        <p>Consulting, data engineering, AI integration, and anything that doesn't fit one of the products below.</p>
+      </div>
+      <div class="products">
+        <article class="product wide" id="p-adoption" data-hours="94" data-price="4700" data-monthly="750">
+          <div class="head">
+            <h4>AI adoption program</h4>
+            <p class="like">Like Ozum</p>
+          </div>
+          <p class="desc">Your company's own AI platform installed, the first workflows built with your team, and everyone taught to build their own. Twelve weeks, with two points where spending stops if it isn't being used.</p>
+          <div class="price-block">
+            <div class="cost"><span class="amount">$4,700</span><span class="hours">94 h · 12 weeks</span></div>
+            <p class="extra">Then $750/month for up to 10 people: platform, updates and 3 hours of work a month.</p>
+          </div>
+        </article>
+        <article class="product" id="p-platform" data-hours="140" data-price="7000">
+          <h4>AI web platform (MVP)</h4>
+          <p class="like">Like Espacio Bosques</p>
+          <p class="desc">Accounts, a database and an AI feature at the core, bilingual if you need it — from an idea to a working product you can demo.</p>
+          <div class="cost"><span class="amount"><small>from</small> $7,000</span><span class="hours">~140 h</span></div>
+        </article>
+        <article class="product" id="p-vision" data-hours="70" data-price="3500">
+          <h4>Camera / computer-vision widget</h4>
+          <p class="like">Like LOOL AI</p>
+          <p class="desc">Real-time face or object tracking in the browser, embedded in your site with one tag. No image ever leaves the device.</p>
+          <div class="cost"><span class="amount"><small>from</small> $3,500</span><span class="hours">~70 h</span></div>
+        </article>
+        <article class="product" id="p-assistant" data-hours="50" data-price="2500">
+          <h4>AI assistant for your site</h4>
+          <p class="like">Like NutrIA</p>
+          <p class="desc">A chat and voice assistant that knows your business and remembers each customer, as a web app and a one-line widget.</p>
+          <div class="cost"><span class="amount"><small>from</small> $2,500</span><span class="hours">~50 h</span></div>
+        </article>
+        <article class="product" id="p-data" data-hours="40" data-price="2000">
+          <h4>Data pipeline &amp; dashboard</h4>
+          <p class="like">Like Mercado Bot · my day job</p>
+          <p class="desc">Data pulled from your APIs into Snowflake or Postgres, validated and retried on failure, with a dashboard on top.</p>
+          <div class="cost"><span class="amount"><small>from</small> $2,000</span><span class="hours">~40 h</span></div>
+        </article>
+        <article class="product" id="p-website" data-hours="30" data-price="1500">
+          <h4>Business website</h4>
+          <p class="like">Like Longevité</p>
+          <p class="desc">Bilingual, fast and mobile-first, with contact straight to WhatsApp. Two rounds of review included.</p>
+          <div class="cost"><span class="amount"><small>from</small> $1,500</span><span class="hours">~30 h</span></div>
+        </article>
+        <article class="product" id="p-workflow" data-hours="10" data-price="500">
+          <h4>One automated workflow</h4>
+          <p class="like">Like the loops in Janus IA</p>
+          <p class="desc">One recurring task handed to an AI agent: it runs on schedule, keeps a log, and checks its own result.</p>
+          <div class="cost"><span class="amount"><small>from</small> $500</span><span class="hours">~10 h</span></div>
+        </article>
+      </div>
+      <p class="rates-foot">AI and hosting costs (model subscriptions, databases) are paid by you directly to each provider, with no margin added.</p>
     </section>
 
     <section id="experience" class="section">
@@ -269,6 +379,6 @@
     <button class="close" type="button" aria-label="Close">&times;</button>
     <img alt="">
   </dialog>
-  <script src="lightbox.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
