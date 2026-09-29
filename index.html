@@ -3,60 +3,272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alejandro Salas Oliva — Portfolio</title>
+<meta name="portfolio-version" content="2">
+<title>Alejandro Salas Oliva — Data &amp; AI Engineer</title>
+<meta name="description" content="Data & AI engineer. Snowflake pipelines, machine learning, and LLM agent systems — plus the AI products I build on my own.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://salasoliva27.github.io/">
+<meta property="og:title" content="Alejandro Salas Oliva — Data & AI Engineer">
+<meta property="og:description" content="Snowflake pipelines, machine learning, and LLM agent systems — plus the AI products I build on my own.">
+<meta property="og:image" content="https://salasoliva27.github.io/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
+  <nav class="nav">
+    <a class="brand" href="#top">AS<span>O</span></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <p class="eyebrow">Mexico City · open to remote</p>
     <h1>Alejandro Salas Oliva</h1>
-    <p class="tagline">Software builder — AI-assisted product development, automation, and full-stack systems.</p>
-    <div class="links">
-      <a href="mailto:salasoliva27@gmail.com">Email</a>
-      <a href="https://github.com/salasoliva27">GitHub</a>
+    <p class="role">Data &amp; AI Engineer</p>
+    <p class="lede">I build data pipelines, machine-learning models and LLM agent systems.
+      By day that has meant Snowflake migrations and churn models for companies like
+      Exxon Mobil and Oracle. On my own time I build AI products — the ones below.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:salasoliva27@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/salasoliva27" rel="noopener">GitHub</a>
     </div>
   </header>
 
   <main>
-    <section>
-      <h2>Projects</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Ozum AI</h3>
-          <p>CRM built for a real business, covering client and pipeline management end to end.</p>
-        </article>
-        <article class="card">
-          <h3>Lool AI</h3>
-          <p>3D content pipeline — automated generation and processing workflow.</p>
-        </article>
-        <article class="card">
-          <h3>Mercado Bot</h3>
-          <p>Python backend for automated market data handling and trading logic.</p>
-        </article>
-        <article class="card">
+    <section id="work" class="section">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <p class="note">None of these are publicly deployed yet. Every screenshot was taken from the real project running on my machine — no mock-ups.</p>
+      </div>
+
+      <article class="project featured">
+        <div class="project-text">
+          <p class="kicker">Flagship · personal</p>
+          <h3>Janus IA</h3>
+          <p class="status live">In daily use · private</p>
+          <p class="summary">A personal multi-agent operating system. LLM agents coordinated over MCP
+            share one memory, pick up each other's work, and run every task as a verified loop —
+            a written goal, acceptance criteria and a check that proves each one.</p>
+          <ul>
+            <li>Three-layer brain: Markdown knowledge vault, pgvector semantic memory on Supabase, and a Neo4j graph.</li>
+            <li>Runs Claude Code and Codex as interchangeable engines; routes each request to a fast, standard or deep model tier.</li>
+            <li>React dashboard over a WebSocket bridge — windows, chats, project progress — and usable from a phone.</li>
+            <li>Loop protocol enforced by blocking hooks: 272 of 280 acceptance criteria met across 32 finished loops.</li>
+          </ul>
+          <p class="stack"><span>TypeScript</span><span>React</span><span>Express</span><span>WebSocket</span><span>MCP</span><span>Supabase · pgvector</span><span>Neo4j</span><span>Playwright</span></p>
+        </div>
+        <div class="gallery">
+          <a class="shot main" href="img/janus-progress.webp"><img src="img/janus-progress.webp" width="1440" height="900" loading="lazy" alt="Janus IA Progress window: a timeline of verified loops, 97% of 280 acceptance criteria met"></a>
+          <a class="shot thumb" href="img/janus-brain.webp"><img src="img/janus-brain.webp" width="1040" height="650" loading="lazy" alt="Janus IA knowledge graph of agents, concepts and learnings"></a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="gallery">
+          <a class="shot main" href="img/bosques-project.webp"><img src="img/bosques-project.webp" width="1440" height="900" loading="lazy" alt="Espacio Bosques project page with milestone timeline and funding progress"></a>
+          <a class="shot thumb" href="img/bosques-dashboard.webp"><img src="img/bosques-dashboard.webp" width="1440" height="900" loading="lazy" alt="Espacio Bosques dashboard listing community projects"></a>
+        </div>
+        <div class="project-text">
+          <p class="kicker">Civic fintech</p>
           <h3>Espacio Bosques</h3>
-          <p>Web platform demo, built and shipped with a live CI/CD pipeline.</p>
-        </article>
-        <article class="card">
-          <h3>Longevite</h3>
-          <p>Deployed product delivering a focused health/wellness experience.</p>
-        </article>
-        <article class="card">
-          <h3>Nutria</h3>
-          <p>Deployed application project, built and shipped to production.</p>
-        </article>
+          <p class="status">Proof of concept · simulation mode</p>
+          <p class="summary">A community-funding platform for a Mexico City neighborhood: residents propose,
+            fund and track local projects, and money is released milestone by milestone.</p>
+          <ul>
+            <li>Claude drafts a full project blueprint — budget, milestones, timeline — from a plain-language idea.</li>
+            <li>Providers upload evidence; Claude vision reads Mexican tax invoices (CFDI) and validates RFCs against the SAT blacklist.</li>
+            <li>Community voting with thresholds that scale with the number of backers; bilingual EN/ES.</li>
+          </ul>
+          <p class="stack"><span>React</span><span>Tailwind</span><span>Express</span><span>Prisma</span><span>Supabase Auth</span><span>Claude API</span><span>Bitso sandbox</span></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="gallery">
+          <a class="shot main" href="img/lool-demo.webp"><img src="img/lool-demo.webp" width="1440" height="900" loading="lazy" alt="Demo optical store page with the LOOL try-on widget embedded"></a>
+          <a class="shot thumb" href="img/lool-app.webp"><img src="img/lool-app.webp" width="1440" height="900" loading="lazy" alt="LOOL virtual try-on screen with a frame catalog"></a>
+        </div>
+        <div class="project-text">
+          <p class="kicker">B2B SaaS</p>
+          <h3>LOOL AI</h3>
+          <p class="status">Prototype · core try-on working</p>
+          <p class="summary">A virtual try-on widget for independent optical stores: customers see frames on
+            their own face, live, from the store's website.</p>
+          <ul>
+            <li>MediaPipe face mesh tracks the irises; frames are scaled from inter-pupillary distance and rotated with the head.</li>
+            <li>Smoothing keeps frames steady through blinks; high-DPI canvas rendering.</li>
+            <li>Embeds with one script tag. The camera runs in the browser and no image is ever stored.</li>
+          </ul>
+          <p class="stack"><span>JavaScript</span><span>React</span><span>MediaPipe</span><span>Canvas</span><span>Vite</span></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="gallery">
+          <a class="shot main" href="img/mercado-run.webp"><img src="img/mercado-run.webp" width="1440" height="900" loading="lazy" alt="Mercado Bot dashboard after a ten-round simulated run: portfolio chart, signals, trade log, Kelly calculator"></a>
+        </div>
+        <div class="project-text">
+          <p class="kicker">Quant research</p>
+          <h3>Mercado Bot</h3>
+          <p class="status">Prototype · simulation only</p>
+          <p class="summary">A research bot for prediction markets that estimates probabilities with an LLM and
+            sizes positions the way a quant would — never with real money.</p>
+          <ul>
+            <li>Five-stage pipeline: scan markets, research, predict, execute on paper, compound.</li>
+            <li>Kelly-criterion position sizing; tracks win rate, Brier score and Sharpe ratio.</li>
+            <li>Risk monitor with drawdown cap, API-cost cap and a kill switch; live trading locked.</li>
+          </ul>
+          <p class="stack"><span>Python</span><span>React</span><span>Recharts</span><span>Claude API</span></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="gallery">
+          <a class="shot main contain" href="img/nutria-panel.webp"><img src="img/nutria-panel.webp" width="840" height="672" loading="lazy" alt="NutrIA chat panel with text and voice input"></a>
+        </div>
+        <div class="project-text">
+          <p class="kicker">Health AI</p>
+          <h3>NutrIA</h3>
+          <p class="status">V1 built · not deployed</p>
+          <p class="summary">A conversational clinical-nutrition coach that remembers each patient's profile
+            and can live inside any clinic's website.</p>
+          <ul>
+            <li>Streaming Claude chat with voice input, building a dietary profile as you talk.</li>
+            <li>Ships twice from one codebase: an installable web app and a one-tag embeddable widget.</li>
+            <li>The widget renders in a shadow DOM, so it never clashes with the host site's styles.</li>
+          </ul>
+          <p class="stack"><span>React 19</span><span>Tailwind v4</span><span>Framer Motion</span><span>Supabase</span><span>Claude API</span></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="gallery">
+          <div class="shot-pair">
+            <a class="shot main" href="img/longevite-hero.webp"><img src="img/longevite-hero.webp" width="1440" height="900" loading="lazy" alt="Longevité Therapeutics website hero with video background"></a>
+            <a class="shot phone" href="img/longevite-m-hero.webp"><img src="img/longevite-m-hero.webp" width="390" height="844" loading="lazy" alt="Longevité website on a phone"></a>
+          </div>
+        </div>
+        <div class="project-text">
+          <p class="kicker">Client website</p>
+          <h3>Longevité Therapeutics</h3>
+          <p class="status">Built · awaiting launch</p>
+          <p class="summary">A bilingual website for a longevity and functional-medicine clinic in Mexico City,
+            rebuilt through several rounds of client review.</p>
+          <ul>
+            <li>Video hero, expandable program cards, FAQ with cited sources, contact straight to WhatsApp.</li>
+            <li>Vanilla HTML, CSS and JavaScript — modular, no build step, fast on a phone.</li>
+            <li>Every review round verified by a Playwright suite of 35 automated checks.</li>
+          </ul>
+          <p class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Playwright</span></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Also building</h2>
+      </div>
+      <div class="also">
+        <div>
+          <h4>Platu</h4>
+          <p>An AI language-learning agent that scores whole conversations — can you follow, contribute and repair — instead of counting mistakes.</p>
+        </div>
+        <div>
+          <h4>Page 2 Reel</h4>
+          <p>A pipeline that turns book chapters into ready-to-post vertical videos: AI video clips, captions and an end card, assembled with ffmpeg.</p>
+        </div>
+        <div>
+          <h4>AI OS for an events agency</h4>
+          <p>Client work: an agent-based operating system for a corporate-events and incentive-travel company, with shared memory and role-based access.</p>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Get in touch</h2>
-      <p>Open to freelance and collaboration opportunities.
-        <a href="mailto:salasoliva27@gmail.com">salasoliva27@gmail.com</a>
-      </p>
+    <section id="experience" class="section">
+      <div class="section-head">
+        <h2>Experience</h2>
+      </div>
+      <ol class="timeline">
+        <li>
+          <div class="when">Oct 2025 — Present</div>
+          <div>
+            <h4>Data Engineer · MORSCO — Reece USA</h4>
+            <p>Own ingestion pipelines into the corporate Snowflake warehouse end to end, from source contract to production. Built a resilient API-to-Snowflake pattern reused across integrations, and turn vague data-quality tickets into named root causes.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">Mar 2025 — Present</div>
+          <div>
+            <h4>ML &amp; AI Consultant · Outlier AI, LATAM Coders</h4>
+            <p>Evaluate and correct frontier AI models for clients including Tesla and OpenAI: prompting, analysis, object detection and code reliability.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">Nov 2023 — Apr 2025</div>
+          <div>
+            <h4>Senior Technology Consultant · EY, AI &amp; Tech</h4>
+            <p>Co-led Exxon Mobil's multi-phase SAP-to-Snowflake migration; built Python validation tooling for QA and reconciled emissions metrics under regulatory scrutiny.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">Dec 2021 — Nov 2023</div>
+          <div>
+            <h4>Senior Data Scientist · Oracle, TINNO</h4>
+            <p>Built churn and renewal-risk models (logistic regression, gradient boosting) for an executive task force, plus an NLP sentiment layer over support tickets with BERT, NLTK and the OpenAI API.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-head">
+        <h2>Skills</h2>
+      </div>
+      <div class="skills">
+        <div>
+          <h4>Data &amp; ML</h4>
+          <p class="stack"><span>Snowflake</span><span>SQL</span><span>Python</span><span>pandas / numpy</span><span>Talend</span><span>ETL / ELT</span><span>Data lineage</span><span>scikit-learn</span></p>
+        </div>
+        <div>
+          <h4>AI / LLM</h4>
+          <p class="stack"><span>Claude</span><span>OpenAI API</span><span>Agent design</span><span>MCP servers</span><span>RAG</span><span>pgvector</span><span>Neo4j</span><span>BERT</span></p>
+        </div>
+        <div>
+          <h4>Engineering</h4>
+          <p class="stack"><span>TypeScript</span><span>React</span><span>Node.js</span><span>Supabase</span><span>Docker</span><span>Playwright</span><span>Azure DevOps</span></p>
+        </div>
+      </div>
+      <div class="edu">
+        <p><strong>Postgraduate, Data Science &amp; Business Analytics</strong> — University of Texas at Austin, 2021</p>
+        <p><strong>B.S. Industrial Engineering</strong> — Universidad Anáhuac Norte, 2020</p>
+        <p><strong>Languages</strong> — Spanish (native), English (advanced), French (advanced)</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Let's talk</h2>
+      <p>Hiring for data or AI engineering, or want a walkthrough of any project above? Most of the code lives in private repositories — I'm happy to walk through it on a call.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:salasoliva27@gmail.com">salasoliva27@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
+      </div>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2026 Alejandro Salas Oliva</p>
   </footer>
+
+  <dialog class="lightbox" aria-label="Screenshot">
+    <button class="close" type="button" aria-label="Close">&times;</button>
+    <img alt="">
+  </dialog>
+  <script src="lightbox.js"></script>
 </body>
 </html>
