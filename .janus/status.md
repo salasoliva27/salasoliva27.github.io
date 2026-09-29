@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-09-29T18:51:48.105Z"
-lastSyncedCommit: "8511467"
-lastSyncedCommitMessage: "Portfolio v3: themes, Ozum as a client project, rates"
+lastSyncedAt: "2026-09-29T20:41:24.319Z"
+lastSyncedCommit: "58990ae"
+lastSyncedCommitMessage: "Portfolio v4: drop estimates, weak projects, and \"Like X\" tags"
 ---
 
 ## Next Steps
