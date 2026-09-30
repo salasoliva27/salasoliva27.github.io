@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-09-29T21:06:37.318Z"
-lastSyncedCommit: "4d96d2b"
-lastSyncedCommitMessage: "Portfolio v5: Janus as a personal AI, WhatsApp contact"
+lastSyncedAt: "2026-09-30T00:38:42.889Z"
+lastSyncedCommit: "12093d6"
+lastSyncedCommitMessage: "Portfolio v6: Janus chat shows a sample conversation"
 ---
 
 ## Next Steps
