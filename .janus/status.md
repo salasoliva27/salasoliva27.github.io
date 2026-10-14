@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-09-30T00:38:42.889Z"
-lastSyncedCommit: "12093d6"
-lastSyncedCommitMessage: "Portfolio v6: Janus chat shows a sample conversation"
+lastSyncedAt: "2026-10-14T08:54:59.652Z"
+lastSyncedCommit: "ff33ef7"
+lastSyncedCommitMessage: "Portfolio v7: Spanish option (Español/English toggle, ?lang=es), English stays t"
 ---
 
 ## Next Steps
