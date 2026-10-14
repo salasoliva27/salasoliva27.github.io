@@ -507,3 +507,17 @@ footer { text-align: center; color: var(--faint); padding: 3rem 1.5rem; font-siz
   .shot.thumb { width: 55%; }
   .rate-big { font-size: 2.4rem; }
 }
+
+/* Language toggle (v7): a text action, not a pill — English is the page as written. */
+.lang-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  padding: 0.3rem 0.15rem;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+}
+.lang-btn:hover { color: var(--text); text-decoration-style: solid; }

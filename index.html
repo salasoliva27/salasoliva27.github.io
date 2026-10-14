@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portfolio-version" content="6">
+<meta name="portfolio-version" content="7">
 <meta name="theme-color" content="#0b0d12">
 <script>
   (function () {
@@ -29,37 +29,38 @@
     <a class="brand" href="#top">AS<span>O</span></a>
     <div class="nav-right">
       <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#rates">Rates</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <a href="#work" data-i18n="nav_work">Work</a>
+        <a href="#rates" data-i18n="nav_rates">Rates</a>
+        <a href="#experience" data-i18n="nav_exp">Experience</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
       </div>
+      <button class="lang-btn" type="button" data-lang-toggle lang="es" aria-label="Ver en español" title="Ver en español">Español</button>
       <div class="theme-picker">
-        <button class="theme-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Change theme" title="Change theme">
+        <button class="theme-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Change theme" title="Change theme" data-i18n-attr="aria-label:theme_change;title:theme_change">
           <span class="swatch" aria-hidden="true"></span><span class="theme-name">Dark</span>
         </button>
         <div class="theme-menu" role="menu" aria-label="Themes" hidden>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="dark"><span class="swatch" style="--sw-bg:#0b0d12;--sw-accent:#5eead4" aria-hidden="true"></span>Dark</button>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="light"><span class="swatch" style="--sw-bg:#f7f8fa;--sw-accent:#0f766e" aria-hidden="true"></span>Light</button>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="midnight"><span class="swatch" style="--sw-bg:#0a1022;--sw-accent:#8ab4ff" aria-hidden="true"></span>Midnight</button>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="sand"><span class="swatch" style="--sw-bg:#f5efe6;--sw-accent:#a3431a" aria-hidden="true"></span>Sand</button>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="terminal"><span class="swatch" style="--sw-bg:#050805;--sw-accent:#39ff88" aria-hidden="true"></span>Terminal</button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="dark"><span class="swatch" style="--sw-bg:#0b0d12;--sw-accent:#5eead4" aria-hidden="true"></span><span data-i18n="theme_dark">Dark</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="light"><span class="swatch" style="--sw-bg:#f7f8fa;--sw-accent:#0f766e" aria-hidden="true"></span><span data-i18n="theme_light">Light</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="midnight"><span class="swatch" style="--sw-bg:#0a1022;--sw-accent:#8ab4ff" aria-hidden="true"></span><span data-i18n="theme_midnight">Midnight</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="sand"><span class="swatch" style="--sw-bg:#f5efe6;--sw-accent:#a3431a" aria-hidden="true"></span><span data-i18n="theme_sand">Sand</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="terminal"><span class="swatch" style="--sw-bg:#050805;--sw-accent:#39ff88" aria-hidden="true"></span><span data-i18n="theme_terminal">Terminal</span></button>
         </div>
       </div>
     </div>
   </nav>
 
   <header class="hero" id="top">
-    <p class="eyebrow">Mexico City · open to remote</p>
+    <p data-i18n="hero_eyebrow" class="eyebrow">Mexico City · open to remote</p>
     <h1>Alejandro Salas Oliva</h1>
-    <p class="role">Data &amp; AI Engineer</p>
-    <p class="lede">I build data pipelines, machine-learning models and LLM agent systems.
+    <p data-i18n="hero_role" class="role">Data &amp; AI Engineer</p>
+    <p class="lede" data-i18n="hero_lede">I build data pipelines, machine-learning models and LLM agent systems.
       By day that has meant Snowflake migrations and churn models for companies like
       Exxon Mobil and Oracle. I also help companies bring AI into how they work, and I
       build my own AI products — the work below.</p>
     <div class="cta">
-      <a class="btn primary" href="mailto:salasoliva27@gmail.com">Email me</a>
-      <a class="btn" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn primary" href="mailto:salasoliva27@gmail.com" data-i18n="cta_email">Email me</a>
+      <a class="btn" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" data-i18n-attr="href:wa_link" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://github.com/salasoliva27" rel="noopener">GitHub</a>
     </div>
@@ -68,70 +69,70 @@
   <main>
     <section id="work" class="section">
       <div class="section-head">
-        <h2>Selected work</h2>
-        <p class="note">None of these are publicly deployed yet. Every screenshot comes from the real project running on my machine; personal details are blurred, and the Janus chat shows a sample conversation.</p>
+        <h2 data-i18n="work_h">Selected work</h2>
+        <p class="note" data-i18n="work_note">None of these are publicly deployed yet. Every screenshot comes from the real project running on my machine; personal details are blurred, and the Janus chat shows a sample conversation.</p>
       </div>
 
       <article class="project featured">
         <div class="project-text">
-          <p class="kicker">Flagship · personal</p>
+          <p class="kicker" data-i18n="janus_kicker">Flagship · personal</p>
           <h3>Janus IA</h3>
-          <p class="status live">In daily use · private</p>
-          <p class="summary">My personal AI. It runs the things I use every day — for my own life as much as
+          <p class="status live" data-i18n="janus_status">In daily use · private</p>
+          <p class="summary" data-i18n="janus_sum">My personal AI. It runs the things I use every day — for my own life as much as
             for work and my projects — as live dashboards, with a chat always open beside them, so
             anything on screen is one question away.</p>
           <ul>
-            <li>A home dashboard for the day: schedule, inbox, training, market moves and job leads, each refreshing on its own.</li>
-            <li>Apps for each part of life and work: a gym log, personal finance, workflows that run on a clock, every project's progress, and a searchable chat history.</li>
-            <li>The chat can act, not just answer: it reads my mail, logs a workout, fixes a failing workflow or builds a feature, and remembers across conversations.</li>
-            <li>Under the hood, AI agents that share one memory (Supabase + pgvector, a Neo4j graph), with Claude Code and Codex as interchangeable engines — on desktop or phone.</li>
+            <li data-i18n="janus_1">A home dashboard for the day: schedule, inbox, training, market moves and job leads, each refreshing on its own.</li>
+            <li data-i18n="janus_2">Apps for each part of life and work: a gym log, personal finance, workflows that run on a clock, every project's progress, and a searchable chat history.</li>
+            <li data-i18n="janus_3">The chat can act, not just answer: it reads my mail, logs a workout, fixes a failing workflow or builds a feature, and remembers across conversations.</li>
+            <li data-i18n="janus_4">Under the hood, AI agents that share one memory (Supabase + pgvector, a Neo4j graph), with Claude Code and Codex as interchangeable engines — on desktop or phone.</li>
           </ul>
           <p class="stack"><span>TypeScript</span><span>React</span><span>Express</span><span>WebSocket</span><span>MCP</span><span>Supabase · pgvector</span><span>Neo4j</span><span>Playwright</span></p>
         </div>
         <div class="gallery">
-          <a class="shot main" href="img/janus-home.webp"><img src="img/janus-home.webp" width="1440" height="900" loading="lazy" alt="Janus IA home: a sample conversation in the chat on the left, next to the daily dashboard — schedule, inbox, training, markets and job leads (personal details blurred)"></a>
-          <a class="shot thumb" href="img/janus-apps.webp"><img src="img/janus-apps.webp" width="1440" height="900" loading="lazy" alt="Janus IA apps menu — Progress, Gym, Finance, Workflows, Chats — open over the Gym app's training log"></a>
+          <a class="shot main" href="img/janus-home.webp"><img src="img/janus-home.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_janus_home" alt="Janus IA home: a sample conversation in the chat on the left, next to the daily dashboard — schedule, inbox, training, markets and job leads (personal details blurred)"></a>
+          <a class="shot thumb" href="img/janus-apps.webp"><img src="img/janus-apps.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_janus_apps" alt="Janus IA apps menu — Progress, Gym, Finance, Workflows, Chats — open over the Gym app's training log"></a>
         </div>
       </article>
 
       <article class="project" id="ozum">
         <div class="gallery">
-          <a class="shot main" href="img/ozum-onboarding.webp"><img src="img/ozum-onboarding.webp" width="1440" height="900" loading="lazy" alt="OZUM AI onboarding: the nine guided steps from connecting an engine to a working company AI, in Spanish"></a>
-          <a class="shot thumb" href="img/ozum-workspace.webp"><img src="img/ozum-workspace.webp" width="1440" height="900" loading="lazy" alt="OZUM AI workspace with a chat next to the onboarding console"></a>
+          <a class="shot main" href="img/ozum-onboarding.webp"><img src="img/ozum-onboarding.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_ozum_onb" alt="OZUM AI onboarding: the nine guided steps from connecting an engine to a working company AI, in Spanish"></a>
+          <a class="shot thumb" href="img/ozum-workspace.webp"><img src="img/ozum-workspace.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_ozum_ws" alt="OZUM AI workspace with a chat next to the onboarding console"></a>
         </div>
         <div class="project-text">
-          <p class="kicker">Client · AI adoption</p>
+          <p class="kicker" data-i18n="ozum_kicker">Client · AI adoption</p>
           <h3>Ozum</h3>
-          <p class="status live">Active client · first phase delivered</p>
-          <p class="summary">Ozum is a corporate-events and incentive-travel company with more than 30 years
+          <p class="status live" data-i18n="ozum_status">Active client · first phase delivered</p>
+          <p class="summary" data-i18n="ozum_sum">Ozum is a corporate-events and incentive-travel company with more than 30 years
             in Mexico and the US. I'm bringing AI into how they work: first their own AI platform,
             then workflows built with the team, then teaching each person to build on it themselves.</p>
           <ul>
-            <li><strong>Delivered:</strong> OZUM AI, a Spanish-first AI platform in Ozum's brand that installs with one double-click on Mac or Windows — nothing to set up beforehand.</li>
-            <li><strong>Delivered:</strong> a guided onboarding that takes a non-technical person from zero to a working AI engine, shared company memory and sign-in with roles (client, business, developer, admin), proven by from-zero install tests.</li>
-            <li><strong>Next:</strong> install it for the owner, build the first workflows with him from real pains, then onboard each employee to create their own.</li>
-            <li>A 12-week adoption plan with two points where spending stops on its own if the platform isn't being used.</li>
+            <li data-i18n="ozum_1"><strong>Delivered:</strong> OZUM AI, a Spanish-first AI platform in Ozum's brand that installs with one double-click on Mac or Windows — nothing to set up beforehand.</li>
+            <li data-i18n="ozum_2"><strong>Delivered:</strong> a guided onboarding that takes a non-technical person from zero to a working AI engine, shared company memory and sign-in with roles (client, business, developer, admin), proven by from-zero install tests.</li>
+            <li data-i18n="ozum_3"><strong>Next:</strong> install it for the owner, build the first workflows with him from real pains, then onboard each employee to create their own.</li>
+            <li data-i18n="ozum_4">A 12-week adoption plan with two points where spending stops on its own if the platform isn't being used.</li>
           </ul>
           <p class="stack"><span>TypeScript</span><span>React</span><span>Claude Code · Codex</span><span>Supabase</span><span>Neo4j</span><span>MCP</span><span>Tailscale</span></p>
-          <a class="price-link" href="#p-adoption">AI adoption program <small>$4,700</small></a>
+          <a class="price-link" href="#p-adoption" data-i18n="ozum_price">AI adoption program <small>$4,700</small></a>
         </div>
       </article>
 
       <article class="project">
         <div class="gallery">
-          <a class="shot main" href="img/bosques-project.webp"><img src="img/bosques-project.webp" width="1440" height="900" loading="lazy" alt="Espacio Bosques project page with milestone timeline and funding progress"></a>
-          <a class="shot thumb" href="img/bosques-dashboard.webp"><img src="img/bosques-dashboard.webp" width="1440" height="900" loading="lazy" alt="Espacio Bosques dashboard listing community projects"></a>
+          <a class="shot main" href="img/bosques-project.webp"><img src="img/bosques-project.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_bosques_p" alt="Espacio Bosques project page with milestone timeline and funding progress"></a>
+          <a class="shot thumb" href="img/bosques-dashboard.webp"><img src="img/bosques-dashboard.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_bosques_d" alt="Espacio Bosques dashboard listing community projects"></a>
         </div>
         <div class="project-text">
-          <p class="kicker">Civic fintech</p>
+          <p class="kicker" data-i18n="bosques_kicker">Civic fintech</p>
           <h3>Espacio Bosques</h3>
-          <p class="status">Proof of concept · simulation mode</p>
-          <p class="summary">A community-funding platform for a Mexico City neighborhood: residents propose,
+          <p class="status" data-i18n="bosques_status">Proof of concept · simulation mode</p>
+          <p class="summary" data-i18n="bosques_sum">A community-funding platform for a Mexico City neighborhood: residents propose,
             fund and track local projects, and money is released milestone by milestone.</p>
           <ul>
-            <li>Claude drafts a full project blueprint — budget, milestones, timeline — from a plain-language idea.</li>
-            <li>Providers upload evidence; Claude vision reads Mexican tax invoices (CFDI) and validates RFCs against the SAT blacklist.</li>
-            <li>Community voting with thresholds that scale with the number of backers; bilingual EN/ES.</li>
+            <li data-i18n="bosques_1">Claude drafts a full project blueprint — budget, milestones, timeline — from a plain-language idea.</li>
+            <li data-i18n="bosques_2">Providers upload evidence; Claude vision reads Mexican tax invoices (CFDI) and validates RFCs against the SAT blacklist.</li>
+            <li data-i18n="bosques_3">Community voting with thresholds that scale with the number of backers; bilingual EN/ES.</li>
           </ul>
           <p class="stack"><span>React</span><span>Tailwind</span><span>Express</span><span>Prisma</span><span>Supabase Auth</span><span>Claude API</span><span>Bitso sandbox</span></p>
         </div>
@@ -139,18 +140,18 @@
 
       <article class="project">
         <div class="gallery">
-          <a class="shot main" href="img/mercado-run.webp"><img src="img/mercado-run.webp" width="1440" height="900" loading="lazy" alt="Mercado Bot dashboard after a ten-round simulated run: portfolio chart, signals, trade log, Kelly calculator"></a>
+          <a class="shot main" href="img/mercado-run.webp"><img src="img/mercado-run.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_mercado" alt="Mercado Bot dashboard after a ten-round simulated run: portfolio chart, signals, trade log, Kelly calculator"></a>
         </div>
         <div class="project-text">
-          <p class="kicker">Quant research</p>
+          <p class="kicker" data-i18n="mercado_kicker">Quant research</p>
           <h3>Mercado Bot</h3>
-          <p class="status">Prototype · simulation only</p>
-          <p class="summary">A research bot for prediction markets that estimates probabilities with an LLM and
+          <p class="status" data-i18n="mercado_status">Prototype · simulation only</p>
+          <p class="summary" data-i18n="mercado_sum">A research bot for prediction markets that estimates probabilities with an LLM and
             sizes positions the way a quant would — never with real money.</p>
           <ul>
-            <li>Five-stage pipeline: scan markets, research, predict, execute on paper, compound.</li>
-            <li>Kelly-criterion position sizing; tracks win rate, Brier score and Sharpe ratio.</li>
-            <li>Risk monitor with drawdown cap, API-cost cap and a kill switch; live trading locked.</li>
+            <li data-i18n="mercado_1">Five-stage pipeline: scan markets, research, predict, execute on paper, compound.</li>
+            <li data-i18n="mercado_2">Kelly-criterion position sizing; tracks win rate, Brier score and Sharpe ratio.</li>
+            <li data-i18n="mercado_3">Risk monitor with drawdown cap, API-cost cap and a kill switch; live trading locked.</li>
           </ul>
           <p class="stack"><span>Python</span><span>React</span><span>Recharts</span><span>Claude API</span></p>
         </div>
@@ -159,20 +160,20 @@
       <article class="project">
         <div class="gallery">
           <div class="shot-pair">
-            <a class="shot main" href="img/longevite-hero.webp"><img src="img/longevite-hero.webp" width="1440" height="900" loading="lazy" alt="Longevité Therapeutics website hero with video background"></a>
-            <a class="shot phone" href="img/longevite-m-hero.webp"><img src="img/longevite-m-hero.webp" width="390" height="844" loading="lazy" alt="Longevité website on a phone"></a>
+            <a class="shot main" href="img/longevite-hero.webp"><img src="img/longevite-hero.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_long_hero" alt="Longevité Therapeutics website hero with video background"></a>
+            <a class="shot phone" href="img/longevite-m-hero.webp"><img src="img/longevite-m-hero.webp" width="390" height="844" loading="lazy" data-i18n-attr="alt:alt_long_phone" alt="Longevité website on a phone"></a>
           </div>
         </div>
         <div class="project-text">
-          <p class="kicker">Client website</p>
+          <p class="kicker" data-i18n="long_kicker">Client website</p>
           <h3>Longevité Therapeutics</h3>
-          <p class="status">Built · awaiting launch</p>
-          <p class="summary">A bilingual website for a longevity and functional-medicine clinic in Mexico City,
+          <p class="status" data-i18n="long_status">Built · awaiting launch</p>
+          <p class="summary" data-i18n="long_sum">A bilingual website for a longevity and functional-medicine clinic in Mexico City,
             rebuilt through several rounds of client review.</p>
           <ul>
-            <li>Video hero, expandable program cards, FAQ with cited sources, contact straight to WhatsApp.</li>
-            <li>Vanilla HTML, CSS and JavaScript — modular, no build step, fast on a phone.</li>
-            <li>Every review round verified by a Playwright suite of 35 automated checks.</li>
+            <li data-i18n="long_1">Video hero, expandable program cards, FAQ with cited sources, contact straight to WhatsApp.</li>
+            <li data-i18n="long_2">Vanilla HTML, CSS and JavaScript — modular, no build step, fast on a phone.</li>
+            <li data-i18n="long_3">Every review round verified by a Playwright suite of 35 automated checks.</li>
           </ul>
           <p class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Playwright</span></p>
         </div>
@@ -181,75 +182,75 @@
 
     <section class="section">
       <div class="section-head">
-        <h2>Also building</h2>
+        <h2 data-i18n="also_h">Also building</h2>
       </div>
       <div class="also">
         <div>
           <h4>Platu</h4>
-          <p>An AI language-learning agent that scores whole conversations — can you follow, contribute and repair — instead of counting mistakes.</p>
+          <p data-i18n="also_platu">An AI language-learning agent that scores whole conversations — can you follow, contribute and repair — instead of counting mistakes.</p>
         </div>
         <div>
           <h4>Page 2 Reel</h4>
-          <p>A pipeline that turns book chapters into ready-to-post vertical videos: AI video clips, captions and an end card, assembled with ffmpeg.</p>
+          <p data-i18n="also_p2r">A pipeline that turns book chapters into ready-to-post vertical videos: AI video clips, captions and an end card, assembled with ffmpeg.</p>
         </div>
       </div>
     </section>
 
     <section id="rates" class="section">
       <div class="section-head">
-        <h2>Rates</h2>
-        <p class="note">For freelance and contract work, in USD. Every fixed price is my hour estimate times the hourly rate, so you can see the math. Scope is agreed in writing before any work starts.</p>
+        <h2 data-i18n="rates_h">Rates</h2>
+        <p class="note" data-i18n="rates_note">For freelance and contract work, in USD. Every fixed price is my hour estimate times the hourly rate, so you can see the math. Scope is agreed in writing before any work starts.</p>
       </div>
       <div class="rate-hero">
-        <div class="rate-big" data-rate="50">$50<span>/ hour</span></div>
-        <p>Consulting, data engineering, AI integration, and anything that doesn't fit the program below.</p>
+        <div class="rate-big" data-rate="50">$50<span data-i18n="rate_hour">/ hour</span></div>
+        <p data-i18n="rate_p">Consulting, data engineering, AI integration, and anything that doesn't fit the program below.</p>
       </div>
       <div class="products">
         <article class="product wide" id="p-adoption" data-hours="94" data-price="4700" data-monthly="750">
           <div class="head">
-            <h4>AI adoption program</h4>
+            <h4 data-i18n="prod_h">AI adoption program</h4>
           </div>
-          <p class="desc">For a company bringing AI into how it works: your own AI platform installed, the first workflows built with your team, and everyone taught to build their own. Twelve weeks, with two points where spending stops if it isn't being used.</p>
+          <p class="desc" data-i18n="prod_desc">For a company bringing AI into how it works: your own AI platform installed, the first workflows built with your team, and everyone taught to build their own. Twelve weeks, with two points where spending stops if it isn't being used.</p>
           <div class="price-block">
-            <div class="cost"><span class="amount">$4,700</span><span class="hours">94 h · 12 weeks</span></div>
-            <p class="extra">Then $750/month for up to 10 people: platform, updates and 3 hours of work a month.</p>
+            <div class="cost"><span class="amount">$4,700</span><span class="hours" data-i18n="prod_hours">94 h · 12 weeks</span></div>
+            <p class="extra" data-i18n="prod_extra">Then $750/month for up to 10 people: platform, updates and 3 hours of work a month.</p>
           </div>
         </article>
       </div>
-      <p class="rates-foot">AI and hosting costs (model subscriptions, databases) are paid by you directly to each provider, with no margin added.</p>
+      <p class="rates-foot" data-i18n="rates_foot">AI and hosting costs (model subscriptions, databases) are paid by you directly to each provider, with no margin added.</p>
     </section>
 
     <section id="experience" class="section">
       <div class="section-head">
-        <h2>Experience</h2>
+        <h2 data-i18n="exp_h">Experience</h2>
       </div>
       <ol class="timeline">
         <li>
-          <div class="when">Oct 2025 — Present</div>
+          <div class="when" data-i18n="exp_1_when">Oct 2025 — Present</div>
           <div>
             <h4>Data Engineer · MORSCO — Reece USA</h4>
-            <p>Own ingestion pipelines into the corporate Snowflake warehouse end to end, from source contract to production. Built a resilient API-to-Snowflake pattern reused across integrations, and turn vague data-quality tickets into named root causes.</p>
+            <p data-i18n="exp_1">Own ingestion pipelines into the corporate Snowflake warehouse end to end, from source contract to production. Built a resilient API-to-Snowflake pattern reused across integrations, and turn vague data-quality tickets into named root causes.</p>
           </div>
         </li>
         <li>
-          <div class="when">Mar 2025 — Present</div>
+          <div class="when" data-i18n="exp_2_when">Mar 2025 — Present</div>
           <div>
-            <h4>ML &amp; AI Consultant · Outlier AI, LATAM Coders</h4>
-            <p>Evaluate and correct frontier AI models for clients including Tesla and OpenAI: prompting, analysis, object detection and code reliability.</p>
+            <h4 data-i18n="exp_2_h">ML &amp; AI Consultant · Outlier AI, LATAM Coders</h4>
+            <p data-i18n="exp_2">Evaluate and correct frontier AI models for clients including Tesla and OpenAI: prompting, analysis, object detection and code reliability.</p>
           </div>
         </li>
         <li>
-          <div class="when">Nov 2023 — Apr 2025</div>
+          <div class="when" data-i18n="exp_3_when">Nov 2023 — Apr 2025</div>
           <div>
-            <h4>Senior Technology Consultant · EY, AI &amp; Tech</h4>
-            <p>Co-led Exxon Mobil's multi-phase SAP-to-Snowflake migration; built Python validation tooling for QA and reconciled emissions metrics under regulatory scrutiny.</p>
+            <h4 data-i18n="exp_3_h">Senior Technology Consultant · EY, AI &amp; Tech</h4>
+            <p data-i18n="exp_3">Co-led Exxon Mobil's multi-phase SAP-to-Snowflake migration; built Python validation tooling for QA and reconciled emissions metrics under regulatory scrutiny.</p>
           </div>
         </li>
         <li>
-          <div class="when">Dec 2021 — Nov 2023</div>
+          <div class="when" data-i18n="exp_4_when">Dec 2021 — Nov 2023</div>
           <div>
-            <h4>Senior Data Scientist · Oracle, TINNO</h4>
-            <p>Built churn and renewal-risk models (logistic regression, gradient boosting) for an executive task force, plus an NLP sentiment layer over support tickets with BERT, NLTK and the OpenAI API.</p>
+            <h4 data-i18n="exp_4_h">Senior Data Scientist · Oracle, TINNO</h4>
+            <p data-i18n="exp_4">Built churn and renewal-risk models (logistic regression, gradient boosting) for an executive task force, plus an NLP sentiment layer over support tickets with BERT, NLTK and the OpenAI API.</p>
           </div>
         </li>
       </ol>
@@ -257,7 +258,7 @@
 
     <section id="skills" class="section">
       <div class="section-head">
-        <h2>Skills</h2>
+        <h2 data-i18n="skills_h">Skills</h2>
       </div>
       <div class="skills">
         <div>
@@ -269,23 +270,23 @@
           <p class="stack"><span>Claude</span><span>OpenAI API</span><span>Agent design</span><span>MCP servers</span><span>RAG</span><span>pgvector</span><span>Neo4j</span><span>BERT</span></p>
         </div>
         <div>
-          <h4>Engineering</h4>
+          <h4 data-i18n="skills_eng">Engineering</h4>
           <p class="stack"><span>TypeScript</span><span>React</span><span>Node.js</span><span>Supabase</span><span>Docker</span><span>Playwright</span><span>Azure DevOps</span></p>
         </div>
       </div>
       <div class="edu">
-        <p><strong>Postgraduate, Data Science &amp; Business Analytics</strong> — University of Texas at Austin, 2021</p>
-        <p><strong>B.S. Industrial Engineering</strong> — Universidad Anáhuac Norte, 2020</p>
-        <p><strong>Languages</strong> — Spanish (native), English (advanced), French (advanced)</p>
+        <p data-i18n="edu_1"><strong>Postgraduate, Data Science &amp; Business Analytics</strong> — University of Texas at Austin, 2021</p>
+        <p data-i18n="edu_2"><strong>B.S. Industrial Engineering</strong> — Universidad Anáhuac Norte, 2020</p>
+        <p data-i18n="edu_3"><strong>Languages</strong> — Spanish (native), English (advanced), French (advanced)</p>
       </div>
     </section>
 
     <section id="contact" class="section contact">
-      <h2>Let's talk</h2>
-      <p>Hiring for data or AI engineering, or want a walkthrough of any project above? Most of the code lives in private repositories — I'm happy to walk through it on a call.</p>
+      <h2 data-i18n="contact_h">Let's talk</h2>
+      <p data-i18n="contact_p">Hiring for data or AI engineering, or want a walkthrough of any project above? Most of the code lives in private repositories — I'm happy to walk through it on a call.</p>
       <div class="cta">
         <a class="btn primary" href="mailto:salasoliva27@gmail.com">salasoliva27@gmail.com</a>
-        <a class="btn" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener">WhatsApp +52 55 2984 5788</a>
+        <a class="btn" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" data-i18n-attr="href:wa_link" target="_blank" rel="noopener">WhatsApp +52 55 2984 5788</a>
         <a class="btn" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
       </div>
     </section>
@@ -295,10 +296,11 @@
     <p>&copy; 2026 Alejandro Salas Oliva</p>
   </footer>
 
-  <dialog class="lightbox" aria-label="Screenshot">
-    <button class="close" type="button" aria-label="Close">&times;</button>
+  <dialog class="lightbox" aria-label="Screenshot" data-i18n-attr="aria-label:shot">
+    <button class="close" type="button" aria-label="Close" data-i18n-attr="aria-label:close">&times;</button>
     <img alt="">
   </dialog>
   <script src="site.js"></script>
+  <script src="i18n.js"></script>
 </body>
 </html>
