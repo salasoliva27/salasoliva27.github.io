@@ -1,6 +1,6 @@
 // English is the page as written (and what search engines read). Spanish is
-// swapped in on request: the Español/English toggle, remembered on this
-// device, or a link with ?lang=es (what the Spanish emails send). Every
+// swapped in on request: the EN / ES switch, remembered on this device, or a
+// link with ?lang=es (what the Spanish emails send). Every
 // element that changes carries data-i18n (its HTML) or data-i18n-attr
 // ("attr:key;attr:key").
 (() => {
@@ -12,6 +12,7 @@
     nav_rates: "Tarifas",
     nav_exp: "Experiencia",
     nav_contact: "Contacto",
+    lang_group: "Idioma",
     theme_change: "Cambiar tema",
     theme_dark: "Oscuro",
     theme_light: "Claro",
@@ -35,8 +36,9 @@
     janus_2: "Apps para cada parte de la vida y el trabajo: bitácora del gimnasio, finanzas personales, flujos que corren a cierta hora, el avance de cada proyecto y un historial de chats con búsqueda.",
     janus_3: "El chat actúa, no solo responde: lee mi correo, registra un entrenamiento, arregla un flujo que falló o construye una función, y recuerda entre conversaciones.",
     janus_4: "Por dentro, agentes de IA que comparten una sola memoria (Supabase + pgvector, un grafo en Neo4j), con Claude Code y Codex como motores intercambiables — en computadora o en el celular.",
+    janus_5: "Cada pregunta va al modelo que su dificultad pide — uno rápido, uno de uso diario o uno profundo — y cada cambio corre como un ciclo con pruebas que tiene que pasar antes de darse por terminado.",
     alt_janus_home: "Inicio de Janus IA: una conversación de ejemplo en el chat a la izquierda, junto al tablero del día — agenda, correo, entrenamiento, mercados y oportunidades de trabajo (datos personales difuminados)",
-    alt_janus_apps: "Menú de apps de Janus IA — Progreso, Gimnasio, Finanzas, Flujos, Chats — abierto sobre la bitácora del gimnasio",
+    alt_janus_apps: "Menú de apps de Janus IA — apps de trabajo, personales y de automatización — abierto sobre el plan y la bitácora de entrenamiento del gimnasio",
 
     alt_ozum_onb: "Onboarding de OZUM AI: los nueve pasos guiados, de conectar un motor a tener la IA de la empresa funcionando, en español",
     alt_ozum_ws: "Espacio de trabajo de OZUM AI con un chat junto a la consola de onboarding",
@@ -45,7 +47,8 @@
     ozum_sum: "Ozum es una empresa de eventos corporativos y viajes de incentivo con más de 30 años en México y Estados Unidos. Estoy integrando la IA en su forma de trabajar: primero su propia plataforma de IA, luego flujos construidos con el equipo, y después enseñarle a cada persona a construir sobre ella.",
     ozum_1: "<strong>Entregado:</strong> OZUM AI, una plataforma de IA en español con la marca de Ozum que se instala con un doble clic en Mac o Windows — sin preparar nada antes.",
     ozum_2: "<strong>Entregado:</strong> un onboarding guiado que lleva a una persona sin conocimientos técnicos de cero a un motor de IA funcionando, memoria compartida de la empresa e inicio de sesión con roles (cliente, negocio, desarrollador, admin), probado con instalaciones desde cero.",
-    ozum_3: "<strong>Siguiente:</strong> instalarla para el dueño, construir con él los primeros flujos a partir de problemas reales y luego acompañar a cada empleado a crear los suyos.",
+    ozum_new: "<strong>Construido desde entonces:</strong> un tablero de la empresa que se arma solo a partir del onboarding del dueño, y una memoria compartida que se mantiene consistente cuando varias personas escriben a la vez — con las memorias de cada empleado privadas por defecto.",
+    ozum_3: "<strong>Siguiente:</strong> ya está instalada en la computadora del dueño; sigue su onboarding, luego los primeros flujos construidos con él a partir de problemas reales y después cada empleado creando los suyos.",
     ozum_4: "Un plan de adopción de 12 semanas con dos puntos donde el gasto se detiene solo si la plataforma no se está usando.",
     ozum_price: "Programa de adopción de IA <small>$4,700</small>",
 
@@ -77,7 +80,7 @@
 
     also_h: "También en construcción",
     also_platu: "Un agente de IA para aprender idiomas que califica conversaciones completas — si puedes seguirla, aportar y corregirte — en lugar de contar errores.",
-    also_p2r: "Un pipeline que convierte capítulos de libros en videos verticales listos para publicar: clips de video con IA, subtítulos y una tarjeta final, armados con ffmpeg.",
+    also_clippmx: "Un marketplace de campañas de video corto, primero en México: cualquiera publica una campaña, los creadores la recortan y la publican en sus propias cuentas, y cobran por vista verificada por SPEI o PayPal — las vistas se cuentan solo con la API oficial de cada red.",
 
     rates_h: "Tarifas",
     rates_note: "Para trabajo freelance y por contrato, en USD. Cada precio fijo es mi estimación de horas por la tarifa por hora, para que veas la cuenta. El alcance se acuerda por escrito antes de empezar.",
@@ -123,7 +126,7 @@
   const enAttr = new Map(attrNodes.map((n) => [n, Object.fromEntries(pairs(n).map(([a]) => [a, n.getAttribute(a)]))]));
   const metaDesc = document.querySelector('meta[name="description"]');
   const en = { title: document.title, desc: metaDesc ? metaDesc.content : "" };
-  const toggle = document.querySelector("[data-lang-toggle]");
+  const choices = [...document.querySelectorAll(".lang-switch [data-lang]")];
 
   function apply(lang) {
     const es = lang === "es";
@@ -136,12 +139,7 @@
     const chosen = document.querySelector('[data-theme-choice][aria-checked="true"]');
     const nameEl = document.querySelector(".theme-btn .theme-name");
     if (chosen && nameEl) nameEl.textContent = chosen.textContent.trim();
-    if (toggle) {
-      toggle.textContent = es ? "English" : "Español";
-      toggle.lang = es ? "en" : "es";
-      toggle.setAttribute("aria-label", es ? "View in English" : "Ver en español");
-      toggle.title = toggle.getAttribute("aria-label");
-    }
+    choices.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
   }
 
   const fromUrl = new URLSearchParams(location.search).get("lang");
@@ -151,9 +149,14 @@
   if (fromUrl === "es" || fromUrl === "en") { try { localStorage.setItem(KEY, fromUrl); } catch (e) { /* ok */ } }
   apply(lang);
 
-  toggle?.addEventListener("click", () => {
-    lang = lang === "es" ? "en" : "es";
+  choices.forEach((b) => b.addEventListener("click", () => {
+    if (b.dataset.lang === lang) return;
+    lang = b.dataset.lang;
     try { localStorage.setItem(KEY, lang); } catch (e) { /* ok */ }
+    // A ?lang= link only picks the first language; a choice made here has to
+    // survive a reload, so drop the parameter from the address.
+    const url = new URL(location.href);
+    if (url.searchParams.has("lang")) { url.searchParams.delete("lang"); history.replaceState(null, "", url); }
     apply(lang);
-  });
+  }));
 })();

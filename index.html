@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portfolio-version" content="7">
+<meta name="portfolio-version" content="8">
 <meta name="theme-color" content="#0b0d12">
 <script>
   (function () {
@@ -34,7 +34,10 @@
         <a href="#experience" data-i18n="nav_exp">Experience</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </div>
-      <button class="lang-btn" type="button" data-lang-toggle lang="es" aria-label="Ver en español" title="Ver en español">Español</button>
+      <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:lang_group">
+        <button type="button" data-lang="en" lang="en" aria-pressed="true" title="English">EN</button>
+        <button type="button" data-lang="es" lang="es" aria-pressed="false" title="Español">ES</button>
+      </div>
       <div class="theme-picker">
         <button class="theme-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Change theme" title="Change theme" data-i18n-attr="aria-label:theme_change;title:theme_change">
           <span class="swatch" aria-hidden="true"></span><span class="theme-name">Dark</span>
@@ -59,7 +62,7 @@
       Exxon Mobil and Oracle. I also help companies bring AI into how they work, and I
       build my own AI products — the work below.</p>
     <div class="cta">
-      <a class="btn primary" href="mailto:salasoliva27@gmail.com" data-i18n="cta_email">Email me</a>
+      <a class="btn btn--primary" href="mailto:salasoliva27@gmail.com" data-i18n="cta_email">Email me</a>
       <a class="btn" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" data-i18n-attr="href:wa_link" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://github.com/salasoliva27" rel="noopener">GitHub</a>
@@ -86,12 +89,13 @@
             <li data-i18n="janus_2">Apps for each part of life and work: a gym log, personal finance, workflows that run on a clock, every project's progress, and a searchable chat history.</li>
             <li data-i18n="janus_3">The chat can act, not just answer: it reads my mail, logs a workout, fixes a failing workflow or builds a feature, and remembers across conversations.</li>
             <li data-i18n="janus_4">Under the hood, AI agents that share one memory (Supabase + pgvector, a Neo4j graph), with Claude Code and Codex as interchangeable engines — on desktop or phone.</li>
+            <li data-i18n="janus_5">Each question goes to the model its difficulty calls for — a fast one, an everyday one or a deep one — and every change runs as a loop with checks it has to pass before it calls itself done.</li>
           </ul>
           <p class="stack"><span>TypeScript</span><span>React</span><span>Express</span><span>WebSocket</span><span>MCP</span><span>Supabase · pgvector</span><span>Neo4j</span><span>Playwright</span></p>
         </div>
         <div class="gallery">
           <a class="shot main" href="img/janus-home.webp"><img src="img/janus-home.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_janus_home" alt="Janus IA home: a sample conversation in the chat on the left, next to the daily dashboard — schedule, inbox, training, markets and job leads (personal details blurred)"></a>
-          <a class="shot thumb" href="img/janus-apps.webp"><img src="img/janus-apps.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_janus_apps" alt="Janus IA apps menu — Progress, Gym, Finance, Workflows, Chats — open over the Gym app's training log"></a>
+          <a class="shot thumb" href="img/janus-apps.webp"><img src="img/janus-apps.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_janus_apps" alt="Janus IA apps menu — work, personal and automation apps — open over the Gym app's training plan and session log"></a>
         </div>
       </article>
 
@@ -110,7 +114,8 @@
           <ul>
             <li data-i18n="ozum_1"><strong>Delivered:</strong> OZUM AI, a Spanish-first AI platform in Ozum's brand that installs with one double-click on Mac or Windows — nothing to set up beforehand.</li>
             <li data-i18n="ozum_2"><strong>Delivered:</strong> a guided onboarding that takes a non-technical person from zero to a working AI engine, shared company memory and sign-in with roles (client, business, developer, admin), proven by from-zero install tests.</li>
-            <li data-i18n="ozum_3"><strong>Next:</strong> install it for the owner, build the first workflows with him from real pains, then onboard each employee to create their own.</li>
+            <li data-i18n="ozum_new"><strong>Built since:</strong> a company dashboard that forms itself from the owner's onboarding, and shared memory that stays consistent when several people write at once — each employee's own memories private by default.</li>
+            <li data-i18n="ozum_3"><strong>Next:</strong> it is installed on the owner's computer; his onboarding comes next, then the first workflows built with him from real pains, then each employee creating their own.</li>
             <li data-i18n="ozum_4">A 12-week adoption plan with two points where spending stops on its own if the platform isn't being used.</li>
           </ul>
           <p class="stack"><span>TypeScript</span><span>React</span><span>Claude Code · Codex</span><span>Supabase</span><span>Neo4j</span><span>MCP</span><span>Tailscale</span></p>
@@ -190,8 +195,8 @@
           <p data-i18n="also_platu">An AI language-learning agent that scores whole conversations — can you follow, contribute and repair — instead of counting mistakes.</p>
         </div>
         <div>
-          <h4>Page 2 Reel</h4>
-          <p data-i18n="also_p2r">A pipeline that turns book chapters into ready-to-post vertical videos: AI video clips, captions and an end card, assembled with ffmpeg.</p>
+          <h4>ClippMX</h4>
+          <p data-i18n="also_clippmx">A marketplace for short-video campaigns, Mexico first: anyone posts a campaign, creators clip it and post it on their own accounts, and get paid per verified view by SPEI or PayPal — views counted only through each network's official API.</p>
         </div>
       </div>
     </section>
@@ -285,7 +290,7 @@
       <h2 data-i18n="contact_h">Let's talk</h2>
       <p data-i18n="contact_p">Hiring for data or AI engineering, or want a walkthrough of any project above? Most of the code lives in private repositories — I'm happy to walk through it on a call.</p>
       <div class="cta">
-        <a class="btn primary" href="mailto:salasoliva27@gmail.com">salasoliva27@gmail.com</a>
+        <a class="btn btn--primary" href="mailto:salasoliva27@gmail.com">salasoliva27@gmail.com</a>
         <a class="btn" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" data-i18n-attr="href:wa_link" target="_blank" rel="noopener">WhatsApp +52 55 2984 5788</a>
         <a class="btn" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
       </div>
