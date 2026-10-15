@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-10-14T08:54:59.652Z"
-lastSyncedCommit: "ff33ef7"
-lastSyncedCommitMessage: "Portfolio v7: Spanish option (Español/English toggle, ?lang=es), English stays t"
+lastSyncedAt: "2026-10-15T08:12:33.374Z"
+lastSyncedCommit: "6eb2f70"
+lastSyncedCommitMessage: "Portfolio v8: EN / ES language switch, page up to date, no boxes"
 ---
 
 ## Next Steps
