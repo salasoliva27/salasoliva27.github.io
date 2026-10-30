@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-10-30T01:46:10.130Z"
-lastSyncedCommit: "ec61367"
-lastSyncedCommitMessage: "Portfolio v10: own hero + showreel, websites designed by my AI (live, varied, ke"
+lastSyncedAt: "2026-10-30T03:04:44.505Z"
+lastSyncedCommit: "ea7f7d0"
+lastSyncedCommitMessage: "portfolio: replace Mercado Bot with AI Hound + Janus Investments (simulated MX$1"
 ---
 
 ## Next Steps
