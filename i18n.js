@@ -82,13 +82,6 @@
     bosques_2: "Los proveedores suben evidencia; la visión de Claude lee facturas mexicanas (CFDI) y valida los RFC contra la lista negra del SAT.",
     bosques_3: "Votación comunitaria con umbrales que crecen con el número de participantes; bilingüe EN/ES.",
 
-    alt_aihound: "Página de propuesta que AI Hound construyó para un negocio local",
-    aihound_kicker: "Prospección con IA",
-    aihound_status: "Corriendo cada día hábil",
-    aihound_sum: "Una IA que encuentra negocios locales que podrían usar IA, les arma una página y una propuesta gratis, los contacta por correo y WhatsApp y lee las respuestas.",
-    aihound_1: "Busca negocios que ganarían con IA, diseña una página con la marca de cada uno y una propuesta que cita un estudio por cada paso que ofrece.",
-    aihound_2: "Contacta por correo y WhatsApp en días hábiles, lee cada respuesta y registra las reuniones agendadas con su enlace.",
-    aihound_3: "Las páginas son gratis y suyas; un «no» se responde una vez, con cortesía, y la página se retira.",
     alt_finance: "Inicio de Janus IA con la sección de mercados y portafolio simulado junto al chat (datos personales difuminados)",
     finance_kicker: "IA financiera · dinero simulado",
     finance_h: "Janus Inversiones",
