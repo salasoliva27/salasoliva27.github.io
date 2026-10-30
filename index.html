@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portfolio-version" content="9">
+<meta name="portfolio-version" content="10">
 <meta name="theme-color" content="#f5f5f7">
 <meta name="color-scheme" content="light">
 <title>Alejandro Salas Oliva — Data &amp; AI Engineer</title>
@@ -71,6 +71,7 @@
       <a class="brand" href="#top" aria-label="Alejandro Salas Oliva">AS<span>O</span></a>
       <div class="nav-links">
         <a href="#work" data-i18n="nav_work">Work</a>
+        <a href="#websites" data-i18n="nav_sites">Websites</a>
         <a href="#automations" data-i18n="nav_auto">Automations</a>
         <a href="#rates" data-i18n="nav_rates">Rates</a>
         <a href="#experience" data-i18n="nav_exp">Experience</a>
@@ -84,31 +85,54 @@
     </nav>
   </header>
 
+  <!-- Hero (v10): an editorial split — the name set large, the claim beside it — and under it a showreel that plays the
+       work from the first screen. Deliberately nothing of ClippMX's home: no floating card stack, no stat strip. -->
   <div class="hero" id="top">
-    <div class="hero-text">
-      <p class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="hero_eyebrow">Mexico City · open to remote</span></p>
-      <h1>Alejandro Salas Oliva</h1>
-      <p class="role"><span data-i18n="hero_role">Data &amp; AI Engineer</span> <span class="role-accent" data-i18n="hero_role2">building AI that runs in production.</span></p>
-      <p class="lede" data-i18n="hero_lede">I build data pipelines, machine-learning models and AI systems. By day that has meant Snowflake migrations and churn models for companies like Exxon Mobil and Oracle. I also help companies bring AI into how they work, and I build and operate my own AI products and automations — click anything below to see how it works.</p>
+    <div class="hero-name">
+      <h1>Alejandro<br>Salas Oliva</h1>
+      <p class="hero-where" data-i18n="hero_where">Data &amp; AI Engineer · Mexico City · open to remote</p>
+    </div>
+    <div class="hero-pitch">
+      <p class="hero-claim" data-i18n="hero_claim">I build AI that runs in production. Six of my systems work every day — <b>75+</b> scheduled tasks, <b>30k+</b> views on what they publish — and one of them designs websites for real businesses.</p>
+      <p class="lede" data-i18n="hero_lede">By day: Snowflake pipelines and machine-learning models for companies like Exxon Mobil and Oracle. Click anything on this page to see how it works.</p>
       <div class="cta">
         <a class="btn btn--primary" href="mailto:salasoliva27@gmail.com" data-i18n="cta_email">Email me</a>
         <a class="act" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" data-i18n-attr="href:wa_link" target="_blank" rel="noopener">WhatsApp</a>
         <a class="act" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
         <a class="act" href="https://github.com/salasoliva27" rel="noopener">GitHub</a>
       </div>
-      <dl class="stats">
-        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-workflow"/></svg><span data-i18n="stat_auto">Automations live</span></dt><dd data-count="6">6</dd></div>
-        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="stat_tasks">Scheduled tasks</span></dt><dd data-count="75" data-suffix="+">75+</dd></div>
-        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg><span data-i18n="stat_views">Views on their posts</span></dt><dd data-count="30" data-suffix="k+">30k+</dd></div>
-      </dl>
-      <p class="stats-note" data-i18n="stats_note">As of October 29, 2026.</p>
-    </div>
-    <div class="hero-photos">
-      <button type="button" class="hero-photo hp-1" data-win="janus" aria-label="Open Janus IA" data-i18n-attr="aria-label:open_janus"><img src="img/janus-home.webp" width="1440" height="900" alt=""></button>
-      <button type="button" class="hero-photo hp-2" data-win="clippmx" aria-label="Open ClippMX" data-i18n-attr="aria-label:open_clippmx"><img src="img/clippmx-home.webp" width="1280" height="800" alt=""></button>
-      <button type="button" class="hero-photo hp-3" data-win="news" aria-label="Open the AI newsroom" data-i18n-attr="aria-label:open_news"><img src="img/news-2.webp" width="540" height="960" alt=""></button>
     </div>
   </div>
+
+  <section class="reel" aria-label="Showreel" data-i18n-attr="aria-label:reel_label">
+    <div class="reel-window">
+      <ol class="reel-list">
+        <li><button type="button" class="reel-tab" data-scene="0" aria-current="true"><span class="reel-n">01</span><span class="reel-t">Janus IA</span><span class="reel-s" data-i18n="reel1_s">The AI platform everything here runs on</span><span class="reel-progress" aria-hidden="true"></span></button></li>
+        <li><button type="button" class="reel-tab" data-scene="1"><span class="reel-n">02</span><span class="reel-t" data-i18n="reel2_t">Websites by my AI</span><span class="reel-s" data-i18n="reel2_s">Live sites, a different industry each</span><span class="reel-progress" aria-hidden="true"></span></button></li>
+        <li><button type="button" class="reel-tab" data-scene="2"><span class="reel-n">03</span><span class="reel-t" data-i18n="news_name">AI newsroom</span><span class="reel-s" data-i18n="reel3_s">Up to 10 posts a day, made by AI</span><span class="reel-progress" aria-hidden="true"></span></button></li>
+        <li><button type="button" class="reel-tab" data-scene="3"><span class="reel-n">04</span><span class="reel-t">ClippMX</span><span class="reel-s" data-i18n="reel4_s">A marketplace for clip campaigns</span><span class="reel-progress" aria-hidden="true"></span></button></li>
+        <li><button type="button" class="reel-tab" data-scene="4"><span class="reel-n">05</span><span class="reel-t">Ozum</span><span class="reel-s" data-i18n="reel5_s">AI adoption for a 30-year company</span><span class="reel-progress" aria-hidden="true"></span></button></li>
+      </ol>
+      <div class="reel-viewport">
+        <figure class="scene is-on" data-scene="0" data-win="janus"><img class="scene-pan" src="img/janus-home.webp" width="1440" height="900" alt="Janus IA home: a sample conversation next to the daily dashboard (personal details blurred)" data-i18n-attr="alt:alt_janus_home"></figure>
+        <figure class="scene" data-scene="1">
+          <div class="browser-frame">
+            <div class="browser-bar"><a class="browser-url" href="https://propuesta.salasoliva27.workers.dev/4ad50befedb17817debfa857/pagina" target="_blank" rel="noopener">propuesta.salasoliva27.workers.dev/…/pagina ↗</a></div>
+            <button type="button" class="browser-page" data-win="site:reich-by-wolters" aria-label="Reich by Wolters"><img class="page-scroll" src="img/sites/reich-by-wolters.jpg" alt="" loading="lazy"></button>
+          </div>
+        </figure>
+        <figure class="scene scene--reels" data-scene="2" data-win="news">
+          <img src="img/news-2.webp" width="540" height="960" alt="" loading="lazy"><img src="img/news-9.webp" width="540" height="960" alt="" loading="lazy"><img src="img/news-25.webp" width="540" height="960" alt="" loading="lazy">
+        </figure>
+        <figure class="scene" data-scene="3" data-win="clippmx"><img class="scene-pan" src="img/clippmx-lab.webp" width="1280" height="1097" alt="" loading="lazy"></figure>
+        <figure class="scene" data-scene="4" data-win="ozum"><img class="scene-pan" src="img/ozum-onboarding.webp" width="1440" height="900" alt="" loading="lazy"></figure>
+      </div>
+      <div class="reel-foot">
+        <p class="reel-caption" aria-live="polite"></p>
+        <button type="button" class="reel-pause" aria-pressed="false" data-i18n="reel_pause">Pause</button>
+      </div>
+    </div>
+  </section>
 
   <main>
     <!-- ══ Work ══ -->
@@ -176,6 +200,34 @@
           <p data-i18n="also_platu">An AI language-learning agent that scores whole conversations — can you follow, contribute and repair — instead of counting mistakes.</p>
         </div>
       </div>
+    </section>
+
+    <!-- ══ Websites designed by an AI I built (sites.json, kept live by janus-ia scripts/portfolio-sites.mjs) ══ -->
+    <section id="websites" class="sec-frame">
+      <div class="sec-head">
+        <h2><svg class="ic" aria-hidden="true"><use href="#i-layout"/></svg><span data-i18n="sites_h">Websites designed by an AI I built</span></h2>
+      </div>
+      <div class="sites-why">
+        <div>
+          <h3 data-i18n="sites_why_h">Why I built it</h3>
+          <p data-i18n="sites_why">Small businesses rarely buy a website from a pitch — they buy it when they see their own. Designing one by hand for every business doesn't scale, so I built an AI that does the research and the first design, and I spend my time on the businesses that answer.</p>
+        </div>
+        <div>
+          <h3 data-i18n="sites_how_h">What it does</h3>
+          <p data-i18n="sites_how">It reads a business's own brand — its colours, fonts, logo, photos and words — and designs a site in that look, with a one-minute video and a proposal, then sends it to the business free. There is no template per industry: every page starts from the business itself.</p>
+        </div>
+      </div>
+      <div class="sites-grid" data-sites>
+        <!-- filled from sites.json by site.js; this one stays as the no-script fallback -->
+        <article class="site" data-win="site:club-nick">
+          <div class="site-frame"><img class="page-scroll" src="img/sites/club-nick.jpg" alt="" loading="lazy"></div>
+          <p class="site-industry">Squash &amp; gym</p>
+          <h4>Club Nick</h4>
+          <p class="site-area">Zacahuitzco, Iztapalapa</p>
+          <p class="site-acts"><a class="act" href="https://propuesta.salasoliva27.workers.dev/ef7285fec198952a54c655cf/pagina" target="_blank" rel="noopener">Open live</a></p>
+        </article>
+      </div>
+      <p class="sites-note" data-i18n="sites_note">Every link is live: the pages are kept online and checked every day, and a page that goes offline is replaced by a newer one.</p>
     </section>
 
     <!-- ══ Automations ══ -->

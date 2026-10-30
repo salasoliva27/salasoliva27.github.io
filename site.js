@@ -18,6 +18,20 @@
       tech: "Technology",
       used: (s) => `Where I've used ${s}`,
       exp: "Experience",
+      openLive: "Open live",
+      details: "Details",
+      openSite: "Open the live site",
+      allSites: "See all the websites",
+      proposal: "Proposal",
+      example: "Example",
+      siteBody: (n) => `My AI designed this page from ${n}'s own brand — its colours, fonts, logo, photos and words. Nothing came from a template.`,
+      siteProposal: "It was sent to the business as a free proposal; the page is theirs to use.",
+      siteExample: "It was made as an example of what the AI does for a business like this one.",
+      liveNote: "Live link — kept online and checked every day.",
+      pause: "Pause",
+      play: "Play",
+      cap: ["Janus IA — click the screen to open it.", null, "Three reels from one night's run — click to open the newsroom.", "ClippMX's Lab: every automated workflow drawn as its steps.", "OZUM AI's guided onboarding, in Spanish — click to open the case."],
+      siteCap: "open the live site",
     },
     es: {
       close: "Cerrar",
@@ -28,6 +42,20 @@
       tech: "Tecnología",
       used: (s) => `Dónde he usado ${s}`,
       exp: "Experiencia",
+      openLive: "Abrir en vivo",
+      details: "Detalles",
+      openSite: "Abrir el sitio en vivo",
+      allSites: "Ver todos los sitios",
+      proposal: "Propuesta",
+      example: "Ejemplo",
+      siteBody: (n) => `Mi IA diseñó esta página a partir de la marca de ${n}: sus colores, tipografías, logo, fotos y palabras. Nada salió de una plantilla.`,
+      siteProposal: "Se le envió al negocio como propuesta gratuita; la página es suya para usarla.",
+      siteExample: "Se hizo como ejemplo de lo que la IA hace para un negocio como este.",
+      liveNote: "Enlace en vivo — se mantiene en línea y se revisa todos los días.",
+      pause: "Pausa",
+      play: "Reproducir",
+      cap: ["Janus IA — haz clic en la pantalla para abrirlo.", null, "Tres reels de una sola noche — haz clic para abrir la sala de noticias.", "El Laboratorio de ClippMX: cada flujo automático dibujado como sus pasos.", "El onboarding guiado de OZUM AI, en español — haz clic para abrir el caso."],
+      siteCap: "abrir el sitio en vivo",
     },
   };
   const t = () => UI[root.lang === "es" ? "es" : "en"];
@@ -75,6 +103,7 @@
 
   function render(id) {
     if (id.startsWith("skill:")) return renderSkill(id.slice(6));
+    if (id.startsWith("site:")) return renderSite(id.slice(5));
     const st = stepOf(id);
     if (st) return renderStep(st, id);
     const s = src(id);
@@ -132,6 +161,129 @@
     body.append(list);
     return { key: "skill", body, title: skill, hue: "", narrow: true };
   }
+
+  // ── Websites designed by my AI: sites.json (kept live and swapped by janus-ia scripts/portfolio-sites.mjs).
+  let SITES = [];
+  const lang = () => (root.lang === "es" ? "es" : "en");
+  const sitesReady = fetch("sites.json", { cache: "no-cache" }).then((r) => r.json()).then((d) => { SITES = d.sites || []; }).catch(() => {});
+  const siteBySlug = (slug) => SITES.find((s) => s.slug === slug);
+  const imgOf = (s) => `img/sites/${s.slug}.jpg`;
+
+  function renderSite(slug) {
+    const s = siteBySlug(slug);
+    if (!s) return null;
+    const body = el("div", "window__content");
+    // The live link sits right under the name, so it is seen without scrolling the window.
+    const live = el("a", "act", t().openSite); live.href = s.url; live.target = "_blank"; live.rel = "noopener";
+    const where = el("p", "w-where"); where.append(el("span", "w-note", s.area), live);
+    body.append(el("p", "w-kicker", `${s.sample ? t().example : t().proposal} · ${s.industry[lang()]}`), el("h2", null, s.name), where);
+    const frame = el("div", "w-site-frame");
+    const img = el("img", "page-scroll"); img.src = imgOf(s); img.alt = ""; frame.append(img);
+    body.append(frame, el("p", null, t().siteBody(s.name)), el("p", null, s.sample ? t().siteExample : t().siteProposal), el("p", "w-note", t().liveNote));
+    const acts = el("p", "w-actions");
+    const all = el("button", "act act--go", t().allSites); all.type = "button"; all.dataset.goto = "#websites";
+    acts.append(all);
+    body.append(acts);
+    return { key: "site", body, title: s.name, hue: "news", narrow: false };
+  }
+
+  const grid = document.querySelector("[data-sites]");
+  function renderGrid() {
+    if (!grid || !SITES.length) return;
+    grid.replaceChildren(...SITES.map((s) => {
+      const art = el("article", "site"); art.dataset.win = "site:" + s.slug;
+      const frame = el("div", "site-frame"); const img = el("img", "page-scroll"); img.src = imgOf(s); img.alt = ""; img.loading = "lazy"; frame.append(img);
+      const acts = el("p", "site-acts");
+      const live = el("a", "act", t().openLive); live.href = s.url; live.target = "_blank"; live.rel = "noopener";
+      const more = el("button", "act act--go", t().details); more.type = "button"; more.dataset.win = "site:" + s.slug;
+      acts.append(live, more);
+      art.append(frame, el("p", "site-industry", s.industry[lang()]), el("h4", null, s.name), el("p", "site-area", s.area), acts);
+      return art;
+    }));
+  }
+  // One page scrolls at a time, in turn, while the grid is on screen (hover scrolls the one under the pointer).
+  let rr = 0, rrTimer = null;
+  function nextScroll() {
+    const items = grid ? [...grid.querySelectorAll(".site")] : [];
+    if (!items.length || reduce.matches) return;
+    items.forEach((x) => x.classList.remove("is-scrolling"));
+    const it = items[rr++ % items.length];
+    void it.offsetWidth;
+    it.classList.add("is-scrolling");
+  }
+  if (grid && "IntersectionObserver" in window) {
+    new IntersectionObserver(([en]) => {
+      clearInterval(rrTimer); rrTimer = null;
+      if (en.isIntersecting && !reduce.matches) { nextScroll(); rrTimer = setInterval(nextScroll, 9500); }
+    }, { threshold: 0.25 }).observe(grid);
+  }
+
+  // ── The showreel: scenes play in turn while it is on screen; hover, focus, an open window or Pause holds it.
+  const reel = document.querySelector(".reel");
+  const scenes = reel ? [...reel.querySelectorAll(".scene")] : [];
+  const tabs = reel ? [...reel.querySelectorAll(".reel-tab")] : [];
+  const caption = reel && reel.querySelector(".reel-caption");
+  const pauseBtn = reel && reel.querySelector(".reel-pause");
+  const DUR = 7500;
+  let cur = 0, elapsed = 0, last = 0, held = false, hover = false, onScreen = false, siteTurn = 0, shownSite = null;
+  function siteScene() {
+    if (!SITES.length || !reel) return;
+    const s = SITES[siteTurn % SITES.length];
+    shownSite = s;
+    const page = reel.querySelector(".browser-page"), img = page.querySelector("img"), url = reel.querySelector(".browser-url");
+    page.dataset.win = "site:" + s.slug; page.setAttribute("aria-label", s.name);
+    if (!img.src.endsWith(imgOf(s))) img.src = imgOf(s);
+    url.href = s.url; url.textContent = s.url.replace(/^https:\/\//, "") + " ↗";
+  }
+  function setCaption() {
+    if (!caption) return;
+    caption.replaceChildren();
+    if (cur === 1 && shownSite) {
+      const s = shownSite, a = el("a", null, t().siteCap + " ↗");
+      a.href = s.url; a.target = "_blank"; a.rel = "noopener";
+      caption.append(`${s.industry[lang()]} · ${s.name}, ${s.area} — `, a);
+    } else caption.textContent = t().cap[cur] || "";
+  }
+  function show(i) {
+    cur = i; elapsed = 0;
+    if (i === 1) siteScene();
+    scenes.forEach((s) => s.classList.toggle("is-on", +s.dataset.scene === i));
+    tabs.forEach((b) => { b.setAttribute("aria-current", String(+b.dataset.scene === i)); b.style.setProperty("--p", 0); });
+    setCaption();
+  }
+  const running = () => !held && !hover && onScreen && !document.hidden && !reduce.matches && !wins.length;
+  function tick(now) {
+    const dt = last ? now - last : 0; last = now;
+    if (running()) {
+      elapsed += dt;
+      const p = Math.min(1, elapsed / DUR);
+      if (tabs[cur]) tabs[cur].style.setProperty("--p", p.toFixed(4));
+      if (p >= 1) { if (cur === 1) siteTurn++; show((cur + 1) % scenes.length); }
+    }
+    requestAnimationFrame(tick);
+  }
+  if (reel) {
+    tabs.forEach((b) => b.addEventListener("click", () => { if (+b.dataset.scene === 1 && cur === 1) siteTurn++; show(+b.dataset.scene); }));
+    const win = reel.querySelector(".reel-window");
+    win.addEventListener("pointerenter", () => { hover = true; });
+    win.addEventListener("pointerleave", () => { hover = false; });
+    win.addEventListener("focusin", () => { hover = true; });
+    win.addEventListener("focusout", () => { hover = false; });
+    pauseBtn.addEventListener("click", () => {
+      held = !held;
+      pauseBtn.setAttribute("aria-pressed", String(held));
+      pauseBtn.textContent = held ? t().play : t().pause;
+    });
+    if ("IntersectionObserver" in window) new IntersectionObserver(([en]) => { onScreen = en.isIntersecting; }, { threshold: 0.3 }).observe(reel);
+    else onScreen = true;
+    show(0);
+    requestAnimationFrame(tick);
+  }
+  sitesReady.then(() => { renderGrid(); siteScene(); setCaption(); });
+  document.addEventListener("langchange", () => {
+    renderGrid(); setCaption();
+    if (pauseBtn) pauseBtn.textContent = held ? t().play : t().pause;
+  });
 
   // ── The window manager.
   const page = [document.querySelector("header.top"), document.querySelector(".hero"), document.querySelector("main"), document.querySelector("footer")];
@@ -350,5 +502,5 @@
   addEventListener("beforeprint", () => watched.forEach((n) => n.classList.add("in")));
 
   // ── A link to #w-<id> opens that window (after i18n.js has set the language).
-  setTimeout(() => { if (/^#w-[\w:-]+$/.test(location.hash) && render(location.hash.slice(3))) open(location.hash.slice(3), null); }, 0);
+  setTimeout(() => sitesReady.then(() => { if (/^#w-[\w:-]+$/.test(location.hash) && render(location.hash.slice(3))) open(location.hash.slice(3), null); }), 0);
 })();

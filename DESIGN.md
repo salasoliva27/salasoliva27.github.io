@@ -40,3 +40,26 @@ only theme, so the five-theme picker from v3 is gone.
   Esc closes the top one; focus goes back to what opened it.
 - Motion is CSS (plus the window transition) and stops under `prefers-reduced-motion`.
 - Numbers on the page trace to a file in janus-ia (see the v9 loop: `.planning/loops/2026-10-29-48a5d7d5.md`).
+
+## v10 (2026-10-29): its own composition, not ClippMX's
+
+Jano: "the section in the image looks exactly like the home page of clippmx, you are being repetitive with your designs".
+v9 had taken ClippMX's whole home (text left + tilted floating screenshot cards right + icon stat strip + icon eyebrow),
+when he had asked only for its colours. Rule since then: borrow a theme's **tokens only**.
+
+**Must not resemble:** ClippMX's home (`janus-ia/outputs/ui-checks/clippmx-ronda7/home-clean.png`) — no floating card
+stack, no stat strip with icon labels, no icon eyebrow. Checked: verify-v10 fails on `hero-photo`, `class="stats"`,
+`class="eyebrow"` in the markup, and the hero screenshot was compared with ClippMX's before shipping.
+
+**What it is instead:**
+- Hero = an editorial split: the name set large (two lines, −0.05em) on the left, the claim with the two numbers inline
+  and the contacts on the right, on one baseline.
+- Showreel = a dark stage under it, on the first screen: five numbered scenes with progress lines on the left, the
+  scene playing on the right (a slow camera move over a screen; a website scrolling top to bottom with its live URL;
+  three reels rising). It plays only while on screen, holds on hover/focus/an open window, has Pause, and stays still
+  under reduced motion (UI UX Pro Max `"autoplaying motion" --domain ux`: pause control, stop off-screen, honour reduced
+  motion, 1–2 moving elements per view). `"showreel portfolio hero autoplay work preview" --domain style` returned
+  kinetic typography / 3D product preview — not used.
+- Websites = "why I built it / what it does", then page frames (4:5) in a grid; one page scrolls at a time in turn, or
+  the one under the pointer. Data: `sites.json`, kept live by janus-ia `scripts/portfolio-sites.mjs` (daily workflow
+  `portfolio-sites`, 09:15).

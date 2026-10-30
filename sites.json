@@ -1,0 +1,118 @@
+{
+  "about": "Live pages designed by Alejandro's AI, shown in the 'Websites designed by an AI I built' section. Kept live and checked daily by janus-ia scripts/portfolio-sites.mjs (swaps a dead or withdrawn page for the newest live proposal of an industry not shown).",
+  "updatedAt": "2026-10-29",
+  "sites": [
+    {
+      "token": "ef7285fec198952a54c655cf",
+      "name": "Club Nick",
+      "area": "Zacahuitzco, Iztapalapa",
+      "industry": {
+        "en": "Squash & gym",
+        "es": "Squash y gimnasio"
+      },
+      "url": "https://propuesta.salasoliva27.workers.dev/ef7285fec198952a54c655cf/pagina",
+      "slug": "club-nick",
+      "kind": "sample",
+      "sample": true,
+      "h": 1499
+    },
+    {
+      "token": "fa74b9616b1c077570508cf1",
+      "name": "Dog City Pet Hospital",
+      "area": "Pensil Sur",
+      "industry": {
+        "en": "Veterinary hospital",
+        "es": "Hospital veterinario"
+      },
+      "url": "https://propuesta.salasoliva27.workers.dev/fa74b9616b1c077570508cf1/pagina",
+      "slug": "dog-city",
+      "kind": "proposal",
+      "sample": false,
+      "h": 1689
+    },
+    {
+      "token": "4ad50befedb17817debfa857",
+      "name": "Reich by Wolters",
+      "area": "Lindavista",
+      "industry": {
+        "en": "Gastropub",
+        "es": "Gastropub"
+      },
+      "url": "https://propuesta.salasoliva27.workers.dev/4ad50befedb17817debfa857/pagina",
+      "slug": "reich-by-wolters",
+      "kind": "sample",
+      "sample": true,
+      "h": 1584
+    },
+    {
+      "token": "e15f614199962b3f278e148a",
+      "name": "Soulflower Condesa",
+      "area": "Hipódromo",
+      "industry": {
+        "en": "Tattoo & piercing studio",
+        "es": "Estudio de tatuajes y piercing"
+      },
+      "url": "https://propuesta.salasoliva27.workers.dev/e15f614199962b3f278e148a/pagina",
+      "slug": "soulflower",
+      "kind": "proposal",
+      "sample": false,
+      "h": 2219
+    },
+    {
+      "token": "7dbcb12126c5fb624e1cabfa",
+      "name": "Vivero del Bosque",
+      "area": "Del Carmen, Coyoacán",
+      "industry": {
+        "en": "Plant nursery",
+        "es": "Vivero"
+      },
+      "url": "https://propuesta.salasoliva27.workers.dev/7dbcb12126c5fb624e1cabfa/pagina",
+      "slug": "vivero-del-bosque",
+      "kind": "proposal",
+      "sample": false,
+      "h": 1855
+    },
+    {
+      "token": "a24ac4d67278f3c0e53facfd",
+      "name": "Uma Spa",
+      "area": "Roma Sur",
+      "industry": {
+        "en": "Spa",
+        "es": "Spa"
+      },
+      "url": "https://propuesta.salasoliva27.workers.dev/a24ac4d67278f3c0e53facfd/pagina",
+      "slug": "uma-spa",
+      "kind": "proposal",
+      "sample": false,
+      "h": 1679
+    },
+    {
+      "token": "ec7ebf6f7379f7df931d2b19",
+      "name": "Ceramikas Emiisa",
+      "area": "Jamaica",
+      "industry": {
+        "en": "Ceramics shop",
+        "es": "Tienda de cerámica"
+      },
+      "url": "https://propuesta.salasoliva27.workers.dev/ec7ebf6f7379f7df931d2b19/pagina",
+      "slug": "ceramikas-emiisa",
+      "kind": "proposal",
+      "sample": false,
+      "h": 2106
+    },
+    {
+      "token": "d787653a2115399bb1ae0956",
+      "name": "Paax",
+      "area": "Del Carmen, Coyoacán",
+      "industry": {
+        "en": "Music school",
+        "es": "Escuela de música"
+      },
+      "url": "https://propuesta.salasoliva27.workers.dev/d787653a2115399bb1ae0956/pagina",
+      "slug": "paax",
+      "kind": "proposal",
+      "sample": false,
+      "h": 1741
+    }
+  ]
+}
