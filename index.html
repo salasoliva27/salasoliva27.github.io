@@ -170,13 +170,21 @@
           <p class="summary" data-i18n="bosques_sum">A community-funding platform for a Mexico City neighborhood: residents propose, fund and track local projects, and money is released milestone by milestone.</p>
           <button type="button" class="act act--go" data-win="bosques" data-i18n="open_case">Open the case</button>
         </article>
-        <article class="work" data-win="mercado">
-          <div class="work-shot"><img src="img/mercado-run.webp" width="1440" height="900" loading="lazy" alt="Mercado Bot dashboard after a ten-round simulated run" data-i18n-attr="alt:alt_mercado"></div>
-          <p class="kicker" data-i18n="mercado_kicker">Quant research</p>
-          <h3>Mercado Bot</h3>
-          <p class="status" data-i18n="mercado_status">Prototype · simulation only</p>
-          <p class="summary" data-i18n="mercado_sum">A research bot for prediction markets that estimates probabilities with an LLM and sizes positions the way a quant would — never with real money.</p>
-          <button type="button" class="act act--go" data-win="mercado" data-i18n="open_case">Open the case</button>
+        <article class="work" data-win="aihound">
+          <div class="work-shot"><img src="img/sites/reich-by-wolters.jpg" width="1440" height="900" loading="lazy" alt="A website proposal page that AI Hound built for a local business" data-i18n-attr="alt:alt_aihound"></div>
+          <p class="kicker" data-i18n="aihound_kicker">AI prospecting</p>
+          <h3>AI Hound</h3>
+          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="aihound_status">Running every weekday</span></p>
+          <p class="summary" data-i18n="aihound_sum">An AI that finds local businesses that could use AI, builds each one a free page and proposal, reaches out by email and WhatsApp, and reads the replies.</p>
+          <button type="button" class="act act--go" data-win="aihound" data-i18n="open_case">Open the case</button>
+        </article>
+        <article class="work" data-win="finance">
+          <div class="work-shot"><img src="img/janus-home.webp" width="1440" height="900" loading="lazy" alt="Janus IA home with the markets and paper-portfolio section next to the chat (personal details blurred)" data-i18n-attr="alt:alt_finance"></div>
+          <p class="kicker" data-i18n="finance_kicker">Finance AI · paper money</p>
+          <h3 data-i18n="finance_h">Janus Investments</h3>
+          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="finance_status">Simulated · MX$100,000 → MX$100,677 (+0.68%)</span></p>
+          <p class="summary" data-i18n="finance_sum">The finance AI I use every day, plus a portfolio I handed to Janus to run on its own rules. Twelve days in: +0.68% on a simulated MX$100,000, against +0.80% for the S&amp;P 500.</p>
+          <button type="button" class="act act--go" data-win="finance" data-i18n="open_case">Open the case</button>
         </article>
         <article class="work" data-win="longevite">
           <div class="work-shot"><img src="img/longevite-hero.webp" width="1440" height="900" loading="lazy" alt="Longevité Therapeutics website hero with video background" data-i18n-attr="alt:alt_long_hero"></div>
@@ -535,21 +543,38 @@
       <p class="stack"><span>React</span><span>Tailwind</span><span>Express</span><span>Prisma</span><span>Supabase</span><span>Claude</span><span>Bitso sandbox</span></p>
     </div>
 
-    <div class="win-src" id="w-mercado">
-      <p class="w-kicker" data-i18n="mercado_kicker">Quant research</p>
-      <h2>Mercado Bot</h2>
-      <p class="status" data-i18n="mercado_status">Prototype · simulation only</p>
-      <p class="w-lede" data-i18n="mercado_sum">A research bot for prediction markets that estimates probabilities with an LLM and sizes positions the way a quant would — never with real money.</p>
+    <div class="win-src" id="w-aihound">
+      <p class="w-kicker" data-i18n="aihound_kicker">AI prospecting</p>
+      <h2>AI Hound</h2>
+      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="aihound_status">Running every weekday</span></p>
+      <p class="w-lede" data-i18n="aihound_sum">An AI that finds local businesses that could use AI, builds each one a free page and proposal, reaches out by email and WhatsApp, and reads the replies.</p>
       <div class="w-gallery w-gallery--one">
-        <a class="shot" href="img/mercado-run.webp"><img src="img/mercado-run.webp" width="1440" height="900" loading="lazy" alt="Mercado Bot dashboard after a ten-round simulated run: portfolio chart, signals, trade log, Kelly calculator" data-i18n-attr="alt:alt_mercado"></a>
+        <a class="shot" href="img/sites/reich-by-wolters.jpg"><img src="img/sites/reich-by-wolters.jpg" width="1440" height="900" loading="lazy" alt="A website proposal page that AI Hound built for a local business" data-i18n-attr="alt:alt_aihound"></a>
       </div>
       <h3 data-i18n="w_what">What it does</h3>
       <ul>
-        <li data-i18n="mercado_1">Five-stage pipeline: scan markets, research, predict, execute on paper, compound.</li>
-        <li data-i18n="mercado_2">Kelly-criterion position sizing; tracks win rate, Brier score and Sharpe ratio.</li>
-        <li data-i18n="mercado_3">Risk monitor with drawdown cap, API-cost cap and a kill switch; live trading locked.</li>
+        <li data-i18n="aihound_1">Looks for businesses that could gain from AI, then designs a page in each one's own brand, with a proposal that cites a study for every step it offers.</li>
+        <li data-i18n="aihound_2">Reaches out by email and WhatsApp on weekdays, reads every reply, and logs meetings booked through its link.</li>
+        <li data-i18n="aihound_3">Pages are free and theirs to keep; a "no" is answered once, politely, and the page is removed.</li>
       </ul>
-      <p class="stack"><span>Python</span><span>React</span><span>Recharts</span><span>Claude</span></p>
+      <p class="stack"><span>Node</span><span>Claude</span><span>Playwright</span><span>Cloudflare</span></p>
+    </div>
+
+    <div class="win-src" id="w-finance">
+      <p class="w-kicker" data-i18n="finance_kicker">Finance AI · paper money</p>
+      <h2 data-i18n="finance_h">Janus Investments</h2>
+      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="finance_status">Simulated · MX$100,000 → MX$100,677 (+0.68%)</span></p>
+      <p class="w-lede" data-i18n="finance_sum">The finance AI I use every day, plus a portfolio I handed to Janus to run on its own rules. Twelve days in: +0.68% on a simulated MX$100,000, against +0.80% for the S&amp;P 500.</p>
+      <div class="w-gallery w-gallery--one">
+        <a class="shot" href="img/janus-home.webp"><img src="img/janus-home.webp" width="1440" height="900" loading="lazy" alt="Janus IA home with the markets and paper-portfolio section next to the chat (personal details blurred)" data-i18n-attr="alt:alt_finance"></a>
+      </div>
+      <h3 data-i18n="w_what">What it does</h3>
+      <ul>
+        <li data-i18n="finance_1">Reads the market every hour it is open, flags stocks that fell but still look healthy, and keeps three paper portfolios (low, medium, high risk) of MX$100,000 each.</li>
+        <li data-i18n="finance_2">Janus's own portfolio, opened 17 Oct 2026 and run by the AI alone: it holds the eight strongest trends among about 277 names, with a trailing stop on each and weekly rotation.</li>
+        <li data-i18n="finance_3">Result at the 29 Oct 2026 close: MX$100,000 → MX$100,677, +0.68% in 12 days; the S&amp;P 500 made +0.80% over the same days. Paper money only, no broker connection, and no promise of future returns.</li>
+      </ul>
+      <p class="stack"><span>TypeScript</span><span>Claude</span><span>React</span><span>Yahoo Finance data</span></p>
     </div>
 
     <div class="win-src" id="w-longevite">
