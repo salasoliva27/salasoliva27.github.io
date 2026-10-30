@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-10-15T08:12:33.374Z"
-lastSyncedCommit: "6eb2f70"
-lastSyncedCommitMessage: "Portfolio v8: EN / ES language switch, page up to date, no boxes"
+lastSyncedAt: "2026-10-30T00:45:21.214Z"
+lastSyncedCommit: "32da601"
+lastSyncedCommitMessage: "Portfolio v9: Clean look, click-to-open windows, automations in production"
 ---
 
 ## Next Steps
