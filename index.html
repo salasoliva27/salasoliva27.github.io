@@ -3,255 +3,366 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portfolio-version" content="8">
-<meta name="theme-color" content="#0b0d12">
-<script>
-  (function () {
-    var themes = ["dark", "light", "midnight", "sand", "terminal"], t = null;
-    try { t = localStorage.getItem("theme"); } catch (e) {}
-    if (themes.indexOf(t) < 0) t = window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", t);
-  })();
-</script>
+<meta name="portfolio-version" content="9">
+<meta name="theme-color" content="#f5f5f7">
+<meta name="color-scheme" content="light">
 <title>Alejandro Salas Oliva — Data &amp; AI Engineer</title>
-<meta name="description" content="Data & AI engineer. Snowflake pipelines, machine learning, and LLM agent systems — plus the AI products I build on my own.">
+<meta name="description" content="Data & AI engineer. Snowflake pipelines, machine learning, and AI systems that run in production — plus the AI products and automations I build and operate.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://salasoliva27.github.io/">
 <meta property="og:title" content="Alejandro Salas Oliva — Data & AI Engineer">
-<meta property="og:description" content="Snowflake pipelines, machine learning, and LLM agent systems — plus the AI products I build on my own.">
+<meta property="og:description" content="Snowflake pipelines, machine learning, and AI systems that run in production — plus the AI products and automations I build and operate.">
 <meta property="og:image" content="https://salasoliva27.github.io/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <nav class="nav">
-    <a class="brand" href="#top">AS<span>O</span></a>
-    <div class="nav-right">
+  <!-- Icons: outlines in the Lucide style (ISC), one stroke weight, drawn in currentColor. -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-window" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20"/><path d="M6 4v4"/><path d="M10 4v4"/></symbol>
+    <symbol id="i-workflow" viewBox="0 0 24 24"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.4 10.9a1 1 0 0 0 0-1.8l-8.6-3.9a2 2 0 0 0-1.6 0L2.6 9.1a1 1 0 0 0 0 1.8l8.6 3.9a2 2 0 0 0 1.6 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><path d="M8.1 8.1 12 12"/><path d="M20 4 8.1 15.9"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
+    <symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.9.7-1.9 1-3 1s-2.1-.3-3-1Z"/><path d="m2 16 3-8 3 8c-.9.7-1.9 1-3 1s-2.1-.3-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.5a2 2 0 0 1-.2.9L4.7 20.6a1 1 0 0 0 .9 1.4h12.8a1 1 0 0 0 .9-1.4l-5.1-10.2a2 2 0 0 1-.2-.9V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m22 17-8.5-8.5-5 5L2 7"/><path d="M16 17h6v-6"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M13 8H7"/><path d="M17 12H7"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.8 9.8 0 0 0-6.7 2.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.7-.9l-.8-1.2A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M21 4h-7"/><path d="M10 4H3"/><path d="M21 12h-9"/><path d="M8 12H3"/><path d="M21 20h-5"/><path d="M12 20H3"/><path d="M14 2v4"/><path d="M8 10v4"/><path d="M16 18v4"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.9 15.5a2 2 0 0 0-1.4-1.4l-6.1-1.6a.5.5 0 0 1 0-1l6.1-1.6a2 2 0 0 0 1.4-1.4l1.6-6.1a.5.5 0 0 1 1 0l1.6 6.1a2 2 0 0 0 1.4 1.4l6.1 1.6a.5.5 0 0 1 0 1l-6.1 1.6a2 2 0 0 0-1.4 1.4l-1.6 6.1a.5.5 0 0 1-1 0z"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m9 11 3 3L22 4"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3l14 9-14 9z"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  </svg>
+
+  <header class="top">
+    <nav class="nav" aria-label="Main" data-i18n-attr="aria-label:nav_main">
+      <a class="brand" href="#top" aria-label="Alejandro Salas Oliva">AS<span>O</span></a>
       <div class="nav-links">
         <a href="#work" data-i18n="nav_work">Work</a>
+        <a href="#automations" data-i18n="nav_auto">Automations</a>
         <a href="#rates" data-i18n="nav_rates">Rates</a>
         <a href="#experience" data-i18n="nav_exp">Experience</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </div>
       <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:lang_group">
+        <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
         <button type="button" data-lang="en" lang="en" aria-pressed="true" title="English">EN</button>
         <button type="button" data-lang="es" lang="es" aria-pressed="false" title="Español">ES</button>
       </div>
-      <div class="theme-picker">
-        <button class="theme-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Change theme" title="Change theme" data-i18n-attr="aria-label:theme_change;title:theme_change">
-          <span class="swatch" aria-hidden="true"></span><span class="theme-name">Dark</span>
-        </button>
-        <div class="theme-menu" role="menu" aria-label="Themes" hidden>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="dark"><span class="swatch" style="--sw-bg:#0b0d12;--sw-accent:#5eead4" aria-hidden="true"></span><span data-i18n="theme_dark">Dark</span></button>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="light"><span class="swatch" style="--sw-bg:#f7f8fa;--sw-accent:#0f766e" aria-hidden="true"></span><span data-i18n="theme_light">Light</span></button>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="midnight"><span class="swatch" style="--sw-bg:#0a1022;--sw-accent:#8ab4ff" aria-hidden="true"></span><span data-i18n="theme_midnight">Midnight</span></button>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="sand"><span class="swatch" style="--sw-bg:#f5efe6;--sw-accent:#a3431a" aria-hidden="true"></span><span data-i18n="theme_sand">Sand</span></button>
-          <button type="button" role="menuitemradio" aria-checked="false" data-theme-choice="terminal"><span class="swatch" style="--sw-bg:#050805;--sw-accent:#39ff88" aria-hidden="true"></span><span data-i18n="theme_terminal">Terminal</span></button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero" id="top">
-    <p data-i18n="hero_eyebrow" class="eyebrow">Mexico City · open to remote</p>
-    <h1>Alejandro Salas Oliva</h1>
-    <p data-i18n="hero_role" class="role">Data &amp; AI Engineer</p>
-    <p class="lede" data-i18n="hero_lede">I build data pipelines, machine-learning models and LLM agent systems.
-      By day that has meant Snowflake migrations and churn models for companies like
-      Exxon Mobil and Oracle. I also help companies bring AI into how they work, and I
-      build my own AI products — the work below.</p>
-    <div class="cta">
-      <a class="btn btn--primary" href="mailto:salasoliva27@gmail.com" data-i18n="cta_email">Email me</a>
-      <a class="btn" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" data-i18n-attr="href:wa_link" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="btn" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/salasoliva27" rel="noopener">GitHub</a>
-    </div>
+    </nav>
   </header>
 
+  <div class="hero" id="top">
+    <div class="hero-text">
+      <p class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="hero_eyebrow">Mexico City · open to remote</span></p>
+      <h1>Alejandro Salas Oliva</h1>
+      <p class="role"><span data-i18n="hero_role">Data &amp; AI Engineer</span> <span class="role-accent" data-i18n="hero_role2">building AI that runs in production.</span></p>
+      <p class="lede" data-i18n="hero_lede">I build data pipelines, machine-learning models and AI systems. By day that has meant Snowflake migrations and churn models for companies like Exxon Mobil and Oracle. I also help companies bring AI into how they work, and I build and operate my own AI products and automations — click anything below to see how it works.</p>
+      <div class="cta">
+        <a class="btn btn--primary" href="mailto:salasoliva27@gmail.com" data-i18n="cta_email">Email me</a>
+        <a class="act" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" data-i18n-attr="href:wa_link" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="act" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
+        <a class="act" href="https://github.com/salasoliva27" rel="noopener">GitHub</a>
+      </div>
+      <dl class="stats">
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-workflow"/></svg><span data-i18n="stat_auto">Automations live</span></dt><dd data-count="6">6</dd></div>
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="stat_tasks">Scheduled tasks</span></dt><dd data-count="75" data-suffix="+">75+</dd></div>
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg><span data-i18n="stat_views">Views on their posts</span></dt><dd data-count="30" data-suffix="k+">30k+</dd></div>
+      </dl>
+      <p class="stats-note" data-i18n="stats_note">As of October 29, 2026.</p>
+    </div>
+    <div class="hero-photos">
+      <button type="button" class="hero-photo hp-1" data-win="janus" aria-label="Open Janus IA" data-i18n-attr="aria-label:open_janus"><img src="img/janus-home.webp" width="1440" height="900" alt=""></button>
+      <button type="button" class="hero-photo hp-2" data-win="clippmx" aria-label="Open ClippMX" data-i18n-attr="aria-label:open_clippmx"><img src="img/clippmx-home.webp" width="1280" height="800" alt=""></button>
+      <button type="button" class="hero-photo hp-3" data-win="news" aria-label="Open the AI newsroom" data-i18n-attr="aria-label:open_news"><img src="img/news-2.webp" width="540" height="960" alt=""></button>
+    </div>
+  </div>
+
   <main>
-    <section id="work" class="section">
-      <div class="section-head">
-        <h2 data-i18n="work_h">Selected work</h2>
-        <p class="note" data-i18n="work_note">None of these are publicly deployed yet. Every screenshot comes from the real project running on my machine; personal details are blurred, and the Janus chat shows a sample conversation.</p>
+    <!-- ══ Work ══ -->
+    <section id="work" class="sec-frame">
+      <div class="sec-head">
+        <h2><svg class="ic" aria-hidden="true"><use href="#i-window"/></svg><span data-i18n="work_h">Selected work</span></h2>
+        <p class="note" data-i18n="work_note">Every screenshot comes from the real project running on my machine; personal details are blurred, and the Janus chat shows a sample conversation. Click a project to open it.</p>
       </div>
 
-      <article class="project featured">
-        <div class="project-text">
-          <p class="kicker" data-i18n="janus_kicker">Flagship · personal</p>
+      <article class="work work--featured" data-win="janus">
+        <div class="work-shot"><img src="img/janus-home.webp" width="1440" height="900" loading="lazy" alt="Janus IA home: a sample conversation in the chat next to the daily dashboard (personal details blurred)" data-i18n-attr="alt:alt_janus_home"></div>
+        <div class="work-text">
+          <p class="kicker" data-i18n="janus_kicker">Flagship · AI platform</p>
           <h3>Janus IA</h3>
-          <p class="status live" data-i18n="janus_status">In daily use · private</p>
-          <p class="summary" data-i18n="janus_sum">My personal AI. It runs the things I use every day — for my own life as much as
-            for work and my projects — as live dashboards, with a chat always open beside them, so
-            anything on screen is one question away.</p>
-          <ul>
-            <li data-i18n="janus_1">A home dashboard for the day: schedule, inbox, training, market moves and job leads, each refreshing on its own.</li>
-            <li data-i18n="janus_2">Apps for each part of life and work: a gym log, personal finance, workflows that run on a clock, every project's progress, and a searchable chat history.</li>
-            <li data-i18n="janus_3">The chat can act, not just answer: it reads my mail, logs a workout, fixes a failing workflow or builds a feature, and remembers across conversations.</li>
-            <li data-i18n="janus_4">Under the hood, AI agents that share one memory (Supabase + pgvector, a Neo4j graph), with Claude Code and Codex as interchangeable engines — on desktop or phone.</li>
-            <li data-i18n="janus_5">Each question goes to the model its difficulty calls for — a fast one, an everyday one or a deep one — and every change runs as a loop with checks it has to pass before it calls itself done.</li>
-          </ul>
-          <p class="stack"><span>TypeScript</span><span>React</span><span>Express</span><span>WebSocket</span><span>MCP</span><span>Supabase · pgvector</span><span>Neo4j</span><span>Playwright</span></p>
-        </div>
-        <div class="gallery">
-          <a class="shot main" href="img/janus-home.webp"><img src="img/janus-home.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_janus_home" alt="Janus IA home: a sample conversation in the chat on the left, next to the daily dashboard — schedule, inbox, training, markets and job leads (personal details blurred)"></a>
-          <a class="shot thumb" href="img/janus-apps.webp"><img src="img/janus-apps.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_janus_apps" alt="Janus IA apps menu — work, personal and automation apps — open over the Gym app's training plan and session log"></a>
+          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="janus_status">In production · used every day</span></p>
+          <p class="summary" data-i18n="janus_sum">An AI platform that runs day-to-day work as live dashboards with a chat always beside them — and the engine the automations below run on. Anything on screen is one question away, and the chat can act, not just answer.</p>
+          <button type="button" class="act act--go" data-win="janus" data-i18n="janus_open">Explore Janus IA</button>
         </div>
       </article>
 
-      <article class="project" id="ozum">
-        <div class="gallery">
-          <a class="shot main" href="img/ozum-onboarding.webp"><img src="img/ozum-onboarding.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_ozum_onb" alt="OZUM AI onboarding: the nine guided steps from connecting an engine to a working company AI, in Spanish"></a>
-          <a class="shot thumb" href="img/ozum-workspace.webp"><img src="img/ozum-workspace.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_ozum_ws" alt="OZUM AI workspace with a chat next to the onboarding console"></a>
-        </div>
-        <div class="project-text">
+      <div class="work-grid">
+        <article class="work" data-win="ozum">
+          <div class="work-shot"><img src="img/ozum-onboarding.webp" width="1440" height="900" loading="lazy" alt="OZUM AI onboarding: the nine guided steps, in Spanish" data-i18n-attr="alt:alt_ozum_onb"></div>
           <p class="kicker" data-i18n="ozum_kicker">Client · AI adoption</p>
           <h3>Ozum</h3>
-          <p class="status live" data-i18n="ozum_status">Active client · first phase delivered</p>
-          <p class="summary" data-i18n="ozum_sum">Ozum is a corporate-events and incentive-travel company with more than 30 years
-            in Mexico and the US. I'm bringing AI into how they work: first their own AI platform,
-            then workflows built with the team, then teaching each person to build on it themselves.</p>
-          <ul>
-            <li data-i18n="ozum_1"><strong>Delivered:</strong> OZUM AI, a Spanish-first AI platform in Ozum's brand that installs with one double-click on Mac or Windows — nothing to set up beforehand.</li>
-            <li data-i18n="ozum_2"><strong>Delivered:</strong> a guided onboarding that takes a non-technical person from zero to a working AI engine, shared company memory and sign-in with roles (client, business, developer, admin), proven by from-zero install tests.</li>
-            <li data-i18n="ozum_new"><strong>Built since:</strong> a company dashboard that forms itself from the owner's onboarding, and shared memory that stays consistent when several people write at once — each employee's own memories private by default.</li>
-            <li data-i18n="ozum_3"><strong>Next:</strong> it is installed on the owner's computer; his onboarding comes next, then the first workflows built with him from real pains, then each employee creating their own.</li>
-            <li data-i18n="ozum_4">A 12-week adoption plan with two points where spending stops on its own if the platform isn't being used.</li>
-          </ul>
-          <p class="stack"><span>TypeScript</span><span>React</span><span>Claude Code · Codex</span><span>Supabase</span><span>Neo4j</span><span>MCP</span><span>Tailscale</span></p>
-          <a class="price-link" href="#p-adoption" data-i18n="ozum_price">AI adoption program <small>$4,700</small></a>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="gallery">
-          <a class="shot main" href="img/bosques-project.webp"><img src="img/bosques-project.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_bosques_p" alt="Espacio Bosques project page with milestone timeline and funding progress"></a>
-          <a class="shot thumb" href="img/bosques-dashboard.webp"><img src="img/bosques-dashboard.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_bosques_d" alt="Espacio Bosques dashboard listing community projects"></a>
-        </div>
-        <div class="project-text">
+          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="ozum_status">Active client · first phase delivered</span></p>
+          <p class="summary" data-i18n="ozum_sum_short">Bringing AI into a 30-year events and incentive-travel company: their own AI platform, workflows built with the team, then each person building their own.</p>
+          <button type="button" class="act act--go" data-win="ozum" data-i18n="open_case">Open the case</button>
+        </article>
+        <article class="work" data-win="bosques">
+          <div class="work-shot"><img src="img/bosques-project.webp" width="1440" height="900" loading="lazy" alt="Espacio Bosques project page with milestone timeline and funding progress" data-i18n-attr="alt:alt_bosques_p"></div>
           <p class="kicker" data-i18n="bosques_kicker">Civic fintech</p>
           <h3>Espacio Bosques</h3>
           <p class="status" data-i18n="bosques_status">Proof of concept · simulation mode</p>
-          <p class="summary" data-i18n="bosques_sum">A community-funding platform for a Mexico City neighborhood: residents propose,
-            fund and track local projects, and money is released milestone by milestone.</p>
-          <ul>
-            <li data-i18n="bosques_1">Claude drafts a full project blueprint — budget, milestones, timeline — from a plain-language idea.</li>
-            <li data-i18n="bosques_2">Providers upload evidence; Claude vision reads Mexican tax invoices (CFDI) and validates RFCs against the SAT blacklist.</li>
-            <li data-i18n="bosques_3">Community voting with thresholds that scale with the number of backers; bilingual EN/ES.</li>
-          </ul>
-          <p class="stack"><span>React</span><span>Tailwind</span><span>Express</span><span>Prisma</span><span>Supabase Auth</span><span>Claude API</span><span>Bitso sandbox</span></p>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="gallery">
-          <a class="shot main" href="img/mercado-run.webp"><img src="img/mercado-run.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_mercado" alt="Mercado Bot dashboard after a ten-round simulated run: portfolio chart, signals, trade log, Kelly calculator"></a>
-        </div>
-        <div class="project-text">
+          <p class="summary" data-i18n="bosques_sum">A community-funding platform for a Mexico City neighborhood: residents propose, fund and track local projects, and money is released milestone by milestone.</p>
+          <button type="button" class="act act--go" data-win="bosques" data-i18n="open_case">Open the case</button>
+        </article>
+        <article class="work" data-win="mercado">
+          <div class="work-shot"><img src="img/mercado-run.webp" width="1440" height="900" loading="lazy" alt="Mercado Bot dashboard after a ten-round simulated run" data-i18n-attr="alt:alt_mercado"></div>
           <p class="kicker" data-i18n="mercado_kicker">Quant research</p>
           <h3>Mercado Bot</h3>
           <p class="status" data-i18n="mercado_status">Prototype · simulation only</p>
-          <p class="summary" data-i18n="mercado_sum">A research bot for prediction markets that estimates probabilities with an LLM and
-            sizes positions the way a quant would — never with real money.</p>
-          <ul>
-            <li data-i18n="mercado_1">Five-stage pipeline: scan markets, research, predict, execute on paper, compound.</li>
-            <li data-i18n="mercado_2">Kelly-criterion position sizing; tracks win rate, Brier score and Sharpe ratio.</li>
-            <li data-i18n="mercado_3">Risk monitor with drawdown cap, API-cost cap and a kill switch; live trading locked.</li>
-          </ul>
-          <p class="stack"><span>Python</span><span>React</span><span>Recharts</span><span>Claude API</span></p>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="gallery">
-          <div class="shot-pair">
-            <a class="shot main" href="img/longevite-hero.webp"><img src="img/longevite-hero.webp" width="1440" height="900" loading="lazy" data-i18n-attr="alt:alt_long_hero" alt="Longevité Therapeutics website hero with video background"></a>
-            <a class="shot phone" href="img/longevite-m-hero.webp"><img src="img/longevite-m-hero.webp" width="390" height="844" loading="lazy" data-i18n-attr="alt:alt_long_phone" alt="Longevité website on a phone"></a>
-          </div>
-        </div>
-        <div class="project-text">
+          <p class="summary" data-i18n="mercado_sum">A research bot for prediction markets that estimates probabilities with an LLM and sizes positions the way a quant would — never with real money.</p>
+          <button type="button" class="act act--go" data-win="mercado" data-i18n="open_case">Open the case</button>
+        </article>
+        <article class="work" data-win="longevite">
+          <div class="work-shot"><img src="img/longevite-hero.webp" width="1440" height="900" loading="lazy" alt="Longevité Therapeutics website hero with video background" data-i18n-attr="alt:alt_long_hero"></div>
           <p class="kicker" data-i18n="long_kicker">Client website</p>
           <h3>Longevité Therapeutics</h3>
           <p class="status" data-i18n="long_status">Built · awaiting launch</p>
-          <p class="summary" data-i18n="long_sum">A bilingual website for a longevity and functional-medicine clinic in Mexico City,
-            rebuilt through several rounds of client review.</p>
-          <ul>
-            <li data-i18n="long_1">Video hero, expandable program cards, FAQ with cited sources, contact straight to WhatsApp.</li>
-            <li data-i18n="long_2">Vanilla HTML, CSS and JavaScript — modular, no build step, fast on a phone.</li>
-            <li data-i18n="long_3">Every review round verified by a Playwright suite of 35 automated checks.</li>
-          </ul>
-          <p class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Playwright</span></p>
-        </div>
-      </article>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2 data-i18n="also_h">Also building</h2>
+          <p class="summary" data-i18n="long_sum">A bilingual website for a longevity and functional-medicine clinic in Mexico City, rebuilt through several rounds of client review.</p>
+          <button type="button" class="act act--go" data-win="longevite" data-i18n="open_case">Open the case</button>
+        </article>
       </div>
+
       <div class="also">
-        <div>
+        <h3 class="also-h" data-i18n="also_h">Also building</h3>
+        <div class="also-row" data-win="clippmx">
+          <h4>ClippMX</h4>
+          <p data-i18n="also_clippmx">A marketplace for short-video campaigns, Mexico first: anyone posts a campaign, creators clip it and post it on their own accounts, and get paid per verified view by SPEI or PayPal — views counted only through each network's official API.</p>
+          <button type="button" class="act act--go" data-win="clippmx" data-i18n="open_demo">See the demo</button>
+        </div>
+        <div class="also-row">
           <h4>Platu</h4>
           <p data-i18n="also_platu">An AI language-learning agent that scores whole conversations — can you follow, contribute and repair — instead of counting mistakes.</p>
         </div>
-        <div>
-          <h4>ClippMX</h4>
-          <p data-i18n="also_clippmx">A marketplace for short-video campaigns, Mexico first: anyone posts a campaign, creators clip it and post it on their own accounts, and get paid per verified view by SPEI or PayPal — views counted only through each network's official API.</p>
+      </div>
+    </section>
+
+    <!-- ══ Automations ══ -->
+    <section id="automations" class="sec-frame">
+      <div class="sec-head">
+        <h2><svg class="ic" aria-hidden="true"><use href="#i-workflow"/></svg><span data-i18n="auto_h">Automations in production</span></h2>
+        <p class="note" data-i18n="auto_note">Systems that run every day on a schedule, with no one pressing a button — built, operated and monitored by me. The same pipelines can run for any business: content, brand safety, vendor research, analytics. Click a system or any of its steps.</p>
+      </div>
+
+      <article class="auto hue-news" data-win="news" data-reveal>
+        <div class="auto-text">
+          <h3><button type="button" data-win="news"><svg class="ic" aria-hidden="true"><use href="#i-film"/></svg><span data-i18n="news_name">AI newsroom</span></button></h3>
+          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="news_when">Running · every night at 19:00</span></p>
+          <p class="auto-line" data-i18n="news_line">Finds the day's AI news, turns each story into a short video and two carousels, and publishes them on Instagram and TikTok — up to 10 posts a day.</p>
+          <p class="facts"><span><b data-count="164">164</b> <span data-i18n="news_f1">posts in 16 days</span></span><span><b data-count="14259">14,259</b> <span data-i18n="f_views">views</span></span><span><b data-count="1013">1,013</b> <span data-i18n="f_best">on the best post</span></span></p>
+        </div>
+        <ol class="flow" id="flow-news" style="--n:6">
+          <li><button type="button" class="flow__step" data-win="news-1"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></span><span class="flow__label" data-i18n="news_s1">Pick the stories</span><span class="flow__sub" data-i18n="news_s1s">the day's news</span></button></li>
+          <li><button type="button" class="flow__step" data-win="news-2"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-pen"/></svg></span><span class="flow__label" data-i18n="news_s2">Write from the source</span><span class="flow__sub" data-i18n="news_s2s">fact gate</span></button></li>
+          <li><button type="button" class="flow__step" data-win="news-3"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-image"/></svg></span><span class="flow__label" data-i18n="news_s3">Images &amp; motion</span><span class="flow__sub" data-i18n="news_s3s">AI, on our own GPU</span></button></li>
+          <li><button type="button" class="flow__step" data-win="news-4"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg></span><span class="flow__label" data-i18n="news_s4">Voice &amp; listen-back</span><span class="flow__sub" data-i18n="news_s4s">every line checked</span></button></li>
+          <li><button type="button" class="flow__step" data-win="news-5"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-type"/></svg></span><span class="flow__label" data-i18n="news_s5">Edit &amp; captions</span><span class="flow__sub" data-i18n="news_s5s">video + carousels</span></button></li>
+          <li><button type="button" class="flow__step" data-win="news-6"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg></span><span class="flow__label" data-i18n="news_s6">Publish</span><span class="flow__sub" data-i18n="news_s6s">08:00–21:30</span></button></li>
+        </ol>
+      </article>
+
+      <article class="auto hue-clips" data-win="clips" data-reveal>
+        <div class="auto-text">
+          <h3><button type="button" data-win="clips"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><span data-i18n="clips_name">Creator clips with a brand-safety check</span></button></h3>
+          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="clips_when">Running · every afternoon, one run per campaign</span></p>
+          <p class="auto-line" data-i18n="clips_line">Turns a brand's long videos into short clips, checks each one against the brand's rules before it can post, publishes on TikTok, Instagram and YouTube, and files each live link for payment.</p>
+          <p class="facts"><span><b data-count="130">130</b> <span data-i18n="clips_f1">posts</span></span><span><b data-count="16294">16,294</b> <span data-i18n="f_views">views</span></span><span><b data-count="48">48</b> <span data-i18n="clips_f3">links filed automatically</span></span></p>
+        </div>
+        <ol class="flow" id="flow-clips" style="--n:6">
+          <li><button type="button" class="flow__step" data-win="clips-1"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></span><span class="flow__label" data-i18n="clips_s1">Find campaigns</span><span class="flow__sub" data-i18n="clips_s1s">daily scan</span></button></li>
+          <li><button type="button" class="flow__step" data-win="clips-2"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-scissors"/></svg></span><span class="flow__label" data-i18n="clips_s2">Cut the clips</span><span class="flow__sub" data-i18n="clips_s2s">strongest moments</span></button></li>
+          <li><button type="button" class="flow__step" data-win="clips-3"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-type"/></svg></span><span class="flow__label" data-i18n="clips_s3">Captions &amp; edit</span><span class="flow__sub" data-i18n="clips_s3s">to the brief</span></button></li>
+          <li><button type="button" class="flow__step" data-win="clips-4"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span><span class="flow__label" data-i18n="clips_s4">Brand-safety check</span><span class="flow__sub" data-i18n="clips_s4s">rules + platform</span></button></li>
+          <li><button type="button" class="flow__step" data-win="clips-5"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg></span><span class="flow__label" data-i18n="clips_s5">Publish</span><span class="flow__sub" data-i18n="clips_s5s">3 networks</span></button></li>
+          <li><button type="button" class="flow__step" data-win="clips-6"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-file-check"/></svg></span><span class="flow__label" data-i18n="clips_s6">File for payment</span><span class="flow__sub" data-i18n="clips_s6s">within 30 min</span></button></li>
+        </ol>
+      </article>
+
+      <article class="auto hue-models" data-win="models" data-reveal>
+        <div class="auto-text">
+          <h3><button type="button" data-win="models"><svg class="ic" aria-hidden="true"><use href="#i-flask"/></svg><span data-i18n="models_name">AI model intelligence</span></button></h3>
+          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="models_when">Running · every week, Tuesday and Thursday</span></p>
+          <p class="auto-line" data-i18n="models_line">Compares the AI models on the market — text, speech, vision, embeddings, voice, image, video, 3D — on public leaderboards and real prices, and recommends a switch only when a test proves it.</p>
+          <p class="facts"><span><b data-count="59">59</b> <span data-i18n="models_f1">models tracked</span></span><span><b data-count="8">8</b> <span data-i18n="models_f2">kinds of model</span></span><span><b>0</b> <span data-i18n="models_f3">numbers without a source</span></span></p>
+        </div>
+        <ol class="flow" id="flow-models" style="--n:6">
+          <li><button type="button" class="flow__step" data-win="models-1"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span><span class="flow__label" data-i18n="models_s1">Read the boards</span><span class="flow__sub" data-i18n="models_s1s">scores + prices</span></button></li>
+          <li><button type="button" class="flow__step" data-win="models-2"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-ban"/></svg></span><span class="flow__label" data-i18n="models_s2">Drop the unsourced</span><span class="flow__sub" data-i18n="models_s2s">no link, no number</span></button></li>
+          <li><button type="button" class="flow__step" data-win="models-3"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg></span><span class="flow__label" data-i18n="models_s3">Like with like</span><span class="flow__sub" data-i18n="models_s3s">within each type</span></button></li>
+          <li><button type="button" class="flow__step" data-win="models-4"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg></span><span class="flow__label" data-i18n="models_s4">Preview the switch</span><span class="flow__sub" data-i18n="models_s4s">cost + quality</span></button></li>
+          <li><button type="button" class="flow__step" data-win="models-5"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-flask"/></svg></span><span class="flow__label" data-i18n="models_s5">Blind test</span><span class="flow__sub" data-i18n="models_s5s">on real work</span></button></li>
+          <li><button type="button" class="flow__step" data-win="models-6"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-swap"/></svg></span><span class="flow__label" data-i18n="models_s6">Switch or keep</span><span class="flow__sub" data-i18n="models_s6s">one click back</span></button></li>
+        </ol>
+      </article>
+
+      <article class="auto hue-market" data-win="market" data-reveal>
+        <div class="auto-text">
+          <h3><button type="button" data-win="market"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg><span data-i18n="market_name">Market analytics &amp; paper trading</span></button></h3>
+          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="market_when">Running · every market day, hourly</span></p>
+          <p class="auto-line" data-i18n="market_line">Screens for stocks that fell but are expected to recover, runs rule-based paper portfolios at several risk levels, and sends a weekday morning brief. Code computes every number; the AI only writes the commentary.</p>
+          <p class="facts"><span><b>1 h</b> <span data-i18n="market_f1">between analyses in market hours</span></span><span><b>15 min</b> <span data-i18n="market_f2">between stop checks</span></span><span><b>0</b> <span data-i18n="market_f3">real orders — paper only</span></span></p>
+        </div>
+        <ol class="flow" id="flow-market" style="--n:6">
+          <li><button type="button" class="flow__step" data-win="market-1"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg></span><span class="flow__label" data-i18n="market_s1">Prices in</span><span class="flow__sub" data-i18n="market_s1s">open to close</span></button></li>
+          <li><button type="button" class="flow__step" data-win="market-2"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg></span><span class="flow__label" data-i18n="market_s2">Indicators in code</span><span class="flow__sub" data-i18n="market_s2s">never by the AI</span></button></li>
+          <li><button type="button" class="flow__step" data-win="market-3"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></span><span class="flow__label" data-i18n="market_s3">Screen the dips</span><span class="flow__sub" data-i18n="market_s3s">fell, still sound</span></button></li>
+          <li><button type="button" class="flow__step" data-win="market-4"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-up"/></svg></span><span class="flow__label" data-i18n="market_s4">Paper trades</span><span class="flow__sub" data-i18n="market_s4s">trailing stops</span></button></li>
+          <li><button type="button" class="flow__step" data-win="market-5"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-note"/></svg></span><span class="flow__label" data-i18n="market_s5">Commentary</span><span class="flow__sub" data-i18n="market_s5s">weekday brief</span></button></li>
+          <li><button type="button" class="flow__step" data-win="market-6"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-history"/></svg></span><span class="flow__label" data-i18n="market_s6">Weekly review</span><span class="flow__sub" data-i18n="market_s6s">backtested</span></button></li>
+        </ol>
+      </article>
+
+      <article class="auto hue-photos" data-win="photos" data-reveal>
+        <div class="auto-text">
+          <h3><button type="button" data-win="photos"><svg class="ic" aria-hidden="true"><use href="#i-image"/></svg><span data-i18n="photos_name">Photo-to-post studio</span></button></h3>
+          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="photos_when">Running · watches a shared folder every 5 minutes</span></p>
+          <p class="auto-line" data-i18n="photos_line">Drop a photo into a shared Drive folder and it comes back as a finished, on-brand post: colour-graded, retouched, laid out with text, reviewed against the original and scheduled.</p>
+        </div>
+        <ol class="flow" id="flow-photos" style="--n:6">
+          <li><button type="button" class="flow__step" data-win="photos-1"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-folder"/></svg></span><span class="flow__label" data-i18n="photos_s1">Drop in Drive</span><span class="flow__sub" data-i18n="photos_s1s">shared folder</span></button></li>
+          <li><button type="button" class="flow__step" data-win="photos-2"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg></span><span class="flow__label" data-i18n="photos_s2">Grade</span><span class="flow__sub" data-i18n="photos_s2s">light + colour</span></button></li>
+          <li><button type="button" class="flow__step" data-win="photos-3"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg></span><span class="flow__label" data-i18n="photos_s3">Retouch</span><span class="flow__sub" data-i18n="photos_s3s">when it helps</span></button></li>
+          <li><button type="button" class="flow__step" data-win="photos-4"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-layout"/></svg></span><span class="flow__label" data-i18n="photos_s4">Text &amp; layout</span><span class="flow__sub" data-i18n="photos_s4s">the brand's look</span></button></li>
+          <li><button type="button" class="flow__step" data-win="photos-5"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><span class="flow__label" data-i18n="photos_s5">Self-review</span><span class="flow__sub" data-i18n="photos_s5s">vs the original</span></button></li>
+          <li><button type="button" class="flow__step" data-win="photos-6"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg></span><span class="flow__label" data-i18n="photos_s6">Schedule</span><span class="flow__sub" data-i18n="photos_s6s">queued to post</span></button></li>
+        </ol>
+      </article>
+
+      <article class="auto hue-ops" data-win="ops" data-reveal>
+        <div class="auto-text">
+          <h3><button type="button" data-win="ops"><svg class="ic" aria-hidden="true"><use href="#i-wrench"/></svg><span data-i18n="ops_name">Self-healing operations</span></button></h3>
+          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="ops_when">Running · all the time</span></p>
+          <p class="auto-line" data-i18n="ops_line">The layer under everything above: a scheduler that catches up on runs missed while the machine was off, tells "did not run" from "failed", hands every failure a one-click AI fix, and picks up AI work interrupted mid-answer.</p>
+          <p class="facts"><span><b data-count="75" data-suffix="+">75+</b> <span data-i18n="ops_f1">scheduled tasks</span></span><span><b data-count="10">10</b> <span data-i18n="ops_f2">workflows on a clock</span></span></p>
+        </div>
+        <ol class="flow" id="flow-ops" style="--n:6">
+          <li><button type="button" class="flow__step" data-win="ops-1"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg></span><span class="flow__label" data-i18n="ops_s1">Schedule</span><span class="flow__sub" data-i18n="ops_s1s">clocks + watchers</span></button></li>
+          <li><button type="button" class="flow__step" data-win="ops-2"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg></span><span class="flow__label" data-i18n="ops_s2">Run</span><span class="flow__sub" data-i18n="ops_s2s">one heavy job at a time</span></button></li>
+          <li><button type="button" class="flow__step" data-win="ops-3"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg></span><span class="flow__label" data-i18n="ops_s3">Watch</span><span class="flow__sub" data-i18n="ops_s3s">watchdog</span></button></li>
+          <li><button type="button" class="flow__step" data-win="ops-4"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-history"/></svg></span><span class="flow__label" data-i18n="ops_s4">Catch up</span><span class="flow__sub" data-i18n="ops_s4s">missed runs</span></button></li>
+          <li><button type="button" class="flow__step" data-win="ops-5"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-wrench"/></svg></span><span class="flow__label" data-i18n="ops_s5">Fix with AI</span><span class="flow__sub" data-i18n="ops_s5s">one click</span></button></li>
+          <li><button type="button" class="flow__step" data-win="ops-6"><span class="flow__node"><svg class="ic" aria-hidden="true"><use href="#i-bell"/></svg></span><span class="flow__label" data-i18n="ops_s6">Report</span><span class="flow__sub" data-i18n="ops_s6s">only what matters</span></button></li>
+        </ol>
+      </article>
+
+      <div class="trackers">
+        <div class="trackers-head">
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-gauge"/></svg><span data-i18n="trk_h">Trackers</span></h3>
+          <p class="note" data-i18n="trk_note">Live dashboards that watch the numbers these systems produce.</p>
+        </div>
+        <div class="trk-grid">
+          <div class="trk hue-news" data-win="t-content">
+            <button type="button" class="trk-name" data-win="t-content"><span data-i18n="trk1_name">Content performance</span></button>
+            <ol class="spark-bars" aria-hidden="true"><li style="--v:.53"></li><li style="--v:.91"></li><li style="--v:.49"></li><li style="--v:.03"></li><li style="--v:.01"></li><li style="--v:.71"></li><li style="--v:1"></li><li style="--v:.19"></li><li style="--v:.39"></li><li style="--v:.05"></li><li style="--v:.08"></li><li style="--v:0"></li><li style="--v:0"></li><li style="--v:.18"></li><li style="--v:.12"></li></ol>
+            <p data-i18n="trk1_line">Views per post, day and platform, and the best hour to post — refreshed every 2 hours.</p>
+          </div>
+          <div class="trk hue-market" data-win="t-dips">
+            <button type="button" class="trk-name" data-win="t-dips"><span data-i18n="trk2_name">Market dips</span></button>
+            <p data-i18n="trk2_line">Stocks that fell but are expected to recover, with the numbers behind each — every hour the market is open.</p>
+          </div>
+          <div class="trk hue-ops" data-win="t-health">
+            <button type="button" class="trk-name" data-win="t-health"><span data-i18n="trk3_name">Workflow health</span></button>
+            <p data-i18n="trk3_line">Every scheduled run of the last 24 hours — done, failed or did not run — each failure with its fix button.</p>
+          </div>
+          <div class="trk hue-models" data-win="t-models">
+            <button type="button" class="trk-name" data-win="t-models"><span data-i18n="trk4_name">Model leaderboard</span></button>
+            <p data-i18n="trk4_line">Every kind of AI model compared within its kind, with what a switch would change where it is used.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="rates" class="section">
-      <div class="section-head">
-        <h2 data-i18n="rates_h">Rates</h2>
+    <!-- ══ Rates ══ -->
+    <section id="rates" class="sec-frame">
+      <div class="sec-head">
+        <h2><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg><span data-i18n="rates_h">Rates</span></h2>
         <p class="note" data-i18n="rates_note">For freelance and contract work, in USD. Every fixed price is my hour estimate times the hourly rate, so you can see the math. Scope is agreed in writing before any work starts.</p>
       </div>
-      <div class="rate-hero">
-        <div class="rate-big" data-rate="50">$50<span data-i18n="rate_hour">/ hour</span></div>
-        <p data-i18n="rate_p">Consulting, data engineering, AI integration, and anything that doesn't fit the program below.</p>
-      </div>
-      <div class="products">
-        <article class="product wide" id="p-adoption" data-hours="94" data-price="4700" data-monthly="750">
-          <div class="head">
-            <h4 data-i18n="prod_h">AI adoption program</h4>
-          </div>
+      <div class="rates-grid">
+        <div class="rate-hero">
+          <div class="rate-big">$50<span data-i18n="rate_hour">/ hour</span></div>
+          <p data-i18n="rate_p">Consulting, data engineering, AI integration and automation, and anything that doesn't fit the program.</p>
+        </div>
+        <div class="product" id="p-adoption">
+          <h4 data-i18n="prod_h">AI adoption program</h4>
           <p class="desc" data-i18n="prod_desc">For a company bringing AI into how it works: your own AI platform installed, the first workflows built with your team, and everyone taught to build their own. Twelve weeks, with two points where spending stops if it isn't being used.</p>
-          <div class="price-block">
-            <div class="cost"><span class="amount">$4,700</span><span class="hours" data-i18n="prod_hours">94 h · 12 weeks</span></div>
-            <p class="extra" data-i18n="prod_extra">Then $750/month for up to 10 people: platform, updates and 3 hours of work a month.</p>
-          </div>
-        </article>
+          <p class="cost"><span class="amount">$4,700</span><span class="hours" data-i18n="prod_hours">94 h · 12 weeks</span></p>
+          <p class="extra" data-i18n="prod_extra">Then $750/month for up to 10 people: platform, updates and 3 hours of work a month.</p>
+          <button type="button" class="act act--go" data-win="ozum" data-i18n="prod_case">See it at Ozum</button>
+        </div>
       </div>
       <p class="rates-foot" data-i18n="rates_foot">AI and hosting costs (model subscriptions, databases) are paid by you directly to each provider, with no margin added.</p>
     </section>
 
-    <section id="experience" class="section">
-      <div class="section-head">
-        <h2 data-i18n="exp_h">Experience</h2>
+    <!-- ══ Experience ══ -->
+    <section id="experience" class="sec-frame">
+      <div class="sec-head">
+        <h2><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg><span data-i18n="exp_h">Experience</span></h2>
       </div>
       <ol class="timeline">
-        <li>
+        <li data-tech="Snowflake|SQL|Python|ETL / ELT|Data lineage">
           <div class="when" data-i18n="exp_1_when">Oct 2025 — Present</div>
           <div>
             <h4>Data Engineer · MORSCO — Reece USA</h4>
             <p data-i18n="exp_1">Own ingestion pipelines into the corporate Snowflake warehouse end to end, from source contract to production. Built a resilient API-to-Snowflake pattern reused across integrations, and turn vague data-quality tickets into named root causes.</p>
           </div>
         </li>
-        <li>
+        <li data-tech="OpenAI API|Agent design">
           <div class="when" data-i18n="exp_2_when">Mar 2025 — Present</div>
           <div>
             <h4 data-i18n="exp_2_h">ML &amp; AI Consultant · Outlier AI, LATAM Coders</h4>
             <p data-i18n="exp_2">Evaluate and correct frontier AI models for clients including Tesla and OpenAI: prompting, analysis, object detection and code reliability.</p>
           </div>
         </li>
-        <li>
+        <li data-tech="Snowflake|SQL|Python|ETL / ELT">
           <div class="when" data-i18n="exp_3_when">Nov 2023 — Apr 2025</div>
           <div>
             <h4 data-i18n="exp_3_h">Senior Technology Consultant · EY, AI &amp; Tech</h4>
             <p data-i18n="exp_3">Co-led Exxon Mobil's multi-phase SAP-to-Snowflake migration; built Python validation tooling for QA and reconciled emissions metrics under regulatory scrutiny.</p>
           </div>
         </li>
-        <li>
+        <li data-tech="Python|scikit-learn|pandas / numpy|BERT|OpenAI API">
           <div class="when" data-i18n="exp_4_when">Dec 2021 — Nov 2023</div>
           <div>
             <h4 data-i18n="exp_4_h">Senior Data Scientist · Oracle, TINNO</h4>
@@ -261,9 +372,11 @@
       </ol>
     </section>
 
-    <section id="skills" class="section">
-      <div class="section-head">
-        <h2 data-i18n="skills_h">Skills</h2>
+    <!-- ══ Skills ══ -->
+    <section id="skills" class="sec-frame">
+      <div class="sec-head">
+        <h2><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg><span data-i18n="skills_h">Skills</span></h2>
+        <p class="note" data-i18n="skills_note">Click a technology to see where I've used it.</p>
       </div>
       <div class="skills">
         <div>
@@ -272,11 +385,15 @@
         </div>
         <div>
           <h4>AI / LLM</h4>
-          <p class="stack"><span>Claude</span><span>OpenAI API</span><span>Agent design</span><span>MCP servers</span><span>RAG</span><span>pgvector</span><span>Neo4j</span><span>BERT</span></p>
+          <p class="stack"><span>Claude</span><span>OpenAI API</span><span>Agent design</span><span>MCP</span><span>RAG</span><span>pgvector</span><span>Neo4j</span><span>BERT</span></p>
         </div>
         <div>
           <h4 data-i18n="skills_eng">Engineering</h4>
           <p class="stack"><span>TypeScript</span><span>React</span><span>Node.js</span><span>Supabase</span><span>Docker</span><span>Playwright</span><span>Azure DevOps</span></p>
+        </div>
+        <div>
+          <h4 data-i18n="skills_media">Automation &amp; media</h4>
+          <p class="stack"><span>Remotion</span><span>FFmpeg</span><span>Whisper</span><span>FLUX</span><span>Buffer API</span><span>Cloudflare R2</span></p>
         </div>
       </div>
       <div class="edu">
@@ -286,13 +403,14 @@
       </div>
     </section>
 
-    <section id="contact" class="section contact">
+    <!-- ══ Contact ══ -->
+    <section id="contact" class="contact">
       <h2 data-i18n="contact_h">Let's talk</h2>
-      <p data-i18n="contact_p">Hiring for data or AI engineering, or want a walkthrough of any project above? Most of the code lives in private repositories — I'm happy to walk through it on a call.</p>
+      <p data-i18n="contact_p">Hiring for data or AI engineering, want one of these automations running for your business, or a walkthrough of any project above? Most of the code lives in private repositories — I'm happy to walk through it on a call.</p>
       <div class="cta">
         <a class="btn btn--primary" href="mailto:salasoliva27@gmail.com">salasoliva27@gmail.com</a>
-        <a class="btn" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" data-i18n-attr="href:wa_link" target="_blank" rel="noopener">WhatsApp +52 55 2984 5788</a>
-        <a class="btn" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
+        <a class="act" href="https://wa.me/525529845788?text=Hi%20Alejandro%2C%20I%20saw%20your%20portfolio" data-i18n-attr="href:wa_link" target="_blank" rel="noopener">WhatsApp +52 55 2984 5788</a>
+        <a class="act" href="https://www.linkedin.com/in/salasoliva27" rel="noopener">LinkedIn</a>
       </div>
     </section>
   </main>
@@ -301,8 +419,328 @@
     <p>&copy; 2026 Alejandro Salas Oliva</p>
   </footer>
 
+  <!-- ══ Window contents. Hidden here; a click copies one into a window (site.js). ══ -->
+  <div class="win-sources" hidden>
+
+    <div class="win-src" id="w-janus">
+      <p class="w-kicker" data-i18n="janus_kicker">Flagship · AI platform</p>
+      <h2>Janus IA</h2>
+      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="janus_status">In production · used every day</span></p>
+      <p class="w-lede" data-i18n="janus_sum">An AI platform that runs day-to-day work as live dashboards with a chat always beside them — and the engine the automations below run on. Anything on screen is one question away, and the chat can act, not just answer.</p>
+      <div class="w-gallery">
+        <a class="shot" href="img/janus-home.webp"><img src="img/janus-home.webp" width="1440" height="900" loading="lazy" alt="Janus IA home: a sample conversation in the chat on the left, next to the daily dashboard — schedule, inbox, training, markets and job leads (personal details blurred)" data-i18n-attr="alt:alt_janus_home"></a>
+        <a class="shot" href="img/janus-apps.webp"><img src="img/janus-apps.webp" width="1440" height="900" loading="lazy" alt="Janus IA apps menu — work, personal and automation apps — open over the Gym app's training plan and session log" data-i18n-attr="alt:alt_janus_apps"></a>
+      </div>
+      <h3 data-i18n="w_what">What it does</h3>
+      <ul>
+        <li data-i18n="janus_1">A home dashboard for the day: schedule, inbox, training, market moves and leads, each refreshing on its own.</li>
+        <li data-i18n="janus_2">Apps for each part of the work and the day: every project's progress, workflows that run on a clock, finance, a gym log and a searchable chat history.</li>
+        <li data-i18n="janus_3">The chat can act, not just answer: it reads mail, logs a workout, fixes a failing workflow or builds a feature, and remembers across conversations.</li>
+        <li data-i18n="janus_4">Under the hood, AI agents that share one memory (Supabase + pgvector, a Neo4j graph), with Claude Code and Codex as interchangeable engines — on desktop or phone.</li>
+        <li data-i18n="janus_5">Each question goes to the model its difficulty calls for — a fast one, an everyday one or a deep one — and every change runs as a loop with checks it has to pass before it calls itself done.</li>
+        <li data-i18n="janus_6">It runs the six automations in production on this page, every day.</li>
+      </ul>
+      <p class="stack"><span>TypeScript</span><span>React</span><span>Express</span><span>WebSocket</span><span>MCP</span><span>Supabase</span><span>pgvector</span><span>Neo4j</span><span>Claude</span><span>Playwright</span></p>
+      <p class="w-actions"><button type="button" class="act act--go" data-goto="#automations" data-i18n="janus_goto">See the automations it runs</button></p>
+    </div>
+
+    <div class="win-src" id="w-ozum">
+      <p class="w-kicker" data-i18n="ozum_kicker">Client · AI adoption</p>
+      <h2>Ozum</h2>
+      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="ozum_status">Active client · first phase delivered</span></p>
+      <p class="w-lede" data-i18n="ozum_sum">Ozum is a corporate-events and incentive-travel company with more than 30 years in Mexico and the US. I'm bringing AI into how they work: first their own AI platform, then workflows built with the team, then teaching each person to build on it themselves.</p>
+      <div class="w-gallery">
+        <a class="shot" href="img/ozum-onboarding.webp"><img src="img/ozum-onboarding.webp" width="1440" height="900" loading="lazy" alt="OZUM AI onboarding: the nine guided steps from connecting an engine to a working company AI, in Spanish" data-i18n-attr="alt:alt_ozum_onb"></a>
+        <a class="shot" href="img/ozum-workspace.webp"><img src="img/ozum-workspace.webp" width="1440" height="900" loading="lazy" alt="OZUM AI workspace with a chat next to the onboarding console" data-i18n-attr="alt:alt_ozum_ws"></a>
+      </div>
+      <h3 data-i18n="w_what">What it does</h3>
+      <ul>
+        <li data-i18n="ozum_1"><strong>Delivered:</strong> OZUM AI, a Spanish-first AI platform in Ozum's brand that installs with one double-click on Mac or Windows — nothing to set up beforehand.</li>
+        <li data-i18n="ozum_2"><strong>Delivered:</strong> a guided onboarding that takes a non-technical person from zero to a working AI engine, shared company memory and sign-in with roles (client, business, developer, admin), proven by from-zero install tests.</li>
+        <li data-i18n="ozum_new"><strong>Built since:</strong> a company dashboard that forms itself from the owner's onboarding, and shared memory that stays consistent when several people write at once — each employee's own memories private by default.</li>
+        <li data-i18n="ozum_3"><strong>Next:</strong> it is installed on the owner's computer; his onboarding comes next, then the first workflows built with him from real pains, then each employee creating their own.</li>
+        <li data-i18n="ozum_4">A 12-week adoption plan with two points where spending stops on its own if the platform isn't being used.</li>
+      </ul>
+      <p class="stack"><span>TypeScript</span><span>React</span><span>Claude</span><span>Supabase</span><span>Neo4j</span><span>MCP</span><span>Tailscale</span></p>
+      <p class="w-actions"><button type="button" class="act act--go" data-goto="#rates" data-i18n="ozum_price">The AI adoption program · $4,700</button></p>
+    </div>
+
+    <div class="win-src" id="w-bosques">
+      <p class="w-kicker" data-i18n="bosques_kicker">Civic fintech</p>
+      <h2>Espacio Bosques</h2>
+      <p class="status" data-i18n="bosques_status">Proof of concept · simulation mode</p>
+      <p class="w-lede" data-i18n="bosques_sum">A community-funding platform for a Mexico City neighborhood: residents propose, fund and track local projects, and money is released milestone by milestone.</p>
+      <div class="w-gallery">
+        <a class="shot" href="img/bosques-project.webp"><img src="img/bosques-project.webp" width="1440" height="900" loading="lazy" alt="Espacio Bosques project page with milestone timeline and funding progress" data-i18n-attr="alt:alt_bosques_p"></a>
+        <a class="shot" href="img/bosques-dashboard.webp"><img src="img/bosques-dashboard.webp" width="1440" height="900" loading="lazy" alt="Espacio Bosques dashboard listing community projects" data-i18n-attr="alt:alt_bosques_d"></a>
+      </div>
+      <h3 data-i18n="w_what">What it does</h3>
+      <ul>
+        <li data-i18n="bosques_1">Claude drafts a full project blueprint — budget, milestones, timeline — from a plain-language idea.</li>
+        <li data-i18n="bosques_2">Providers upload evidence; Claude vision reads Mexican tax invoices (CFDI) and validates RFCs against the SAT blacklist.</li>
+        <li data-i18n="bosques_3">Community voting with thresholds that scale with the number of backers; bilingual EN/ES.</li>
+      </ul>
+      <p class="stack"><span>React</span><span>Tailwind</span><span>Express</span><span>Prisma</span><span>Supabase</span><span>Claude</span><span>Bitso sandbox</span></p>
+    </div>
+
+    <div class="win-src" id="w-mercado">
+      <p class="w-kicker" data-i18n="mercado_kicker">Quant research</p>
+      <h2>Mercado Bot</h2>
+      <p class="status" data-i18n="mercado_status">Prototype · simulation only</p>
+      <p class="w-lede" data-i18n="mercado_sum">A research bot for prediction markets that estimates probabilities with an LLM and sizes positions the way a quant would — never with real money.</p>
+      <div class="w-gallery w-gallery--one">
+        <a class="shot" href="img/mercado-run.webp"><img src="img/mercado-run.webp" width="1440" height="900" loading="lazy" alt="Mercado Bot dashboard after a ten-round simulated run: portfolio chart, signals, trade log, Kelly calculator" data-i18n-attr="alt:alt_mercado"></a>
+      </div>
+      <h3 data-i18n="w_what">What it does</h3>
+      <ul>
+        <li data-i18n="mercado_1">Five-stage pipeline: scan markets, research, predict, execute on paper, compound.</li>
+        <li data-i18n="mercado_2">Kelly-criterion position sizing; tracks win rate, Brier score and Sharpe ratio.</li>
+        <li data-i18n="mercado_3">Risk monitor with drawdown cap, API-cost cap and a kill switch; live trading locked.</li>
+      </ul>
+      <p class="stack"><span>Python</span><span>React</span><span>Recharts</span><span>Claude</span></p>
+    </div>
+
+    <div class="win-src" id="w-longevite">
+      <p class="w-kicker" data-i18n="long_kicker">Client website</p>
+      <h2>Longevité Therapeutics</h2>
+      <p class="status" data-i18n="long_status">Built · awaiting launch</p>
+      <p class="w-lede" data-i18n="long_sum">A bilingual website for a longevity and functional-medicine clinic in Mexico City, rebuilt through several rounds of client review.</p>
+      <div class="w-gallery w-gallery--phone">
+        <a class="shot" href="img/longevite-hero.webp"><img src="img/longevite-hero.webp" width="1440" height="900" loading="lazy" alt="Longevité Therapeutics website hero with video background" data-i18n-attr="alt:alt_long_hero"></a>
+        <a class="shot" href="img/longevite-m-hero.webp"><img src="img/longevite-m-hero.webp" width="390" height="844" loading="lazy" alt="Longevité website on a phone" data-i18n-attr="alt:alt_long_phone"></a>
+      </div>
+      <h3 data-i18n="w_what">What it does</h3>
+      <ul>
+        <li data-i18n="long_1">Video hero, expandable program cards, FAQ with cited sources, contact straight to WhatsApp.</li>
+        <li data-i18n="long_2">Vanilla HTML, CSS and JavaScript — modular, no build step, fast on a phone.</li>
+        <li data-i18n="long_3">Every review round verified by a Playwright suite of 35 automated checks.</li>
+      </ul>
+      <p class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Playwright</span></p>
+    </div>
+
+    <div class="win-src" id="w-clippmx">
+      <p class="w-kicker" data-i18n="clippmx_kicker">Marketplace · own product</p>
+      <h2>ClippMX</h2>
+      <p class="status" data-i18n="clippmx_status">Working demo · networks and payments simulated</p>
+      <p class="w-lede" data-i18n="also_clippmx">A marketplace for short-video campaigns, Mexico first: anyone posts a campaign, creators clip it and post it on their own accounts, and get paid per verified view by SPEI or PayPal — views counted only through each network's official API.</p>
+      <div class="w-gallery">
+        <a class="shot" href="img/clippmx-home.webp"><img src="img/clippmx-home.webp" width="1280" height="800" loading="lazy" alt="ClippMX home in the demo: campaigns paying per 1,000 verified views, in pesos" data-i18n-attr="alt:alt_clippmx_home"></a>
+        <a class="shot" href="img/clippmx-lab.webp"><img src="img/clippmx-lab.webp" width="1280" height="1097" loading="lazy" alt="ClippMX Lab in the demo: each Autopilot workflow drawn as its steps, from video to submission" data-i18n-attr="alt:alt_clippmx_lab"></a>
+      </div>
+      <h3 data-i18n="w_what">What it does</h3>
+      <ul>
+        <li data-i18n="clippmx_1">Campaign owners fund a campaign in pesos and pay only for verified views; creators clip it and post it on their own accounts.</li>
+        <li data-i18n="clippmx_2">Views come only through each network's official access, and every clip is checked against the owner's rules before it counts. A person decides appeals.</li>
+        <li data-i18n="clippmx_3">Autopilot, optional per campaign: cuts, captions, checks and posts the clips. TikTok and X always ask the creator to approve each post.</li>
+        <li data-i18n="clippmx_4">SPEI and PayPal both ways for everyone, a REST API and an MCP server so AI agents can work with it, Spanish and English.</li>
+      </ul>
+      <p class="w-note" data-i18n="clippmx_note">Screens from the demo, with test data.</p>
+      <p class="stack"><span>Node.js</span><span>Postgres</span><span>Supabase</span><span>MCP</span><span>Playwright</span><span>Remotion</span></p>
+    </div>
+
+    <!-- Automations -->
+    <div class="win-src" id="w-news" data-hue="news">
+      <p class="w-kicker" data-i18n="w_auto_kicker">Automation · in production</p>
+      <h2 data-i18n="news_name">AI newsroom</h2>
+      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="news_when">Running · every night at 19:00</span></p>
+      <p class="w-lede" data-i18n="news_biz">A newsroom that runs itself. Every night it reads the day's news, picks the stories worth telling and produces finished short videos and carousels — script, images, motion, voice, captions and music — then schedules them across the next day. Point it at a company's own news, product updates or blog and it becomes a daily video channel with no production team.</p>
+      <div class="w-flow" data-flow="news"></div>
+      <p class="w-hint" data-i18n="w_step_hint">Click a step to see what happens in it.</p>
+      <dl class="w-stats">
+        <div><dt data-i18n="news_f1">posts in 16 days</dt><dd>164</dd></div>
+        <div><dt data-i18n="f_views">views</dt><dd>14,259</dd></div>
+        <div><dt data-i18n="f_best">on the best post</dt><dd>1,013</dd></div>
+        <div><dt data-i18n="news_f4">posts a day, at most</dt><dd>10</dd></div>
+      </dl>
+      <p class="w-note" data-i18n="news_note">October 14–29, 2026. Most of the views come from TikTok.</p>
+      <h3 data-i18n="news_acc_h">How it stays accurate</h3>
+      <p data-i18n="news_acc">The script is written from the article alone. A gate refuses any quote or number that isn't in the source, and a speech-to-text check listens to every line of the voice-over before anything is published.</p>
+      <div class="w-gallery w-gallery--reels">
+        <a class="shot" href="img/news-2.webp"><img src="img/news-2.webp" width="540" height="960" loading="lazy" alt="Frame from a published AI-news video: Google announced Genie 4" data-i18n-attr="alt:alt_news_1"></a>
+        <a class="shot" href="img/news-9.webp"><img src="img/news-9.webp" width="540" height="960" loading="lazy" alt="Frame from the same video: a generated mountain world on a screen, with word-by-word captions" data-i18n-attr="alt:alt_news_2"></a>
+        <a class="shot" href="img/news-25.webp"><img src="img/news-25.webp" width="540" height="960" loading="lazy" alt="Frame from the same video: a viewer facing a generated coastline" data-i18n-attr="alt:alt_news_3"></a>
+      </div>
+      <p class="stack"><span>Claude</span><span>FLUX</span><span>LTX-Video</span><span>Whisper</span><span>Remotion</span><span>FFmpeg</span><span>Buffer API</span><span>Cloudflare R2</span></p>
+      <p class="w-actions"><button type="button" class="act act--go" data-win="t-content" data-i18n="news_trk">Open its tracker</button></p>
+    </div>
+
+    <div class="win-src" id="w-clips" data-hue="clips">
+      <p class="w-kicker" data-i18n="w_auto_kicker">Automation · in production</p>
+      <h2 data-i18n="clips_name">Creator clips with a brand-safety check</h2>
+      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="clips_when">Running · every afternoon, one run per campaign</span></p>
+      <p class="w-lede" data-i18n="clips_biz">Brands pay creators per view to repost their content as short clips. This runs that work end to end — and the part a brand cares about most is the check: every clip is reviewed against the campaign's own rules and each platform's safety rules before it can be posted.</p>
+      <div class="w-flow" data-flow="clips"></div>
+      <p class="w-hint" data-i18n="w_step_hint">Click a step to see what happens in it.</p>
+      <dl class="w-stats">
+        <div><dt data-i18n="clips_f1">posts</dt><dd>130</dd></div>
+        <div><dt data-i18n="f_views">views</dt><dd>16,294</dd></div>
+        <div><dt data-i18n="clips_f3">links filed automatically</dt><dd>48</dd></div>
+        <div><dt data-i18n="clips_f4">bad clips blocked in testing</dt><dd>14/15</dd></div>
+      </dl>
+      <h3 data-i18n="clips_test_h">The check, tested</h3>
+      <p data-i18n="clips_test">On a labelled test set it never let a bad clip through: 14 of 15 were blocked outright and the 15th was sent to a person for review. It errs on the strict side — 1 of 5 good clips was held back for a second look.</p>
+      <p class="stack"><span>Claude</span><span>Whisper</span><span>FFmpeg</span><span>Playwright</span><span>Buffer API</span><span>Cloudflare R2</span><span>Docker</span></p>
+    </div>
+
+    <div class="win-src" id="w-models" data-hue="models">
+      <p class="w-kicker" data-i18n="w_auto_kicker">Automation · in production</p>
+      <h2 data-i18n="models_name">AI model intelligence</h2>
+      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="models_when">Running · every week, Tuesday and Thursday</span></p>
+      <p class="w-lede" data-i18n="models_biz">Choosing AI vendors goes stale in weeks. This keeps the choice current: every week it reads the public leaderboards and pricing pages for each kind of model, compares only like with like, and shows what a switch would change in cost and quality wherever the model is used. Nothing changes on a leaderboard alone — a candidate has to win a test on real work first.</p>
+      <div class="w-flow" data-flow="models"></div>
+      <p class="w-hint" data-i18n="w_step_hint">Click a step to see what happens in it.</p>
+      <dl class="w-stats">
+        <div><dt data-i18n="models_f1">models tracked</dt><dd>59</dd></div>
+        <div><dt data-i18n="models_f2">kinds of model</dt><dd>8</dd></div>
+        <div><dt data-i18n="models_f3">numbers without a source</dt><dd>0</dd></div>
+      </dl>
+      <h3 data-i18n="models_ex_h">A real decision it made</h3>
+      <p data-i18n="models_ex">Speech-to-text, October 2026: a newer model tied the one in use in English (2.02% vs 2.25% word errors) and clearly lost in Spanish (10.78% vs 5.99%). The current model stayed, and the newer one is installed one click away.</p>
+      <p class="stack"><span>Claude</span><span>Python</span><span>Node.js</span><span>Whisper</span></p>
+      <p class="w-actions"><button type="button" class="act act--go" data-win="t-models" data-i18n="models_trk">Open its tracker</button></p>
+    </div>
+
+    <div class="win-src" id="w-market" data-hue="market">
+      <p class="w-kicker" data-i18n="w_auto_kicker">Automation · in production</p>
+      <h2 data-i18n="market_name">Market analytics &amp; paper trading</h2>
+      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="market_when">Running · every market day, hourly</span></p>
+      <p class="w-lede" data-i18n="market_biz">A research desk that never sleeps and never invents a number. Prices come in through the day; drawdowns, moving averages and RSI are computed in code; a screen flags stocks that fell hard but still look sound; paper portfolios trade by fixed rules with trailing stops; and the model only writes the plain-language commentary on top.</p>
+      <div class="w-flow" data-flow="market"></div>
+      <p class="w-hint" data-i18n="w_step_hint">Click a step to see what happens in it.</p>
+      <dl class="w-stats">
+        <div><dt data-i18n="market_f1">between analyses in market hours</dt><dd>1 h</dd></div>
+        <div><dt data-i18n="market_f2">between stop checks</dt><dd>15 min</dd></div>
+        <div><dt data-i18n="market_f3">real orders — paper only</dt><dd>0</dd></div>
+      </dl>
+      <p class="w-note" data-i18n="market_note">Paper money only: no broker keys and no real orders.</p>
+      <p class="stack"><span>TypeScript</span><span>Node.js</span><span>Claude</span></p>
+      <p class="w-actions"><button type="button" class="act act--go" data-win="t-dips" data-i18n="market_trk">Open its tracker</button></p>
+    </div>
+
+    <div class="win-src" id="w-photos" data-hue="photos">
+      <p class="w-kicker" data-i18n="w_auto_kicker">Automation · in production</p>
+      <h2 data-i18n="photos_name">Photo-to-post studio</h2>
+      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="photos_when">Running · watches a shared folder every 5 minutes</span></p>
+      <p class="w-lede" data-i18n="photos_biz">For a business that has photos but no designer: the team drops pictures into one folder and each comes back as a post in the brand's look. Every edit is compared with the original on a review sheet before it's queued, so nothing goes out looking worse than what came in.</p>
+      <div class="w-flow" data-flow="photos"></div>
+      <p class="w-hint" data-i18n="w_step_hint">Click a step to see what happens in it.</p>
+      <p class="stack"><span>Node.js</span><span>Remotion</span><span>FLUX</span><span>Buffer API</span></p>
+    </div>
+
+    <div class="win-src" id="w-ops" data-hue="ops">
+      <p class="w-kicker" data-i18n="w_auto_kicker">Automation · in production</p>
+      <h2 data-i18n="ops_name">Self-healing operations</h2>
+      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="ops_when">Running · all the time</span></p>
+      <p class="w-lede" data-i18n="ops_biz">Automations are only worth something if they run when nobody is watching. This is the scheduler and watchdog under every system on this page. A run that couldn't happen — the machine asleep, no internet — shows as "did not run", not as a failure, and goes as soon as it can. A real failure arrives as a card saying what broke and where, with a "Fix with AI" button that hands that exact error to an AI engineer.</p>
+      <div class="w-flow" data-flow="ops"></div>
+      <p class="w-hint" data-i18n="w_step_hint">Click a step to see what happens in it.</p>
+      <dl class="w-stats">
+        <div><dt data-i18n="ops_f1">scheduled tasks</dt><dd>75+</dd></div>
+        <div><dt data-i18n="ops_f2">workflows on a clock</dt><dd>10</dd></div>
+      </dl>
+      <p class="stack"><span>TypeScript</span><span>Node.js</span><span>Express</span><span>WebSocket</span><span>Claude</span></p>
+      <p class="w-actions"><button type="button" class="act act--go" data-win="t-health" data-i18n="ops_trk">Open its tracker</button></p>
+    </div>
+
+    <!-- Steps: the title and the step's place come from the flow on the page. -->
+    <div class="win-src" id="w-news-1"><p data-i18n="news_d1">Each night it reads the day's AI news and picks the stories worth a video. Crime, deaths and politics are left out, and links already used are skipped.</p></div>
+    <div class="win-src" id="w-news-2"><p data-i18n="news_d2">The script — about 35 seconds — is written from the article alone. A fact gate refuses any quote or figure that isn't in the source text.</p></div>
+    <div class="win-src" id="w-news-3"><p data-i18n="news_d3">Every scene gets an AI-generated image, animated into a short clip, plus real logos where the story names a company. It all runs on our own GPU, so a video has no per-render cost.</p></div>
+    <div class="win-src" id="w-news-4"><p data-i18n="news_d4">A cloned voice reads the script. Speech-to-text then listens to every line and compares it with the script; a line that doesn't match is flagged and redone before the video moves on.</p></div>
+    <div class="win-src" id="w-news-5"><p data-i18n="news_d5">Scenes, word-by-word captions, music and sound effects are put together into a vertical video. Two photo carousels per story are designed alongside it.</p></div>
+    <div class="win-src" id="w-news-6"><p data-i18n="news_d6">Everything is scheduled across the next day, from 08:00 to 21:30, with captions that explain the story. Views are collected every two hours and feed the content tracker.</p></div>
+
+    <div class="win-src" id="w-clips-1"><p data-i18n="clips_d1">A daily scan reads the open campaigns — their budgets, rules and source videos — and picks the ones worth clipping.</p></div>
+    <div class="win-src" id="w-clips-2"><p data-i18n="clips_d2">The source videos are transcribed and cut into short vertical clips at their strongest moments.</p></div>
+    <div class="win-src" id="w-clips-3"><p data-i18n="clips_d3">Each clip gets captions, a hook and the disclosure the campaign asks for, following the brief's own words.</p></div>
+    <div class="win-src" id="w-clips-4"><p data-i18n="clips_d4">Frames and transcript are checked line by line against the campaign's rules and each platform's safety rules. A missing tag is fixed; anything doubtful is held, never posted.</p></div>
+    <div class="win-src" id="w-clips-5"><p data-i18n="clips_d5">Approved clips are scheduled on TikTok, Instagram and YouTube.</p></div>
+    <div class="win-src" id="w-clips-6"><p data-i18n="clips_d6">As each post goes live, its link is submitted to the campaign within 30 minutes, so its views start counting toward payment.</p></div>
+
+    <div class="win-src" id="w-models-1"><p data-i18n="models_d1">Every week it reads the public leaderboards for each kind of model — LMArena, Artificial Analysis, MTEB, Open ASR and others — and the makers' own pricing pages.</p></div>
+    <div class="win-src" id="w-models-2"><p data-i18n="models_d2">A price or score without the page it was read on is dropped. Nothing is guessed or carried over from memory.</p></div>
+    <div class="win-src" id="w-models-3"><p data-i18n="models_d3">Models are ranked only against others of their own kind, on the same board, so a speech model is never weighed against a chatbot.</p></div>
+    <div class="win-src" id="w-models-4"><p data-i18n="models_d4">For each place a model is used, it previews what a switch would change: price, quality, and whether it can run on our own hardware.</p></div>
+    <div class="win-src" id="w-models-5"><p data-i18n="models_d5">A candidate runs on real work next to the model in use and is scored on the same material.</p></div>
+    <div class="win-src" id="w-models-6"><p data-i18n="models_d6">Only a clear win is switched in, and every switch keeps the previous setting one click away.</p></div>
+
+    <div class="win-src" id="w-market-1"><p data-i18n="market_d1">The day's first analysis runs before the US market opens, then every hour while it trades, and once more after the close.</p></div>
+    <div class="win-src" id="w-market-2"><p data-i18n="market_d2">Drawdowns, moving averages and RSI are computed in code from the raw prices. The AI never produces a figure.</p></div>
+    <div class="win-src" id="w-market-3"><p data-i18n="market_d3">Stocks that fell hard but still look sound are flagged on the dashboard, refreshed every hour the market is open.</p></div>
+    <div class="win-src" id="w-market-4"><p data-i18n="market_d4">Paper portfolios at different risk levels buy and sell by fixed momentum rules, with trailing stops checked every 15 minutes.</p></div>
+    <div class="win-src" id="w-market-5"><p data-i18n="market_d5">The AI reads the computed numbers and writes a short plain-language brief, sent every weekday morning.</p></div>
+    <div class="win-src" id="w-market-6"><p data-i18n="market_d6">Every Saturday a review may change one setting — and keeps the change only if it wins the 3-, 6- and 12-month backtests.</p></div>
+
+    <div class="win-src" id="w-photos-1"><p data-i18n="photos_d1">The team drops photos into one shared Google Drive folder. It is checked every 5 minutes; nothing else to learn.</p></div>
+    <div class="win-src" id="w-photos-2"><p data-i18n="photos_d2">Light, colour and crop are corrected for the post format.</p></div>
+    <div class="win-src" id="w-photos-3"><p data-i18n="photos_d3">Where it helps, the background is cleaned up or replaced; a photo that is already good is left alone.</p></div>
+    <div class="win-src" id="w-photos-4"><p data-i18n="photos_d4">Text and layout are added in the brand's fonts and colours.</p></div>
+    <div class="win-src" id="w-photos-5"><p data-i18n="photos_d5">Each edit is laid next to the original on a review sheet and judged before it can go further.</p></div>
+    <div class="win-src" id="w-photos-6"><p data-i18n="photos_d6">Approved posts are queued to publish, with their captions.</p></div>
+
+    <div class="win-src" id="w-ops-1"><p data-i18n="ops_d1">Every workflow runs on a clock or a watcher: nightly builds, hourly checks, folders and inboxes watched every few minutes.</p></div>
+    <div class="win-src" id="w-ops-2"><p data-i18n="ops_d2">Heavy jobs — video renders, model runs — take turns on the GPU, so one never starves another.</p></div>
+    <div class="win-src" id="w-ops-3"><p data-i18n="ops_d3">A watchdog keeps the services up, and AI work that was interrupted mid-answer is picked up again where it stopped.</p></div>
+    <div class="win-src" id="w-ops-4"><p data-i18n="ops_d4">Runs missed while the machine was asleep or offline are caught up as soon as it's back — shown as "did not run", never as a failure.</p></div>
+    <div class="win-src" id="w-ops-5"><p data-i18n="ops_d5">A real failure arrives as a card with what broke, where and how; "Fix with AI" hands that exact error to an AI engineer.</p></div>
+    <div class="win-src" id="w-ops-6"><p data-i18n="ops_d6">Notifications are kept for what matters — a failure, a result, something that needs a person — not for every finished run.</p></div>
+
+    <!-- Trackers -->
+    <div class="win-src" id="w-t-content" data-hue="news">
+      <p class="w-kicker" data-i18n="w_trk_kicker">Tracker · live</p>
+      <h2 data-i18n="trk1_name">Content performance</h2>
+      <p class="w-lede" data-i18n="trk1_biz">Every post the newsroom publishes is followed for two weeks: views, reach and watch time per post, per day and per platform, plus the best hour and weekday to post. The findings are computed in code; with fewer than three posts on a side, a finding is shown as a hint, not a fact.</p>
+      <h3 data-i18n="trk1_chart_h">Views by the day a post went out</h3>
+      <ol class="chart-bars">
+        <li style="--v:.53"><span class="bar__val">1,625</span><span class="bar__day">14</span></li>
+        <li style="--v:.91"><span class="bar__val">2,767</span><span class="bar__day">15</span></li>
+        <li style="--v:.49"><span class="bar__val">1,493</span><span class="bar__day">16</span></li>
+        <li style="--v:.03"><span class="bar__val">84</span><span class="bar__day">17</span></li>
+        <li style="--v:.01"><span class="bar__val">21</span><span class="bar__day">18</span></li>
+        <li style="--v:.71"><span class="bar__val">2,153</span><span class="bar__day">19</span></li>
+        <li style="--v:1"><span class="bar__val">3,043</span><span class="bar__day">20</span></li>
+        <li style="--v:.19"><span class="bar__val">574</span><span class="bar__day">21</span></li>
+        <li style="--v:.39"><span class="bar__val">1,191</span><span class="bar__day">22</span></li>
+        <li style="--v:.05"><span class="bar__val">160</span><span class="bar__day">23</span></li>
+        <li style="--v:.08"><span class="bar__val">254</span><span class="bar__day">24</span></li>
+        <li class="bar--none" style="--v:0"><span class="bar__val">—</span><span class="bar__day">25</span></li>
+        <li class="bar--none" style="--v:0"><span class="bar__val">—</span><span class="bar__day">26</span></li>
+        <li style="--v:.18"><span class="bar__val">537</span><span class="bar__day">27</span></li>
+        <li style="--v:.12"><span class="bar__val">357</span><span class="bar__day">28</span></li>
+      </ol>
+      <p class="w-note" data-i18n="trk1_note">October 2026. No posts went out on the 25th and 26th. Snapshot of October 29.</p>
+      <h3 data-i18n="trk1_split_h">Where the views come from</h3>
+      <ul class="split">
+        <li style="--v:.937"><span class="split__name">TikTok</span><span class="split__bar"></span><span class="split__val">13,355</span></li>
+        <li style="--v:.063"><span class="split__name">Instagram</span><span class="split__bar"></span><span class="split__val">904</span></li>
+      </ul>
+      <p class="w-actions"><button type="button" class="act act--go" data-win="news" data-i18n="trk1_auto">Open the newsroom</button></p>
+    </div>
+
+    <div class="win-src" id="w-t-dips" data-hue="market">
+      <p class="w-kicker" data-i18n="w_trk_kicker">Tracker · live</p>
+      <h2 data-i18n="trk2_name">Market dips</h2>
+      <p class="w-lede" data-i18n="trk2_biz">A watchlist that fills itself: stocks that dropped but whose numbers still look sound, each with the drawdown, trend and momentum behind it. It refreshes every hour while the US market is open. Every figure is computed in code; the AI writes one plain-language line on top.</p>
+      <p class="w-actions"><button type="button" class="act act--go" data-win="market" data-i18n="trk2_auto">Open the market system</button></p>
+    </div>
+
+    <div class="win-src" id="w-t-health" data-hue="ops">
+      <p class="w-kicker" data-i18n="w_trk_kicker">Tracker · live</p>
+      <h2 data-i18n="trk3_name">Workflow health</h2>
+      <p class="w-lede" data-i18n="trk3_biz">One view of every scheduled run in the last 24 hours. Done is quiet; a failure carries its "Fix with AI" button; a run that couldn't start — machine asleep, no internet — is grey "did not run", so a real problem is never lost among false alarms. Once a failure is fixed, the row goes back to normal.</p>
+      <p class="w-actions"><button type="button" class="act act--go" data-win="ops" data-i18n="trk3_auto">Open the operations layer</button></p>
+    </div>
+
+    <div class="win-src" id="w-t-models" data-hue="models">
+      <p class="w-kicker" data-i18n="w_trk_kicker">Tracker · live</p>
+      <h2 data-i18n="trk4_name">Model leaderboard</h2>
+      <p class="w-lede" data-i18n="trk4_biz">Each kind of AI model — text, speech, vision, embeddings, voice, image, video, 3D — on its own board, with the model in use marked, its price, its public scores with links, and what a switch would change in each place it is used.</p>
+      <p class="w-actions"><button type="button" class="act act--go" data-win="models" data-i18n="trk4_auto">Open model intelligence</button></p>
+    </div>
+  </div>
+
   <dialog class="lightbox" aria-label="Screenshot" data-i18n-attr="aria-label:shot">
-    <button class="close" type="button" aria-label="Close" data-i18n-attr="aria-label:close">&times;</button>
+    <button class="lightbox__close" type="button" aria-label="Close" data-i18n-attr="aria-label:close"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
     <img alt="">
   </dialog>
   <script src="site.js"></script>
