@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-10-30T00:45:21.214Z"
-lastSyncedCommit: "32da601"
-lastSyncedCommitMessage: "Portfolio v9: Clean look, click-to-open windows, automations in production"
+lastSyncedAt: "2026-10-30T01:46:10.130Z"
+lastSyncedCommit: "ec61367"
+lastSyncedCommitMessage: "Portfolio v10: own hero + showreel, websites designed by my AI (live, varied, ke"
 ---
 
 ## Next Steps
