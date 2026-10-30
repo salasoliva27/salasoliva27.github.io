@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-10-30T03:04:44.505Z"
-lastSyncedCommit: "ea7f7d0"
-lastSyncedCommitMessage: "portfolio: replace Mercado Bot with AI Hound + Janus Investments (simulated MX$1"
+lastSyncedAt: "2026-10-30T03:14:32.346Z"
+lastSyncedCommit: "6c845c6"
+lastSyncedCommitMessage: "portfolio: drop the AI Hound card from Selected work"
 ---
 
 ## Next Steps
