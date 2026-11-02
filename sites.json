@@ -1,20 +1,20 @@
 {
   "about": "Live pages designed by Alejandro's AI, shown in the 'Websites designed by an AI I built' section. Kept live and checked daily by janus-ia scripts/portfolio-sites.mjs (swaps a dead or withdrawn page for the newest live proposal of an industry not shown).",
-  "updatedAt": "2026-10-29",
+  "updatedAt": "2026-11-02",
   "sites": [
     {
-      "token": "ef7285fec198952a54c655cf",
-      "name": "Club Nick",
-      "area": "Zacahuitzco, Iztapalapa",
+      "token": "58ea2c4e43f26e765373232d",
+      "name": "Los Gallitos",
+      "area": "Roma Norte",
       "industry": {
-        "en": "Squash & gym",
-        "es": "Squash y gimnasio"
+        "en": "Taquería",
+        "es": "Taquería"
       },
-      "url": "https://propuesta.salasoliva27.workers.dev/ef7285fec198952a54c655cf/pagina",
-      "slug": "club-nick",
-      "kind": "sample",
-      "sample": true,
-      "h": 1499
+      "url": "https://propuesta.salasoliva27.workers.dev/58ea2c4e43f26e765373232d/pagina",
+      "slug": "los-gallitos",
+      "kind": "proposal",
+      "sample": false,
+      "h": 1526
     },
     {
       "token": "fa74b9616b1c077570508cf1",
