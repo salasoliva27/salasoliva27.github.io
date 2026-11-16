@@ -30,7 +30,6 @@
     reel2_s: "Diseñados a partir de la marca de cada negocio",
     reel3_s: "Videos y carruseles de noticias, hechos por IA",
     reel4_s: "Un marketplace de creadores, en vivo en México",
-    reel5_s: "Adopción de IA en una empresa de 30 años",
     reel_pause: "Pausa",
 
     sites_h: "Sitios web diseñados por una IA que construí",
@@ -59,18 +58,6 @@
     alt_janus_home: "Inicio de Janus IA: una conversación de ejemplo en el chat a la izquierda, junto al tablero del día — agenda, correo, entrenamiento, mercados y oportunidades de trabajo (datos personales difuminados)",
     alt_janus_apps: "Menú de apps de Janus IA — apps de trabajo, personales y de automatización — abierto sobre el plan y la bitácora de entrenamiento del gimnasio",
 
-    alt_ozum_onb: "Onboarding de OZUM AI: los nueve pasos guiados, de conectar un motor a tener la IA de la empresa funcionando, en español",
-    alt_ozum_ws: "Espacio de trabajo de OZUM AI con un chat junto a la consola de onboarding",
-    ozum_kicker: "Cliente · adopción de IA",
-    ozum_status: "Cliente · plataforma construida, implementación en curso",
-    ozum_sum_short: "Integrando la IA en una empresa de eventos y viajes de incentivo con 30 años: su propia plataforma de IA, flujos construidos con el equipo y después cada persona construyendo los suyos.",
-    ozum_sum: "Ozum es una empresa de eventos corporativos y viajes de incentivo con más de 30 años en México y Estados Unidos. Estoy integrando la IA en su forma de trabajar: primero su propia plataforma de IA, luego flujos construidos con el equipo, y después enseñarle a cada persona a construir sobre ella.",
-    ozum_1: "<strong>Entregado:</strong> OZUM AI, una plataforma de IA en español con la marca de Ozum que se instala con un doble clic en Mac o Windows — sin preparar nada antes.",
-    ozum_2: "<strong>Entregado:</strong> un onboarding guiado que lleva a una persona sin conocimientos técnicos de cero a un motor de IA funcionando, memoria compartida de la empresa e inicio de sesión con roles (cliente, negocio, desarrollador, admin), probado con instalaciones desde cero.",
-    ozum_new: "<strong>Construido desde entonces:</strong> un tablero de la empresa que se arma solo a partir del onboarding del dueño, y una memoria compartida que se mantiene consistente cuando varias personas escriben a la vez — con las memorias de cada empleado privadas por defecto.",
-    ozum_3: "<strong>Siguiente:</strong> ya está instalada en la computadora del dueño; sigue su onboarding, luego los primeros flujos construidos con él a partir de problemas reales y después cada empleado creando los suyos.",
-    ozum_4: "Un plan de adopción de 12 semanas con dos puntos donde el gasto se detiene solo si la plataforma no se está usando.",
-    ozum_price: "El programa de adopción de IA · $4,700",
 
     alt_long_hero: "Portada del sitio de Longevité Therapeutics con video de fondo",
     alt_long_phone: "Sitio de Longevité en un celular",
@@ -242,7 +229,6 @@
     prod_desc: "Para una empresa que quiere integrar la IA en su forma de trabajar: su propia plataforma de IA instalada, los primeros flujos construidos con su equipo y todos aprendiendo a construir los suyos. Doce semanas, con dos puntos donde el gasto se detiene si no se está usando.",
     prod_hours: "94 h · 12 semanas",
     prod_extra: "Después $750/mes para hasta 10 personas: plataforma, actualizaciones y 3 horas de trabajo al mes.",
-    prod_case: "Verlo en Ozum",
     rates_foot: "Los costos de IA y hosting (suscripciones a modelos, bases de datos) los pagas tú directamente a cada proveedor, sin margen agregado.",
 
     exp_h: "Experiencia",

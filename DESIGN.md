@@ -72,7 +72,7 @@ investments, platu) and update the portfolio itself with these learnings". The l
 
 - **Two flagships.** Janus IA, then clippana, each across the whole frame and mirrored (picture left / words left).
   clippana shows its two real screens at the same height, the computer one and the phone one, because its phone is
-  its own design. Ozum and Longevité follow as two cards. Espacio Bosques, Janus Investments, Platu and "Also
+  its own design. Longevité follows as one row (a second client card was there until v13). Espacio Bosques, Janus Investments, Platu and "Also
   building" are gone: cards, windows, Spanish, pictures.
 - **Must not resemble** clippana's own home (a wall of clips beside a headline): here its screens are quoted as
   pictures inside the portfolio's own card.
@@ -130,3 +130,14 @@ pages made for others looking AI-made.
 - **Check:** `node C:\Users\salas\portfolio-work\verify-v12.mjs [liveUrl]`; `PORT=4713 SERVE_ONLY=1 node verify-v12.mjs`
   serves the folder for janus-ia `projects/ai-hound/lib/phone-check.mjs`; `scripts/containment-check.mjs --strict style.css`.
 
+## v13 (2026-11-15, night): one client case removed
+
+Jano: "from my portafolio just delete OZUM". Its card, its window, its showreel scene (four now), the "See it at…"
+button in Rates, its Spanish and its two pictures are gone. The AI adoption program stays in Rates as an offer, with
+no case behind it.
+
+- **One card left in a grid of two is half a frame of nothing**, so Longevité became a row across the frame
+  (`.work--row`: picture 0.72, words 1.28), smaller than a flagship and picture-first like Janus IA.
+- The showreel's list keeps its height with four scenes: the gap between tabs took the room the fifth left.
+- **Check:** `node C:/Users/salas/portfolio-work/verify-v13.mjs [liveUrl]` (v12's checks, plus: the name is nowhere
+  in the page, the Spanish, the script, the styles or the sites list; its pictures are gone; four scenes).

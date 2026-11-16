@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portfolio-version" content="12">
+<meta name="portfolio-version" content="13">
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark light">
 <title>Alejandro Salas Oliva — Data &amp; AI Engineer</title>
@@ -116,7 +116,6 @@
         <li><button type="button" class="reel-tab" data-scene="1"><span class="reel-n">02</span><span class="reel-t">clippana</span><span class="reel-s" data-i18n="reel4_s">A creator marketplace, live in Mexico</span><span class="reel-progress" aria-hidden="true"></span></button></li>
         <li><button type="button" class="reel-tab" data-scene="2"><span class="reel-n">03</span><span class="reel-t" data-i18n="reel2_t">Websites by my AI</span><span class="reel-s" data-i18n="reel2_s">Designed from each business's own brand</span><span class="reel-progress" aria-hidden="true"></span></button></li>
         <li><button type="button" class="reel-tab" data-scene="3"><span class="reel-n">04</span><span class="reel-t" data-i18n="news_name">AI newsroom</span><span class="reel-s" data-i18n="reel3_s">News videos and carousels, made by AI</span><span class="reel-progress" aria-hidden="true"></span></button></li>
-        <li><button type="button" class="reel-tab" data-scene="4"><span class="reel-n">05</span><span class="reel-t">Ozum</span><span class="reel-s" data-i18n="reel5_s">AI adoption for a 30-year company</span><span class="reel-progress" aria-hidden="true"></span></button></li>
       </ol>
       <div class="reel-viewport">
         <figure class="scene is-on" data-scene="0" data-win="janus"><img class="scene-pan" src="img/janus-home.webp" width="1440" height="900" alt="Janus IA home: a sample conversation next to the daily dashboard (personal details blurred)" data-i18n-attr="alt:alt_janus_home"></figure>
@@ -130,7 +129,6 @@
         <figure class="scene scene--reels" data-scene="3" data-win="news">
           <img src="img/news-2.webp" width="540" height="960" alt="" loading="lazy"><img src="img/news-9.webp" width="540" height="960" alt="" loading="lazy"><img src="img/news-25.webp" width="540" height="960" alt="" loading="lazy">
         </figure>
-        <figure class="scene" data-scene="4" data-win="ozum"><img class="scene-pan" src="img/ozum-onboarding.webp" width="1440" height="900" alt="" loading="lazy"></figure>
       </div>
       <div class="reel-foot">
         <p class="reel-caption" aria-live="polite"></p>
@@ -172,24 +170,16 @@
         </div>
       </article>
 
-      <div class="work-grid">
-        <article class="work" data-win="ozum">
-          <div class="work-shot"><img src="img/ozum-onboarding.webp" width="1440" height="900" loading="lazy" alt="OZUM AI onboarding: the nine guided steps, in Spanish" data-i18n-attr="alt:alt_ozum_onb"></div>
-          <p class="kicker" data-i18n="ozum_kicker">Client · AI adoption</p>
-          <h3>Ozum</h3>
-          <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="ozum_status">Client · platform built, rollout in progress</span></p>
-          <p class="summary" data-i18n="ozum_sum_short">Bringing AI into a 30-year events and incentive-travel company: their own AI platform, workflows built with the team, then each person building their own.</p>
-          <button type="button" class="act act--go" data-win="ozum" data-i18n="open_case">Open the case</button>
-        </article>
-        <article class="work" data-win="longevite">
-          <div class="work-shot"><img src="img/longevite-hero.webp" width="1440" height="900" loading="lazy" alt="Longevité Therapeutics website hero with video background" data-i18n-attr="alt:alt_long_hero"></div>
+      <article class="work work--row" data-win="longevite">
+        <div class="work-shot"><img src="img/longevite-hero.webp" width="1440" height="900" loading="lazy" alt="Longevité Therapeutics website hero with video background" data-i18n-attr="alt:alt_long_hero"></div>
+        <div class="work-text">
           <p class="kicker" data-i18n="long_kicker">Client website</p>
           <h3>Longevité Therapeutics</h3>
           <p class="status" data-i18n="long_status">Built · awaiting launch</p>
           <p class="summary" data-i18n="long_sum">A bilingual website for a longevity and functional-medicine clinic in Mexico City, rebuilt through several rounds of client review.</p>
           <button type="button" class="act act--go" data-win="longevite" data-i18n="open_case">Open the case</button>
-        </article>
-      </div>
+        </div>
+      </article>
     </section>
 
     <!-- ══ Websites designed by an AI I built (sites.json: captures of pages sent to each business; none is hosted any more) ══ -->
@@ -353,7 +343,6 @@
           <p class="desc" data-i18n="prod_desc">For a company bringing AI into how it works: your own AI platform installed, the first workflows built with your team, and everyone taught to build their own. Twelve weeks, with two points where spending stops if it isn't being used.</p>
           <p class="cost"><span class="amount">$4,700</span><span class="hours" data-i18n="prod_hours">94 h · 12 weeks</span></p>
           <p class="extra" data-i18n="prod_extra">Then $750/month for up to 10 people: platform, updates and 3 hours of work a month.</p>
-          <button type="button" class="act act--go" data-win="ozum" data-i18n="prod_case">See it at Ozum</button>
         </div>
       </div>
       <p class="rates-foot" data-i18n="rates_foot">AI and hosting costs (model subscriptions, databases) are paid by you directly to each provider, with no margin added.</p>
@@ -466,27 +455,6 @@
       </ul>
       <p class="stack"><span>TypeScript</span><span>React</span><span>Express</span><span>WebSocket</span><span>MCP</span><span>Agent design</span><span>Supabase</span><span>pgvector</span><span>Neo4j</span><span>Claude</span><span>Playwright</span></p>
       <p class="w-actions"><button type="button" class="act act--go" data-goto="#automations" data-i18n="janus_goto">See the automations it runs</button></p>
-    </div>
-
-    <div class="win-src" id="w-ozum">
-      <p class="w-kicker" data-i18n="ozum_kicker">Client · AI adoption</p>
-      <h2>Ozum</h2>
-      <p class="status live"><span class="status-ring" aria-hidden="true"></span><span data-i18n="ozum_status">Client · platform built, rollout in progress</span></p>
-      <p class="w-lede" data-i18n="ozum_sum">Ozum is a corporate-events and incentive-travel company with more than 30 years in Mexico and the US. I'm bringing AI into how they work: first their own AI platform, then workflows built with the team, then teaching each person to build on it themselves.</p>
-      <div class="w-gallery">
-        <a class="shot" href="img/ozum-onboarding.webp"><img src="img/ozum-onboarding.webp" width="1440" height="900" loading="lazy" alt="OZUM AI onboarding: the nine guided steps from connecting an engine to a working company AI, in Spanish" data-i18n-attr="alt:alt_ozum_onb"></a>
-        <a class="shot" href="img/ozum-workspace.webp"><img src="img/ozum-workspace.webp" width="1440" height="900" loading="lazy" alt="OZUM AI workspace with a chat next to the onboarding console" data-i18n-attr="alt:alt_ozum_ws"></a>
-      </div>
-      <h3 data-i18n="w_what">What it does</h3>
-      <ul>
-        <li data-i18n="ozum_1"><strong>Delivered:</strong> OZUM AI, a Spanish-first AI platform in Ozum's brand that installs with one double-click on Mac or Windows — nothing to set up beforehand.</li>
-        <li data-i18n="ozum_2"><strong>Delivered:</strong> a guided onboarding that takes a non-technical person from zero to a working AI engine, shared company memory and sign-in with roles (client, business, developer, admin), proven by from-zero install tests.</li>
-        <li data-i18n="ozum_new"><strong>Built since:</strong> a company dashboard that forms itself from the owner's onboarding, and shared memory that stays consistent when several people write at once — each employee's own memories private by default.</li>
-        <li data-i18n="ozum_3"><strong>Next:</strong> it is installed on the owner's computer; his onboarding comes next, then the first workflows built with him from real pains, then each employee creating their own.</li>
-        <li data-i18n="ozum_4">A 12-week adoption plan with two points where spending stops on its own if the platform isn't being used.</li>
-      </ul>
-      <p class="stack"><span>TypeScript</span><span>React</span><span>Claude</span><span>Supabase</span><span>Neo4j</span><span>MCP</span><span>Tailscale</span></p>
-      <p class="w-actions"><button type="button" class="act act--go" data-goto="#rates" data-i18n="ozum_price">The AI adoption program · $4,700</button></p>
     </div>
 
     <div class="win-src" id="w-longevite">
