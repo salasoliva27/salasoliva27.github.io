@@ -30,6 +30,8 @@
       play: "Play",
       cap: ["Janus IA — click the screen to open it.", "clippana.com, live since November 2026 — click to open the project.", null, "Frames from a published AI-news video — click to open the newsroom.", "OZUM AI's guided onboarding, in Spanish — click to open the case."],
       siteCap: "click the page to open it",
+      toLight: "Switch to light mode",
+      toDark: "Switch to dark mode",
     },
     es: {
       close: "Cerrar",
@@ -52,10 +54,28 @@
       play: "Reproducir",
       cap: ["Janus IA — haz clic en la pantalla para abrirlo.", "clippana.com, en vivo desde noviembre de 2026 — haz clic para abrir el proyecto.", null, "Cuadros de un video de noticias de IA publicado — haz clic para abrir la sala de noticias.", "El onboarding guiado de OZUM AI, en español — haz clic para abrir el caso."],
       siteCap: "haz clic en la página para abrirla",
+      toLight: "Cambiar a modo claro",
+      toDark: "Cambiar a modo oscuro",
     },
   };
   const t = () => UI[root.lang === "es" ? "es" : "en"];
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+  // ── The mode: dark unless the visitor chose light. One switch, in the top bar; the choice is remembered.
+  const themeBtn = document.querySelector(".theme-switch");
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const theme = () => (root.dataset.theme === "light" ? "light" : "dark");
+  function paintTheme() {
+    if (themeBtn) themeBtn.setAttribute("aria-label", theme() === "dark" ? t().toLight : t().toDark);
+    if (themeMeta) themeMeta.content = theme() === "dark" ? "#000000" : "#f3f3f6";
+  }
+  if (themeBtn) themeBtn.addEventListener("click", () => {
+    root.dataset.theme = theme() === "dark" ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) { /* private mode */ }
+    paintTheme();
+  });
+  document.addEventListener("langchange", paintTheme);
+  paintTheme();
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
   const src = (id) => document.getElementById("w-" + id);
   const stepOf = (id) => { const m = /^(.+)-(\d+)$/.exec(id); return m && document.getElementById("flow-" + m[1]) ? { auto: m[1], n: +m[2] } : null; };

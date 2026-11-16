@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="portfolio-version" content="11">
-<meta name="theme-color" content="#f5f5f7">
-<meta name="color-scheme" content="light">
+<meta name="portfolio-version" content="12">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark light">
 <title>Alejandro Salas Oliva — Data &amp; AI Engineer</title>
 <meta name="description" content="Data & AI engineer. Founder of clippana, a creator marketplace live in Mexico, and builder of Janus IA, an AI platform that runs automations in production. Before that: Snowflake pipelines and machine learning for Exxon Mobil and Oracle.">
 <meta property="og:type" content="website">
@@ -16,7 +16,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
-<script>document.documentElement.classList.add("js");</script>
+<script>document.documentElement.classList.add("js");
+  // dark is the default; a saved choice is applied before the first paint
+  try { if (localStorage.getItem("theme") === "light") document.documentElement.dataset.theme = "light"; } catch (e) { /* private mode */ }</script>
 </head>
 <body>
   <!-- Icons: outlines in the Lucide style (ISC), one stroke weight, drawn in currentColor. -->
@@ -63,6 +65,8 @@
     <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z"/></symbol>
     <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></symbol>
     <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
   </svg>
 
@@ -82,6 +86,7 @@
         <button type="button" data-lang="en" lang="en" aria-pressed="true" title="English">EN</button>
         <button type="button" data-lang="es" lang="es" aria-pressed="false" title="Español">ES</button>
       </div>
+      <button type="button" class="theme-switch" aria-label="Switch to light mode"><svg class="ic to-light" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ic to-dark" aria-hidden="true"><use href="#i-moon"/></svg></button>
     </nav>
   </header>
 

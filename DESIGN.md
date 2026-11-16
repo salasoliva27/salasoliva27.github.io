@@ -92,3 +92,41 @@ investments, platu) and update the portfolio itself with these learnings". The l
 - **Checks.** `node C:\Users\salas\portfolio-work\verify-v11.mjs [liveUrl]` (static truth greps, every window, the two
   flagships, Spanish for every key, the bar, the phone); janus-ia `projects/ai-hound/lib/phone-check.mjs <url>` ("good
   on a phone") and `scripts/containment-check.mjs --strict style.css` ("clean").
+
+## v12 (2026-11-15): dark by default, his palette, a more technical look
+
+Jano: "set it on dark mode by defult with the option of light mode, make the dark mode look more tech, use the colour
+pallette I pasted here" — Electric Violet `#6900CF`, White `#FFFFFF`, Spring Green `#1BE89C`, Black `#000000`. The
+ClippMX Clean look of v9 to v11 is gone. The violet is his own choice for his own brand; the "no purple" rule is about
+pages made for others looking AI-made.
+
+**Tokens (`style.css`, top).** A mode sets colours only; type, sizes and shapes are the same in both.
+
+| Token | Dark (default) | Light | Use |
+|---|---|---|---|
+| `--paper` | `#000000` | `#f3f3f6` | the page, under a faint 44 px grid |
+| `--surface` / `--surface-2` | `#0a0a0d` / `#111116` | `#ffffff` / `#f8f8fb` | section frames, windows |
+| `--rule` / `--rule-strong` | `#24242c` / `#363642` | `#e3e3ea` / `#cdcdd8` | hairlines, frame edges |
+| `--ink` / `--ink2` / `--muted` | `#ffffff` / `#d9d9e0` / `#a0a0ad` | `#000000` / `#2e2e36` / `#5f5f6b` | text |
+| `--primary` | `#6900cf`, white letters | the same | the one filled action per view |
+| `--link` | `#1be89c` | `#6900cf` | text actions, highlighted words, the O of ASO |
+| `--ok` / `--warn` | `#1be89c` / `#b78cff` | `#097350` / `#6900cf` | statuses |
+| hues | green, violet tint, mint, pale violet, grey | their dark strengths | one per automation |
+
+- **Violet is 2.5:1 on black**, so on dark it is a fill (the main button, the mark on each frame, the selection) and
+  never a text colour; text accents on dark are the green (13:1) or `#b78cff`, a tint of the violet. On light the violet
+  is the text accent (8.4:1) and the green is only a fill; its text shade is `#097350`.
+- **Only the palette:** verify-v12 reads every colour in the sheet (50) and fails on one that is not the violet's
+  family, the green's family or a neutral. The five automation hues are two strengths of each family and a grey.
+- **The technical look**, the same in both modes: small labels (kickers, statuses, dates, flow notes, figures' labels)
+  in the system mono face; a `>` prompt before the line under the name; a faint grid on the page ground; frames of
+  12 px radius with a hairline edge and a 56 px violet mark on the top edge; the main button squared to 8 px.
+- **The switch:** one button in the top bar (a sun in dark, a moon in light), nowhere else. Dark is in the markup; a
+  saved choice is applied before the first paint; `localStorage "theme"`. Its name follows the language.
+- **The showreel stays a dark stage in both modes.**
+- **Measured:** every text against its ground in both modes at 1440 and 390, on the page (285 and 270 texts) and
+  inside five kinds of window: 0 under 4.5:1 (3:1 from 24 px).
+- **Phone:** the bar holds Work · Websites · Contact, the one language you can change to, and the switch (44 px).
+- **Check:** `node C:\Users\salas\portfolio-work\verify-v12.mjs [liveUrl]`; `PORT=4713 SERVE_ONLY=1 node verify-v12.mjs`
+  serves the folder for janus-ia `projects/ai-hound/lib/phone-check.mjs`; `scripts/containment-check.mjs --strict style.css`.
+
