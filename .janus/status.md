@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-11-02T17:00:09.688Z"
-lastSyncedCommit: "ae90d28"
-lastSyncedCommitMessage: "sites: Club Nick → Los Gallitos"
+lastSyncedAt: "2026-11-16T03:53:52.822Z"
+lastSyncedCommit: "e4fdf2d"
+lastSyncedCommitMessage: "portfolio v11: clippana and Janus IA as the two flagships; three projects out; t"
 ---
 
 ## Next Steps
