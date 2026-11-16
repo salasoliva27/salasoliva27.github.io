@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-11-16T04:48:54.811Z"
-lastSyncedCommit: "2b8fea0"
-lastSyncedCommitMessage: "portfolio v12: dark by default with a light mode, in violet and green, and a mor"
+lastSyncedAt: "2026-11-16T06:04:09.664Z"
+lastSyncedCommit: "c0fab47"
+lastSyncedCommitMessage: "Merge origin/main (plumbing — no pull into the shared tree)"
 ---
 
 ## Next Steps
