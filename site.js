@@ -18,20 +18,18 @@
       tech: "Technology",
       used: (s) => `Where I've used ${s}`,
       exp: "Experience",
-      openLive: "Open live",
       details: "Details",
-      openSite: "Open the live site",
       allSites: "See all the websites",
       proposal: "Proposal",
       example: "Example",
       siteBody: (n) => `My AI designed this page from ${n}'s own brand — its colours, fonts, logo, photos and words. Nothing came from a template.`,
       siteProposal: "It was sent to the business as a free proposal; the page is theirs to use.",
       siteExample: "It was made as an example of what the AI does for a business like this one.",
-      liveNote: "Live link — kept online and checked every day.",
+      liveNote: "A capture of the page as it was sent.",
       pause: "Pause",
       play: "Play",
-      cap: ["Janus IA — click the screen to open it.", null, "Three reels from one night's run — click to open the newsroom.", "ClippMX's Lab: every automated workflow drawn as its steps.", "OZUM AI's guided onboarding, in Spanish — click to open the case."],
-      siteCap: "open the live site",
+      cap: ["Janus IA — click the screen to open it.", "clippana.com, live since November 2026 — click to open the project.", null, "Frames from a published AI-news video — click to open the newsroom.", "OZUM AI's guided onboarding, in Spanish — click to open the case."],
+      siteCap: "click the page to open it",
     },
     es: {
       close: "Cerrar",
@@ -42,20 +40,18 @@
       tech: "Tecnología",
       used: (s) => `Dónde he usado ${s}`,
       exp: "Experiencia",
-      openLive: "Abrir en vivo",
       details: "Detalles",
-      openSite: "Abrir el sitio en vivo",
       allSites: "Ver todos los sitios",
       proposal: "Propuesta",
       example: "Ejemplo",
       siteBody: (n) => `Mi IA diseñó esta página a partir de la marca de ${n}: sus colores, tipografías, logo, fotos y palabras. Nada salió de una plantilla.`,
       siteProposal: "Se le envió al negocio como propuesta gratuita; la página es suya para usarla.",
       siteExample: "Se hizo como ejemplo de lo que la IA hace para un negocio como este.",
-      liveNote: "Enlace en vivo — se mantiene en línea y se revisa todos los días.",
+      liveNote: "Captura de la página tal como se envió.",
       pause: "Pausa",
       play: "Reproducir",
-      cap: ["Janus IA — haz clic en la pantalla para abrirlo.", null, "Tres reels de una sola noche — haz clic para abrir la sala de noticias.", "El Laboratorio de ClippMX: cada flujo automático dibujado como sus pasos.", "El onboarding guiado de OZUM AI, en español — haz clic para abrir el caso."],
-      siteCap: "abrir el sitio en vivo",
+      cap: ["Janus IA — haz clic en la pantalla para abrirlo.", "clippana.com, en vivo desde noviembre de 2026 — haz clic para abrir el proyecto.", null, "Cuadros de un video de noticias de IA publicado — haz clic para abrir la sala de noticias.", "El onboarding guiado de OZUM AI, en español — haz clic para abrir el caso."],
+      siteCap: "haz clic en la página para abrirla",
     },
   };
   const t = () => UI[root.lang === "es" ? "es" : "en"];
@@ -63,7 +59,7 @@
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
   const src = (id) => document.getElementById("w-" + id);
   const stepOf = (id) => { const m = /^(.+)-(\d+)$/.exec(id); return m && document.getElementById("flow-" + m[1]) ? { auto: m[1], n: +m[2] } : null; };
-  const HUES = ["news", "clips", "models", "market", "photos", "ops"];
+  const HUES = ["news", "models", "market", "photos", "ops"];
 
   // ── Flows get their running dot (an li taken out of the grid by CSS).
   document.querySelectorAll(".flow").forEach((f) => {
@@ -162,7 +158,8 @@
     return { key: "skill", body, title: skill, hue: "", narrow: true };
   }
 
-  // ── Websites designed by my AI: sites.json (kept live and swapped by janus-ia scripts/portfolio-sites.mjs).
+  // ── Websites designed by my AI: sites.json. Captures of the pages as they were sent; none is hosted any more
+  //    (2026-11-02), so nothing here links out.
   let SITES = [];
   const lang = () => (root.lang === "es" ? "es" : "en");
   const sitesReady = fetch("sites.json", { cache: "no-cache" }).then((r) => r.json()).then((d) => { SITES = d.sites || []; }).catch(() => {});
@@ -173,9 +170,7 @@
     const s = siteBySlug(slug);
     if (!s) return null;
     const body = el("div", "window__content");
-    // The live link sits right under the name, so it is seen without scrolling the window.
-    const live = el("a", "act", t().openSite); live.href = s.url; live.target = "_blank"; live.rel = "noopener";
-    const where = el("p", "w-where"); where.append(el("span", "w-note", s.area), live);
+    const where = el("p", "w-where"); where.append(el("span", "w-note", s.area));
     body.append(el("p", "w-kicker", `${s.sample ? t().example : t().proposal} · ${s.industry[lang()]}`), el("h2", null, s.name), where);
     const frame = el("div", "w-site-frame");
     const img = el("img", "page-scroll"); img.src = imgOf(s); img.alt = ""; frame.append(img);
@@ -194,9 +189,8 @@
       const art = el("article", "site"); art.dataset.win = "site:" + s.slug;
       const frame = el("div", "site-frame"); const img = el("img", "page-scroll"); img.src = imgOf(s); img.alt = ""; img.loading = "lazy"; frame.append(img);
       const acts = el("p", "site-acts");
-      const live = el("a", "act", t().openLive); live.href = s.url; live.target = "_blank"; live.rel = "noopener";
       const more = el("button", "act act--go", t().details); more.type = "button"; more.dataset.win = "site:" + s.slug;
-      acts.append(live, more);
+      acts.append(more);
       art.append(frame, el("p", "site-industry", s.industry[lang()]), el("h4", null, s.name), el("p", "site-area", s.area), acts);
       return art;
     }));
@@ -225,6 +219,7 @@
   const caption = reel && reel.querySelector(".reel-caption");
   const pauseBtn = reel && reel.querySelector(".reel-pause");
   const DUR = 7500;
+  const SITE_SCENE = 2;   // the scene that shows a website designed by the AI (after Janus IA and clippana)
   let cur = 0, elapsed = 0, last = 0, held = false, hover = false, onScreen = false, siteTurn = 0, shownSite = null;
   function siteScene() {
     if (!SITES.length || !reel) return;
@@ -233,20 +228,19 @@
     const page = reel.querySelector(".browser-page"), img = page.querySelector("img"), url = reel.querySelector(".browser-url");
     page.dataset.win = "site:" + s.slug; page.setAttribute("aria-label", s.name);
     if (!img.src.endsWith(imgOf(s))) img.src = imgOf(s);
-    url.href = s.url; url.textContent = s.url.replace(/^https:\/\//, "") + " ↗";
+    url.textContent = `${s.industry[lang()]} · ${s.name}`;
   }
   function setCaption() {
     if (!caption) return;
     caption.replaceChildren();
-    if (cur === 1 && shownSite) {
-      const s = shownSite, a = el("a", null, t().siteCap + " ↗");
-      a.href = s.url; a.target = "_blank"; a.rel = "noopener";
-      caption.append(`${s.industry[lang()]} · ${s.name}, ${s.area} — `, a);
+    if (cur === SITE_SCENE && shownSite) {
+      const s = shownSite;
+      caption.textContent = `${s.industry[lang()]} · ${s.name}, ${s.area} — ${t().siteCap}`;
     } else caption.textContent = t().cap[cur] || "";
   }
   function show(i) {
     cur = i; elapsed = 0;
-    if (i === 1) siteScene();
+    if (i === SITE_SCENE) siteScene();
     scenes.forEach((s) => s.classList.toggle("is-on", +s.dataset.scene === i));
     tabs.forEach((b) => { b.setAttribute("aria-current", String(+b.dataset.scene === i)); b.style.setProperty("--p", 0); });
     setCaption();
@@ -258,7 +252,7 @@
       elapsed += dt;
       const p = Math.min(1, elapsed / DUR);
       if (tabs[cur]) tabs[cur].style.setProperty("--p", p.toFixed(4));
-      if (p >= 1) { if (cur === 1) siteTurn++; show((cur + 1) % scenes.length); }
+      if (p >= 1) { if (cur === SITE_SCENE) siteTurn++; show((cur + 1) % scenes.length); }
     }
     requestAnimationFrame(tick);
   }

@@ -340,12 +340,11 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
 .work--featured h3 { font-size: 1.75rem; }
 .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem 2.6rem; }
 
-.also { margin-top: 2.2rem; padding-top: 1.4rem; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 11rem 1fr 1fr; gap: 1rem 2.4rem; }
-.also-h { margin: 0; font-size: 1.05rem; font-weight: 650; }
-.also-row h4 { margin: 0 0 0.25rem; font-size: 1.05rem; }
-.also-row p { margin: 0 0 0.35rem; color: var(--ink2); font-size: 0.95rem; }
-.also-row[data-win] { cursor: pointer; }
-.also-row[data-win]:hover h4 { color: var(--link); }
+/* The second flagship (v11, clippana) mirrors the first: words on the left, and its two real screens on the right, the
+   computer one and the phone one at the same height (1440×800 and 390×844: the columns are in that proportion). */
+.work--flip { grid-template-columns: 0.85fr 1.35fr; }
+.work-shots { display: grid; grid-template-columns: 1fr 0.2567fr; gap: 0.9rem; align-items: end; }
+.work-acts { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 1.5rem; margin: 0; }
 
 /* ── Automations: one row per system; its steps drawn as a flow (circles on a line, as in ClippMX's Lab). */
 .auto {
@@ -722,8 +721,6 @@ dialog.lightbox img { display: block; max-width: 100%; max-height: 90vh; margin:
   .trk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 0; }
   .trk:nth-child(3) { padding-left: 0; border-left: 0; }
   .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .also { grid-template-columns: 1fr 1fr; }
-  .also-h { grid-column: 1 / -1; }
 }
 
 @media (max-width: 720px) {
@@ -751,7 +748,7 @@ dialog.lightbox img { display: block; max-width: 100%; max-height: 90vh; margin:
   main { padding: 0 0.6rem; }
   .sec-frame { padding: 1.2rem 1.1rem 1.5rem; border-radius: 18px; margin-bottom: 1rem; }
   .work--featured, .work-grid, .rates-grid { grid-template-columns: 1fr; gap: 1.6rem; }
-  .also { grid-template-columns: 1fr; }
+  .work--flip .work-shots { order: -1; }
   .timeline li { grid-template-columns: 1fr; gap: 0.2rem; }
   .trk-grid { grid-template-columns: 1fr; }
   .trk, .trk:first-child { padding: 0.9rem 0; border-left: 0 !important; border-top: 1px solid var(--rule); }
@@ -803,3 +800,26 @@ dialog.lightbox img { display: block; max-width: 100%; max-height: 90vh; margin:
 }
 .window .w-where { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 1.2rem; margin: 0; }
 .window .w-where .w-note { margin: 0; }
+
+/* ── The phone layer (v11, 2026-11-15). Measured on this page at 390 px: 94 links and buttons under 44 px and 17 kinds of
+   text under 14 px, the same fault found on the client pages. Every link or button that stands on its own is now at
+   least 44 px, and no text is under 14 px. Only under 720 px: the computer view is untouched. */
+@media (max-width: 720px) {
+  .brand, .nav-links a, .lang-switch button, .act, .reel-tab, .reel-pause, .auto h3 button, .flow__step, .trk-name, .tech-link { min-height: 44px; }
+  .brand, .nav-links a, .act, .reel-pause, .trk-name, .tech-link { display: inline-flex; align-items: center; }
+  .brand, .lang-switch button, .reel-pause { min-width: 44px; justify-content: center; }
+  .nav { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+  .lang-switch button, .kicker, .w-kicker, .status, .site-industry, .site-area, .sites-note, .reel-pause, .reel-n, .hours,
+  .stack span, .facts, .facts span, .flow__label, .note, .w-note, .when { font-size: 0.9rem; }
+  .flow__sub { font-size: 0.875rem; }
+  .product .cost .hours, footer p { font-size: 0.9rem; }
+  /* the menu on a phone: three places on one line (it showed only "Websites") */
+  .nav { gap: 0.4rem; }
+  .nav-links { gap: 0.1rem; }
+  .nav-links a { padding: 0 0.32rem; }
+  .nav-links a:nth-child(1), .nav-links a:nth-child(6) { display: inline-flex; }
+  .lang-switch .ic { display: none; }
+}
+@media (max-width: 379px) {
+  .nav-links a:nth-child(2) { display: none; }
+}
