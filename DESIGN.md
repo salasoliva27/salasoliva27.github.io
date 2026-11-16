@@ -132,7 +132,7 @@ pages made for others looking AI-made.
 
 ## v13 (2026-11-15, night): one client case removed
 
-Jano: "from my portafolio just delete OZUM". Its card, its window, its showreel scene (four now), the "See it at…"
+Jano asked to delete one client case from the portfolio. Its card, its window, its showreel scene (four now), the "See it at…"
 button in Rates, its Spanish and its two pictures are gone. The AI adoption program stays in Rates as an offer, with
 no case behind it.
 
