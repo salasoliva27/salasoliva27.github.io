@@ -4,9 +4,9 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-11-16T03:53:52.822Z"
-lastSyncedCommit: "e4fdf2d"
-lastSyncedCommitMessage: "portfolio v11: clippana and Janus IA as the two flagships; three projects out; t"
+lastSyncedAt: "2026-11-16T04:48:54.811Z"
+lastSyncedCommit: "2b8fea0"
+lastSyncedCommitMessage: "portfolio v12: dark by default with a light mode, in violet and green, and a mor"
 ---
 
 ## Next Steps
