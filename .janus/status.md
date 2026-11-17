@@ -4,8 +4,8 @@ stage: dev
 phase: ""
 phaseProgress: 0
 summary: "Portfolio"
-lastSyncedAt: "2026-11-16T06:04:09.664Z"
-lastSyncedCommit: "c0fab47"
+lastSyncedAt: "2026-11-17T02:48:38.451Z"
+lastSyncedCommit: "30dbaf7"
 lastSyncedCommitMessage: "Merge origin/main (plumbing — no pull into the shared tree)"
 ---
 
