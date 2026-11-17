@@ -170,3 +170,11 @@ Jano: "you forgot to add the logo, add it on both, also use it as an icon for th
   role in lime) and the two flagships.
 - **Check:** `node C:/Users/salas/portfolio-work/verify-v15.mjs [liveUrl]` (v14's checks + the icons served, the tab
   icon is the mark, the mark drawn in the bar at 1440 and 390).
+
+## v16 (2026-11-16): the tab icon is the bare J, under new names
+
+Jano, with his tab still showing the old teal "AS": "the icon still looks like the picture i attached, just put the J there
+instead". The server already sent v15's J tile; his browser was showing the icon it had kept. Browsers keep a tab icon
+long after the file changes, so a new icon gets NEW file names: `icon-j.svg`, `img/icon-j-32.png`, `img/icon-j-180.png`
+(phones' home screens: the J on charcoal). The icon is the bare mark, no square around it. `favicon.svg` holds the same J
+for anything that still asks for the old name. Check: `verify-v16.mjs`.

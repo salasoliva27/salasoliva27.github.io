@@ -1,9 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<defs><linearGradient id="t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34205c"/><stop offset="0.65" stop-color="#202126"/></linearGradient></defs>
-<rect width="64" height="64" rx="14" fill="url(#t)"/>
-<svg x="11" y="10" width="42" height="44" viewBox="63 68 644 714"><defs>
-<linearGradient id="fbar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6f58a8"/><stop offset="0.3" stop-color="#8f7ec7"/><stop offset="1" stop-color="#bcb0e1"/></linearGradient>
-<linearGradient id="ffoot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5b4590"/><stop offset="1" stop-color="#4a3080"/></linearGradient>
-<linearGradient id="fstem" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9f8fd2"/><stop offset="0.78" stop-color="#bcb0e1"/><stop offset="0.856" stop-color="#cdc4ea"/><stop offset="0.858" stop-color="#c5f05a"/><stop offset="1" stop-color="#c5f05a"/></linearGradient>
-</defs><path fill="url(#fbar)" d="M318 268 L705 70 L705 225 L318 418 Z"/><path fill="url(#fstem)" d="M545 378 L700 300 L700 560 Q700 588 676 605 L440 780 L290 780 L528 618 Q545 606 545 588 Z"/><path fill="url(#ffoot)" d="M65 718 L200 607 Q210 598 225 598 L345 598 L470 522 L470 556 L290 718 Z"/></svg>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="28 68 714 714"><defs>
+<linearGradient id="ibar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6f58a8"/><stop offset="0.3" stop-color="#8f7ec7"/><stop offset="1" stop-color="#bcb0e1"/></linearGradient>
+<linearGradient id="ifoot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5b4590"/><stop offset="1" stop-color="#4a3080"/></linearGradient>
+<linearGradient id="istem" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9f8fd2"/><stop offset="0.78" stop-color="#bcb0e1"/><stop offset="0.856" stop-color="#cdc4ea"/><stop offset="0.858" stop-color="#c5f05a"/><stop offset="1" stop-color="#c5f05a"/></linearGradient>
+</defs><path fill="url(#ibar)" d="M318 268 L705 70 L705 225 L318 418 Z"/><path fill="url(#istem)" d="M545 378 L700 300 L700 560 Q700 588 676 605 L440 780 L290 780 L528 618 Q545 606 545 588 Z"/><path fill="url(#ifoot)" d="M65 718 L200 607 Q210 598 225 598 L345 598 L470 522 L470 556 L290 718 Z"/></svg>

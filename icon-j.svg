@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="28 68 714 714"><defs>
+<linearGradient id="ibar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6f58a8"/><stop offset="0.3" stop-color="#8f7ec7"/><stop offset="1" stop-color="#bcb0e1"/></linearGradient>
+<linearGradient id="ifoot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5b4590"/><stop offset="1" stop-color="#4a3080"/></linearGradient>
+<linearGradient id="istem" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9f8fd2"/><stop offset="0.78" stop-color="#bcb0e1"/><stop offset="0.856" stop-color="#cdc4ea"/><stop offset="0.858" stop-color="#c5f05a"/><stop offset="1" stop-color="#c5f05a"/></linearGradient>
+</defs><path fill="url(#ibar)" d="M318 268 L705 70 L705 225 L318 418 Z"/><path fill="url(#istem)" d="M545 378 L700 300 L700 560 Q700 588 676 605 L440 780 L290 780 L528 618 Q545 606 545 588 Z"/><path fill="url(#ifoot)" d="M65 718 L200 607 Q210 598 225 598 L345 598 L470 522 L470 556 L290 718 Z"/></svg>
