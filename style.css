@@ -1,90 +1,93 @@
-/* Portfolio v12 — dark by default, a light mode behind one switch, both in Jano's palette (2026-11-15): Electric Violet
-   #6900CF, Spring Green #1BE89C, white, black. Tokens and the reasons for them: DESIGN.md. A mode sets colours only:
-   type, sizes and shapes are the same in both. Violet is 2.5:1 on black, so on dark it is a fill (the main button, the
-   marks) and never a text colour; text accents on dark are the green or a light tint of the violet. No boxes beyond the
-   allowed cases: section frames and windows (real estate), flow nodes (the datum), the one primary action. */
+/* Portfolio v14 — dark by default, a light mode behind one switch, both in Jano's brand board (2026-11-16): deep violet
+   #34205C, lavender #A99AD6, lime #C5F05A, charcoal #202126, off-white #F5F3F8. Tokens and the reasons for them:
+   DESIGN.md. A mode sets colours only: type, sizes and shapes are the same in both. Deep violet is 1.3:1 on charcoal, so
+   on dark the violet that shows is the lavender (6:1) and the text accent is the lime (12:1); on light the deep violet
+   is the text accent and the button (12:1) and the lime is only a fill. No boxes beyond the allowed cases: section
+   frames and windows (real estate), flow nodes (the datum), the one primary action. */
 :root {
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI Variable Text", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI Variable Display", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: ui-monospace, "Cascadia Code", "SF Mono", "JetBrains Mono", Consolas, "Liberation Mono", monospace;
-  --violet: #6900cf;
-  --green: #1be89c;
+  --violet: #34205c;
+  --green: #c5f05a;
 }
 /* Dark: the default (the markup says data-theme="dark"; a saved choice is applied before the first paint). */
 :root, :root[data-theme="dark"] {
-  --paper: #000000;
-  --surface: #0a0a0d;
-  --surface-2: #111116;
-  --rule: #24242c;
-  --rule-strong: #363642;
-  --ink: #ffffff;
-  --ink2: #d9d9e0;
-  --muted: #a0a0ad;
-  --primary: #6900cf;
-  --primary-hover: #7c1ae6;
-  --on-primary: #ffffff;
-  --link: #1be89c;
-  --link-soft: rgba(27, 232, 156, 0.4);
-  --ok: #1be89c;
-  --warn: #b78cff;
-  --on-hue: #000000;
-  --grid: rgba(255, 255, 255, 0.05);
-  --scrim: rgba(0, 0, 0, 0.62);
-  --stage: #0a0a0d;
-  --stage-edge: #24242c;
-  --shadow-float: 0 24px 60px -18px rgba(0, 0, 0, 0.9), 0 0 0 1px #363642;
+  --paper: #17171b;
+  --surface: #202126;
+  --surface-2: #26272d;
+  --rule: #33343b;
+  --rule-strong: #44454e;
+  --ink: #f5f3f8;
+  --ink2: #dcd9e2;
+  --muted: #a6a3b0;
+  --primary: #a99ad6;
+  --primary-hover: #bcb0e1;
+  --on-primary: #202126;
+  --link: #c5f05a;
+  --link-soft: rgba(197, 240, 90, 0.4);
+  --ok: #c5f05a;
+  --warn: #a99ad6;
+  --on-hue: #202126;
+  --mark: #a99ad6;
+  --grid: rgba(245, 243, 248, 0.045);
+  --scrim: rgba(23, 23, 27, 0.66);
+  --stage: #202126;
+  --stage-edge: #33343b;
+  --shadow-float: 0 24px 60px -18px rgba(0, 0, 0, 0.9), 0 0 0 1px #44454e;
   --hue: var(--link);
-  --hue-fill: #1be89c;
+  --hue-fill: #c5f05a;
   color-scheme: dark;
 }
 :root[data-theme="light"] {
-  --paper: #f3f3f6;
-  --surface: #ffffff;
-  --surface-2: #f8f8fb;
-  --rule: #e3e3ea;
-  --rule-strong: #cdcdd8;
-  --ink: #000000;
-  --ink2: #2e2e36;
-  --muted: #5f5f6b;
-  --primary: #6900cf;
-  --primary-hover: #5600ab;
-  --on-primary: #ffffff;
-  --link: #6900cf;
-  --link-soft: rgba(105, 0, 207, 0.35);
-  --ok: #097350;
-  --warn: #6900cf;
-  --on-hue: #ffffff;
-  --grid: rgba(0, 0, 0, 0.045);
-  --scrim: rgba(10, 10, 14, 0.4);
-  --stage: #0a0a0d;
-  --stage-edge: #0a0a0d;
+  --paper: #ebe8f0;
+  --surface: #f5f3f8;
+  --surface-2: #efecf3;
+  --rule: #dcd8e3;
+  --rule-strong: #c8c3d1;
+  --ink: #202126;
+  --ink2: #33343b;
+  --muted: #5d5a66;
+  --primary: #34205c;
+  --primary-hover: #4a3080;
+  --on-primary: #f5f3f8;
+  --link: #34205c;
+  --link-soft: rgba(52, 32, 92, 0.35);
+  --ok: #4a6610;
+  --warn: #34205c;
+  --on-hue: #f5f3f8;
+  --mark: #34205c;
+  --grid: rgba(32, 33, 38, 0.045);
+  --scrim: rgba(32, 33, 38, 0.4);
+  --stage: #202126;
+  --stage-edge: #202126;
   --shadow-float: 0 22px 54px -20px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.05);
   --hue: var(--link);
-  --hue-fill: #8a3df0;
+  --hue-fill: #5b4590;
   color-scheme: light;
 }
 /* The showreel is a dark stage in both modes. */
 :root {
-  --stage-ink: #ffffff;
-  --stage-soft: #c9c9d1;
-  --stage-muted: #9a9aa6;
-  --stage-accent: #1be89c;
-  --stage-track: #2a2a33;
-  --stage-view: #000000;
+  --stage-ink: #f5f3f8;
+  --stage-soft: #cfcbd8;
+  --stage-muted: #a6a3b0;
+  --stage-accent: #c5f05a;
+  --stage-track: #33343b;
+  --stage-view: #17171b;
 }
 
 /* One hue per automation: its icon, flow, numbers and window. Only the palette's two families and a neutral:
-   green, a tint of the violet, a tint of the green, a paler violet, grey. Each mode has its own strengths. */
-.hue-news { --hue: #1be89c; --hue-fill: #1be89c; }
-.hue-models { --hue: #b78cff; --hue-fill: #8a3df0; }
-.hue-market { --hue: #7df3c8; --hue-fill: #12b97c; }
-.hue-photos { --hue: #d4b8ff; --hue-fill: #a56bff; }
-.hue-ops { --hue: #c9c9d4; --hue-fill: #8e8e9a; }
-[data-theme="light"] .hue-news { --hue: #097350; --hue-fill: #12c487; }
-[data-theme="light"] .hue-models { --hue: #6900cf; --hue-fill: #8a3df0; }
-[data-theme="light"] .hue-market { --hue: #0d5f44; --hue-fill: #0a9a68; }
-[data-theme="light"] .hue-photos { --hue: #4b0096; --hue-fill: #a56bff; }
-[data-theme="light"] .hue-ops { --hue: #4a4a55; --hue-fill: #8e8e9a; }
+   lime, lavender, a paler lime, a paler lavender, grey. Each mode has its own strengths. */
+.hue-news { --hue: #c5f05a; --hue-fill: #c5f05a; }
+.hue-models { --hue: #a99ad6; --hue-fill: #a99ad6; }
+.hue-market { --hue: #ddf7a0; --hue-fill: #a8d23e; }
+.hue-photos { --hue: #cdc4ea; --hue-fill: #8f7ec7; }
+.hue-ops { --hue: #cfcbd8; --hue-fill: #8f8c99; }
+[data-theme="light"] .hue-news { --hue: #4a6610; --hue-fill: #5d7f14; }
+[data-theme="light"] .hue-models { --hue: #34205c; --hue-fill: #34205c; }
+[data-theme="light"] .hue-market { --hue: #3c530c; --hue-fill: #4a6610; }
+[data-theme="light"] .hue-photos { --hue: #5b4590; --hue-fill: #5b4590; }
+[data-theme="light"] .hue-ops { --hue: #4a4852; --hue-fill: #5d5a66; }
 
 * { box-sizing: border-box; }
 
@@ -100,7 +103,7 @@ body {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
-::selection { background: var(--violet); color: #ffffff; }
+::selection { background: var(--violet); color: #f5f3f8; }
 .has-window body { overflow: hidden; }
 
 a { color: var(--link); }
@@ -257,11 +260,11 @@ header.top {
 .scene--reels img { height: 94%; width: auto; border-radius: 12px; }
 
 /* The website scene and the website frames: a page that scrolls inside its frame (object-position runs top → bottom). */
-.browser-frame { display: flex; flex-direction: column; width: 100%; height: 100%; background: #fff; }
-.browser-bar { display: flex; align-items: center; padding: 0.45rem 0.8rem; background: #e9e9ed; border-bottom: 1px solid #d2d2d7; }
-.browser-url { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.78rem; color: #424245; text-decoration: none; }
+.browser-frame { display: flex; flex-direction: column; width: 100%; height: 100%; background: #f5f3f8; }
+.browser-bar { display: flex; align-items: center; padding: 0.45rem 0.8rem; background: #ebe8f0; border-bottom: 1px solid #dcd8e3; }
+.browser-url { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.78rem; color: #4a4852; text-decoration: none; }
 .browser-url:hover, .browser-url:focus-visible { color: var(--link); text-decoration: underline; outline: none; }
-.browser-page { flex: 1; min-height: 0; display: block; padding: 0; border: 0; background: #fff; cursor: pointer; }
+.browser-page { flex: 1; min-height: 0; display: block; padding: 0; border: 0; background: #f5f3f8; cursor: pointer; }
 .page-scroll { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
 .reel-foot { display: flex; align-items: baseline; gap: 1rem; padding-top: 0.7rem; min-height: 2.2rem; }
 .reel-caption { flex: 1; margin: 0; font-size: 0.88rem; color: var(--stage-soft); }
@@ -290,7 +293,8 @@ header.top {
 
 .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem 1.5rem; }
 
-/* The one filled action per view: violet, white letters (8.4:1). Everything else is a text action. */
+/* The one filled action per view: lavender with charcoal letters on dark (6.3:1), deep violet with off-white letters on
+   light (12.6:1). Everything else is a text action. */
 .btn--primary {
   display: inline-flex;
   align-items: center;
@@ -700,9 +704,9 @@ footer { text-align: center; color: var(--muted); padding: 2.5rem 1.5rem; font-s
 
 /* The zoomed screenshot: the image alone over a dark backdrop. */
 dialog.lightbox { max-width: min(96vw, 1500px); max-height: 94vh; padding: 0; border: 0; background: transparent; overflow: visible; }
-dialog.lightbox::backdrop { background: rgba(0, 0, 0, 0.82); }
+dialog.lightbox::backdrop { background: rgba(23, 23, 27, 0.86); }
 dialog.lightbox img { display: block; max-width: 100%; max-height: 90vh; margin: 0 auto; border-radius: 8px; }
-.lightbox__close { position: absolute; top: -2.6rem; right: 0; padding: 0.3rem; border: 0; background: none; color: #fff; font-size: 1.6rem; line-height: 0; cursor: pointer; }
+.lightbox__close { position: absolute; top: -2.6rem; right: 0; padding: 0.3rem; border: 0; background: none; color: #f5f3f8; font-size: 1.6rem; line-height: 0; cursor: pointer; }
 .lightbox__close:focus-visible { outline: none; color: var(--stage-accent); }
 
 /* ── Motion: everything below runs only when the reader hasn't asked for less of it. */
@@ -895,7 +899,7 @@ dialog.lightbox img { display: block; max-width: 100%; max-height: 90vh; margin:
 }
 .kicker, .w-kicker { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.78rem; }
 .hero-where::before { content: "> "; color: var(--link); font-weight: 700; }
-.sec-frame::before { content: ""; position: absolute; top: -1px; left: 2.4rem; width: 56px; height: 2px; background: var(--violet); }
+.sec-frame::before { content: ""; position: absolute; top: -1px; left: 2.4rem; width: 56px; height: 2px; background: var(--mark); }
 
 /* The mode's switch: one control, in the top bar and nowhere else. The sun shows in dark (it leads to light). */
 .theme-switch {

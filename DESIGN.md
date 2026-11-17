@@ -141,3 +141,17 @@ no case behind it.
 - The showreel's list keeps its height with four scenes: the gap between tabs took the room the fifth left.
 - **Check:** `node C:/Users/salas/portfolio-work/verify-v13.mjs [liveUrl]` (v12's checks, plus: the name is nowhere
   in the page, the Spanish, the script, the styles or the sites list; its pictures are gone; four scenes).
+
+## v14 (2026-11-16): his brand board
+
+Jano: "for my personal brand use the attached pallet, for the portafolio and the CV". Deep violet #34205C, lavender
+#A99AD6, lime #C5F05A, charcoal #202126, off-white #F5F3F8 replace v12's violet and green. The token table above keeps v12's
+values for history; `style.css` holds the current ones.
+
+- **Dark (default):** page #17171b, frames #202126, ink #F5F3F8; text accents lime (12:1); the main button lavender with
+  charcoal letters (6.3:1); the frame marks lavender. Deep violet is 1.3:1 on charcoal, so on dark it is only the selection.
+- **Light:** page #ebe8f0, frames #F5F3F8, ink #202126; text accents and the main button deep violet (12.6:1); lime only
+  as a fill, its text shade #4a6610.
+- Automation hues: lime, lavender, a paler lime, a paler lavender, grey. Favicon charcoal with a lime AS.
+- **Check:** `node C:/Users/salas/portfolio-work/verify-v14.mjs [liveUrl]`: the palette check now accepts the violet family
+  (hue 245–290), the lime family (65–95) or a neutral.

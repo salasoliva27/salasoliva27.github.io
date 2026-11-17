@@ -67,7 +67,7 @@
   const theme = () => (root.dataset.theme === "light" ? "light" : "dark");
   function paintTheme() {
     if (themeBtn) themeBtn.setAttribute("aria-label", theme() === "dark" ? t().toLight : t().toDark);
-    if (themeMeta) themeMeta.content = theme() === "dark" ? "#000000" : "#f3f3f6";
+    if (themeMeta) themeMeta.content = theme() === "dark" ? "#17171b" : "#ebe8f0";
   }
   if (themeBtn) themeBtn.addEventListener("click", () => {
     root.dataset.theme = theme() === "dark" ? "light" : "dark";
