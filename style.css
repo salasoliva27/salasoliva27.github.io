@@ -146,7 +146,10 @@ header.top {
   text-decoration: none;
   margin-right: auto;
 }
-.brand span { color: var(--link); }
+.brand-word span { color: var(--link); }
+/* His J mark (brand board, 2026-11-16) beside the initials, as on the board's banner: the mark, then the name. */
+.brand { display: inline-flex; align-items: center; gap: 0.55rem; }
+.brand-mark { display: block; width: 30px; height: auto; flex: none; }
 .nav-links { display: flex; gap: 1.4rem; }
 .nav-links a {
   color: var(--ink2);
@@ -924,7 +927,10 @@ dialog.lightbox img { display: block; max-width: 100%; max-height: 90vh; margin:
 @media (max-width: 720px) {
   .sec-frame::before { left: 1.1rem; }
   .kicker, .w-kicker { font-size: 0.9rem; }   /* no text under 14 px on a phone */
-  .theme-switch { width: 44px; height: 44px; }
+  .theme-switch { width: 44px; height: 44px; flex: none; }   /* v15: the mark took room; the switch keeps its 44 px */
+  /* on the phone the mark stands alone (the board's mark-only variation): the bar keeps room for its places */
+  .brand-word { display: none; }
+  .brand-mark { width: 28px; }
   /* the bar has room for one language button: the one you can change to */
   .lang-switch button[aria-pressed="true"] { display: none; }
   .lang-switch button + button::before { content: none; }

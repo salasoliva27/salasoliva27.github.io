@@ -155,3 +155,18 @@ values for history; `style.css` holds the current ones.
 - Automation hues: lime, lavender, a paler lime, a paler lavender, grey. Favicon charcoal with a lime AS.
 - **Check:** `node C:/Users/salas/portfolio-work/verify-v14.mjs [liveUrl]`: the palette check now accepts the violet family
   (hue 245–290), the lime family (65–95) or a neutral.
+
+## v15 (2026-11-16): his J mark
+
+Jano: "you forgot to add the logo, add it on both, also use it as an icon for the portafolio on the tab".
+
+- The mark is traced from his brand board as vector paths (three slabs: the bar, the stem ending in lime, the foot), checked
+  by drawing the outline over the board's own pixels. Source and every output: `C:/Users/salas/portfolio-work/logo/make.mjs`.
+- **Top bar:** the mark beside ASO on a computer; on a phone the mark alone (the board's mark-only variation), so the
+  bar keeps Work · Websites · Contact, the language and the 44 px switch.
+- **Tab icon:** `favicon.svg` is the board's tile variation (the mark on a charcoal square with a deep violet glow), with
+  `img/favicon-32.png` and `img/apple-touch-icon.png` for browsers that ignore SVG icons.
+- **Share picture** (`img/og.png`, from `portfolio-work/og-v15.html`): the board's banner (mark, a line, the name, the
+  role in lime) and the two flagships.
+- **Check:** `node C:/Users/salas/portfolio-work/verify-v15.mjs [liveUrl]` (v14's checks + the icons served, the tab
+  icon is the mark, the mark drawn in the bar at 1440 and 390).
